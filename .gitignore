@@ -7,7 +7,6 @@
 /[Bb]uild/
 /[Bb]uilds/
 /Assets/AssetStoreTools*
-/Assets/Meshes.meta
 *.stackdump
 
 # ===================================== #
@@ -36,10 +35,11 @@
 Icon?
 ehthumbs.db
 [Tt]humbs.db
-Assets/sjl.unity.meta
 
 # Unity3D generated meta files
 *.pidb.meta
+/Assets/Meshes.meta
+/Assets/sjl.unity.meta
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
