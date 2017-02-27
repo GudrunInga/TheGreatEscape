@@ -8,7 +8,6 @@
 /[Bb]uilds/
 /Assets/AssetStoreTools*
 /Assets/Meshes.meta
-sysinfo.txt
 *.stackdump
 
 # ===================================== #
@@ -37,6 +36,7 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 [Tt]humbs.db
+Assets/sjl.unity.meta
 
 # Unity3D generated meta files
 *.pidb.meta
