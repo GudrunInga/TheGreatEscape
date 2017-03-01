@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BalloonController : MonoBehaviour {
 
-	SpriteRenderer renderer;
+	SpriteRenderer render;
 	Rigidbody2D rigid;
 	Transform transformer;
 
@@ -15,7 +15,7 @@ public class BalloonController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		renderer = GetComponent<SpriteRenderer>();
+		render = GetComponent<SpriteRenderer>();
 		rigid = GetComponent<Rigidbody2D>();
 		transformer = GetComponent<Transform>();
 	}
@@ -23,15 +23,15 @@ public class BalloonController : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 		if (Input.GetKey(KeyCode.Alpha1)) {
-			renderer.sprite = image1;
+			render.sprite = image1;
 		}
 
 		if (Input.GetKey(KeyCode.Alpha2)) {
-			renderer.sprite = image2;
+			render.sprite = image2;
 		}
 
 		if (Input.GetKey(KeyCode.Alpha3)) {
-			renderer.sprite = image3;
+			render.sprite = image3;
 		}
 
 		if (useFart) {
