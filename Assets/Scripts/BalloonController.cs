@@ -46,6 +46,24 @@ public class BalloonController : MonoBehaviour {
 			}
 		}
 		else {
+			if (Input.GetKey(KeyCode.Q)) {
+				rigid.AddTorque(rotationSpeed);
+			}
+			if (Input.GetKey(KeyCode.E)) {
+				rigid.AddTorque(-rotationSpeed);
+			}
+			if (Input.GetKey(KeyCode.A)) {
+				rigid.AddForce(Vector2.left);
+			}
+			if (Input.GetKey(KeyCode.D)) {
+				rigid.AddForce(Vector2.right);
+			}
+			if (Input.GetKey(KeyCode.W)) {
+				rigid.AddForce(Vector2.up);
+			}
+			if (Input.GetKey(KeyCode.S)) {
+				rigid.AddForce(Vector2.down);
+			}
 		}
 	}
 }
