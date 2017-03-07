@@ -7,7 +7,6 @@ public class KillOnExit : MonoBehaviour {
 	
     void OnTriggerExit2D (Collider2D other)
     {
-            Debug.Log("Trigger Exited");
             Destroy(other.gameObject);
     }
 }
