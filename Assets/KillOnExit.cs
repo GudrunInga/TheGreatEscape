@@ -5,8 +5,9 @@ using UnityEngine;
 public class KillOnExit : MonoBehaviour {
 
 	
-    void OnTriggerExit (Collider other)
+    void OnTriggerExit2D (Collider2D other)
     {
+            Debug.Log("Trigger Exited");
             Destroy(other.gameObject);
     }
 }

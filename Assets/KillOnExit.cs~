@@ -7,9 +7,7 @@ public class KillOnExit : MonoBehaviour {
 	
     void OnTriggerExit (Collider other)
     {
-        if(other.CompareTag("Player"))
-        {
+            Debug.Log("Trigger Exited");
             Destroy(other.gameObject);
-        }
     }
 }
