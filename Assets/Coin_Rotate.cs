@@ -5,6 +5,7 @@ using UnityEngine;
 public class Coin_Rotate : MonoBehaviour {
 	Transform T;
 	public float rotateSpeed;
+	public AudioSource bading;
 	// Use this for initialization
 	void Start () {
 		T = GetComponent<Transform>();
@@ -17,10 +18,12 @@ public class Coin_Rotate : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
-	{											
+	{
 		if (other.gameObject.CompareTag("Player"))
-		{									  
-			gameObject.SetActive(false);
+		{
+			bading.Play();
+			gameObject.GetComponent<Transform>().position = new Vector3(1000, 1000, 1000);			  
+			//gameObject.SetActive(false);
 		}
 	}
 }

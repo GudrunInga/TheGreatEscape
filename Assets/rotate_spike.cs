@@ -6,6 +6,7 @@ public class rotate_spike : MonoBehaviour
 {
 	Transform T;
 	public float rotateSpeed;
+	public AudioSource bad;
 	// Use this for initialization
 	void Start()
 	{
@@ -27,6 +28,7 @@ public class rotate_spike : MonoBehaviour
 		if (other.gameObject.CompareTag("Player"))
 		{
 			Debug.Log("I am Scary");
+			bad.Play();
 			Destroy(other.gameObject);
 		}
 	}
