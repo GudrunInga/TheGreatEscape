@@ -7,6 +7,7 @@ public class KillOnExit : MonoBehaviour {
 	
     void OnTriggerExit2D (Collider2D other)
     {
-            Destroy(other.gameObject);
+		//UIController handles what happens when player dies
+		UIController.instance.GameOver ();
     }
 }

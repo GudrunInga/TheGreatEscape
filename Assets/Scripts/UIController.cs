@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class UIController : MonoBehaviour {
-	
+	public static UIController instance;
+	void Awake()
+	{
+		instance = this;
+	}
 	public bool paused;
 	public GameObject pauseMenu;
 	public Light spotLight;
@@ -15,7 +19,6 @@ public class UIController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Escape)) {
-			Debug.Log ("Escape");
 			if(paused) {
 				Time.timeScale = 1;
 				spotLight.enabled = true;
@@ -71,5 +74,10 @@ public class UIController : MonoBehaviour {
 		spotLight.enabled = true;
 		Time.timeScale = 1;
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+	}
+
+	public void GameOver()
+	{
+
 	}
 }
