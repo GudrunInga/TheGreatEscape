@@ -22,8 +22,10 @@ public class Coin_Rotate : MonoBehaviour {
 		if (other.gameObject.CompareTag("Player"))
 		{
 			bading.Play();
-			gameObject.GetComponent<Transform>().position = new Vector3(1000, 1000, 1000);			  
-			//gameObject.SetActive(false);
+			gameObject.GetComponent<Transform>().position = new Vector3(1000, 1000, 1000);
+            //gameObject.SetActive(false);
+            UIController.instance.tempScore += 1;
+            Debug.Log("Coin " + UIController.instance.tempScore);
 		}
 	}
 }

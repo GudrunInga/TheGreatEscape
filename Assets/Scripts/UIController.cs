@@ -3,17 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class UIController : MonoBehaviour {
+
 	public static UIController instance;
 	void Awake()
 	{
 		instance = this;
 	}
-	public bool paused;
+
+    //Temporary variable for testing purposes (game over ui)
+    public int tempScore;
+    //GameOverCanvas
+    public GameObject gameOverMenu;
+
+    public bool paused;
+    //PauseMenuCanvas
+
 	public GameObject pauseMenu;
+    //MainCamera SpotLight
 	public Light spotLight;
+
 	// Use this for initialization
 	void Start () {
 		paused = false;
+        tempScore = 0;
 	}
 
 	// Update is called once per frame
@@ -76,8 +88,17 @@ public class UIController : MonoBehaviour {
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 	}
 
-	public void GameOver()
+	public void GameOver(string deathReason)
 	{
+		if (deathReason == "Spike") {
+			Debug.Log ("Pointy things are bad for balloons");
+		} 
+		else if (deathReason == "Slow") {
+			Debug.Log ("You were way too slow");
+		}
+
+        spotLight.enabled = false;
+        Time.timeScale = 0;
 
 	}
 }
