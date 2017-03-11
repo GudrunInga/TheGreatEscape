@@ -22,12 +22,12 @@ public class rotate_spike : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		Debug.Log("I am collided");
+		//Debug.Log("I am collided");
 
-		Debug.Log("I am become " + other.tag);
+		//Debug.Log("I am become " + other.tag);
 		if (other.gameObject.CompareTag("Player"))
 		{
-			Debug.Log("I am Scary");
+			//Debug.Log("I am Scary");
 			bad.Play();
 			//UIController handles what happens when player dies
 			UIController.instance.GameOver ("Spike");

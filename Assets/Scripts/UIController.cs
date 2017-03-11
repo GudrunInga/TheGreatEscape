@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 public class UIController : MonoBehaviour {
 
 	public static UIController instance;
@@ -10,7 +12,9 @@ public class UIController : MonoBehaviour {
 		instance = this;
 	}
 
-    //Temporary variable for testing purposes (game over ui)
+	//Text box for reason of death
+	private Text _killReason;
+	//Temporary variable (for now) for testing purposes (game over ui)
     public int tempScore;
     //GameOverCanvas
     public GameObject gameOverMenu;
@@ -19,16 +23,15 @@ public class UIController : MonoBehaviour {
     //PauseMenuCanvas
 
 	public GameObject pauseMenu;
-    //MainCamera SpotLight
+
+    //MainCamera SpotLights
 	public Light spotLight;
 	public Light spotLight1;
 
 	// Use this for initialization
 	void Start () {
 		paused = false;
-        tempScore = 0;
 	}
-
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Escape)) {
@@ -96,13 +99,15 @@ public class UIController : MonoBehaviour {
 
 	public void GameOver(string deathReason)
 	{
+		_killReason = gameOverMenu.transform.Find ("Panel").transform.Find("DeathReason").gameObject.GetComponent<Text>();
+
 		if (deathReason == "Spike") {
-			Debug.Log ("Pointy things are bad for balloons");
+			_killReason.text = "Pointy things are bad for balloons";
 		} 
 		else if (deathReason == "Slow") {
-			Debug.Log ("You were way too slow");
+			_killReason.text = "You were way too slow";
 		}
-
+		gameOverMenu.SetActive (true);
         spotLight.enabled = false;
 		spotLight1.enabled = false;
         Time.timeScale = 0;
