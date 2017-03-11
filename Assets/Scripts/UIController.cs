@@ -21,6 +21,7 @@ public class UIController : MonoBehaviour {
 	public GameObject pauseMenu;
     //MainCamera SpotLight
 	public Light spotLight;
+	public Light spotLight1;
 
 	// Use this for initialization
 	void Start () {
@@ -34,10 +35,12 @@ public class UIController : MonoBehaviour {
 			if(paused) {
 				Time.timeScale = 1;
 				spotLight.enabled = true;
+				spotLight1.enabled = true;
 			}
 			else {
 				Time.timeScale = 0;
 				spotLight.enabled = false;
+				spotLight1.enabled = false;
 			}
 			//Debug.Log("Setting TimeScale to " + Time.timeScale);
 			paused = !paused;
@@ -59,6 +62,7 @@ public class UIController : MonoBehaviour {
 		if (paused) {
 			paused = !paused;
 			spotLight.enabled = true;
+			spotLight1.enabled = true;
 			Time.timeScale = 1;
 		}
 		SceneManager.LoadScene (i);
@@ -77,6 +81,7 @@ public class UIController : MonoBehaviour {
 	{
 		paused = !paused;
 		spotLight.enabled = true;
+		spotLight1.enabled = true;
 		Time.timeScale = 1;
 	}
 
@@ -84,6 +89,7 @@ public class UIController : MonoBehaviour {
 	{
 		paused = !paused;
 		spotLight.enabled = true;
+		spotLight1.enabled = true;
 		Time.timeScale = 1;
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 	}
@@ -98,6 +104,7 @@ public class UIController : MonoBehaviour {
 		}
 
         spotLight.enabled = false;
+		spotLight1.enabled = false;
         Time.timeScale = 0;
 
 	}
