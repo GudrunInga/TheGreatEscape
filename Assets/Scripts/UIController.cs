@@ -26,7 +26,6 @@ public class UIController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		paused = false;
-        tempScore = 0;
 	}
 
 	// Update is called once per frame
