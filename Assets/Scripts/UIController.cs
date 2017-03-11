@@ -8,12 +8,15 @@ public class UIController : MonoBehaviour {
 	{
 		instance = this;
 	}
+	public int score;
+
 	public bool paused;
 	public GameObject pauseMenu;
 	public Light spotLight;
 	// Use this for initialization
 	void Start () {
 		paused = false;
+		score = 0;
 	}
 
 	// Update is called once per frame
@@ -76,8 +79,14 @@ public class UIController : MonoBehaviour {
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 	}
 
-	public void GameOver()
+	public void GameOver(string deathReason)
 	{
+		if (deathReason == "Spike") {
+			Debug.Log ("Pointy things are bad for balloons");
+		} 
+		else if (deathReason == "Slow") {
+			Debug.Log ("You were way too slow");
+		}
 
 	}
 }

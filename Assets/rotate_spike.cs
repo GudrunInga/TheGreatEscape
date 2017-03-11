@@ -30,7 +30,7 @@ public class rotate_spike : MonoBehaviour
 			Debug.Log("I am Scary");
 			bad.Play();
 			//UIController handles what happens when player dies
-			UIController.instance.GameOver ();
+			UIController.instance.GameOver ("Spike");
 			//Destroy(other.gameObject);
 		}
 	}
