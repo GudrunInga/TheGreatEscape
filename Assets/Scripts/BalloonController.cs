@@ -3,35 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BalloonController : MonoBehaviour {
+	private KeyCode[] keyCodes = {
+		 KeyCode.Alpha1,
+		 KeyCode.Alpha2,
+		 KeyCode.Alpha3,
+		 KeyCode.Alpha4,
+		 KeyCode.Alpha5,
+		 KeyCode.Alpha6,
+		 KeyCode.Alpha7,
+		 KeyCode.Alpha8,
+		 KeyCode.Alpha9,
+	 };
 
-	SpriteRenderer render;
 	Rigidbody2D rigid;
 	Transform transformer;
 
 	public float rotationSpeed, movementspeed;
 
-	public Sprite image1, image2, image3;
+	public List<GameObject> models;
+	private GameObject activeModel;
 	public bool useFart;
 
 	// Use this for initialization
-	void Start () {
-		render = GetComponent<SpriteRenderer>();
+	void Start () {								  
 		rigid = GetComponent<Rigidbody2D>();
 		transformer = GetComponent<Transform>();
+		activeModel = models[0];
 	}
 
 	// Update is called once per frame
 	void Update() {
-		if (Input.GetKey(KeyCode.Alpha1)) {
-			render.sprite = image1;
-		}
-
-		if (Input.GetKey(KeyCode.Alpha2)) {
-			render.sprite = image2;
-		}
-
-		if (Input.GetKey(KeyCode.Alpha3)) {
-			render.sprite = image3;
+		for (int i = 0; i < models.Count; i++)
+		{
+			if (Input.GetKeyDown(keyCodes[i]))
+			{
+				activeModel.SetActive(false);
+				activeModel = models[i];
+				activeModel.SetActive(true);
+			}							  
 		}
 
 		if (useFart) {
