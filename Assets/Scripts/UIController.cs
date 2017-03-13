@@ -14,12 +14,18 @@ public class UIController : MonoBehaviour {
 
 	//Text box for reason of death
 	private Text _killReason;
+	//Text box to show coins;
+	public Text coins;
+	//Text box for the score
+	public Text score;
 	//Text box for final score
 	private Text _finalScore;
 	//Game Over, u dead
 	private bool gameOver;
+	//Time player has been alive
+	private float _timeAlive;
 	//Temporary variable (for now) for testing purposes (game over ui)
-    public int tempScore;
+    public int moneyCoins;
     //GameOverCanvas
     public GameObject gameOverMenu;
 
@@ -36,9 +42,15 @@ public class UIController : MonoBehaviour {
 	void Start () {
 		paused = false;
 		gameOver = false;
+		_timeAlive = Time.timeSinceLevelLoad;
+
+
+		//Debug.Log ("Start time " + _timeAlive.ToString("0.00"));
 	}
 	// Update is called once per frame
 	void Update () {
+		coins.text = moneyCoins.ToString();
+		score.text = "Time: " + Time.timeSinceLevelLoad.ToString ("0.0");
 		if (Input.GetKeyDown (KeyCode.Escape) && !gameOver) {
 			if(paused) {
 				Time.timeScale = 1;
@@ -106,10 +118,12 @@ public class UIController : MonoBehaviour {
 
 	public void GameOver(string deathReason)
 	{
+		_timeAlive = Time.timeSinceLevelLoad;
+		//Debug.Log ("Time " + _timeAlive);
 		gameOver = true;
 		_killReason = gameOverMenu.transform.Find ("Panel").transform.Find("DeathReason").gameObject.GetComponent<Text>();
 		_finalScore = gameOverMenu.transform.Find ("Panel").transform.Find ("FinalScore").gameObject.GetComponent<Text> ();
-		_finalScore.text += tempScore.ToString ();
+		_finalScore.text += moneyCoins.ToString ();
 		if (deathReason == "Spike") {
 			_killReason.text = "Pointy things are bad for balloons";
 		} 
@@ -121,7 +135,5 @@ public class UIController : MonoBehaviour {
 		spotLight1.enabled = false;
 		//Stop the game
         Time.timeScale = 0;
-
-
 	}
 }
