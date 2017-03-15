@@ -123,7 +123,7 @@ public class UIController : MonoBehaviour {
 		gameOver = true;
 		_killReason = gameOverMenu.transform.Find ("Panel").transform.Find("DeathReason").gameObject.GetComponent<Text>();
 		_finalScore = gameOverMenu.transform.Find ("Panel").transform.Find ("FinalScore").gameObject.GetComponent<Text> ();
-		_finalScore.text += moneyCoins.ToString ();
+		_finalScore.text = moneyCoins.ToString ();
 		if (deathReason == "Spike") {
 			_killReason.text = "Pointy things are bad for balloons";
 		} 
