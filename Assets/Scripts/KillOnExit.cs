@@ -8,6 +8,8 @@ public class KillOnExit : MonoBehaviour {
     void OnTriggerExit2D (Collider2D other)
     {
 		//UIController handles what happens when player dies
-		UIController.instance.GameOver ("Slow");
+		if (other.tag == "Player") {
+			UIController.instance.GameOver ("Slow");
+		}
     }
 }
