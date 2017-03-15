@@ -6,11 +6,7 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour {
 
-	public static UIController instance;
-	void Awake()
-	{
-		instance = this;
-	}
+
 
 	/*Begin Game Over Menu*/
 	//Text box for reason of death
@@ -54,11 +50,18 @@ public class UIController : MonoBehaviour {
 	public Light spotLight;
 	public Light spotLight1;
 
+	public static UIController instance;
+	void Awake()
+	{
+		instance = this;
+	}
+
 	// Use this for initialization
 	void Start () {
 		_paused = false;
 		_gameOver = false;
 		if(scoreMenu != null){
+			scoreMenu.SetActive (true);
 			_timeAlive = Time.timeSinceLevelLoad;
 			_coinsCollectedText = scoreMenu.transform.Find ("CoinsText").GetComponent<Text> ();
 			//_timeText = scoreMenu.GetComponentInChildren<Text> ();// transform.Find ("Text");
@@ -163,12 +166,13 @@ public class UIController : MonoBehaviour {
 		spotLight1.enabled = false;
 		//Stop the game
         Time.timeScale = 0;
+		scoreMenu.SetActive (false);
 	}
-	/*Not necessary for now*/
-	/*public int GetCoins()
+
+	public int GetCoins()
 	{
 		return _coins;
-	}*/
+	}
 	public void SetCoins()
 	{
 		++_coins;
