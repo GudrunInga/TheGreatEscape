@@ -25,7 +25,12 @@ public class BalloonController : MonoBehaviour {
 	public bool useFart;
 
 	// Use this for initialization
-	void Start () {								  
+	void Start ()
+	{
+		for (int i = 1; i < models.Count; i++)
+		{
+			models[i].SetActive(false);
+		}
 		rigid = GetComponent<Rigidbody2D>();
 		transformer = GetComponent<Transform>();
 		activeModel = models[0];
