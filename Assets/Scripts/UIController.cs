@@ -58,46 +58,48 @@ public class UIController : MonoBehaviour {
 	void Start () {
 		_paused = false;
 		_gameOver = false;
-		_timeAlive = Time.timeSinceLevelLoad;
-		_coinsCollectedText = scoreMenu.transform.Find ("CoinsText").GetComponent<Text> ();
-		//_timeText = scoreMenu.GetComponentInChildren<Text> ();// transform.Find ("Text");
-		_image = scoreMenu.transform.Find("ImageParent").transform.Find("Image").GetComponent<Image>();// transform.Find("Image").GetComponent<RawImage>();
+		if(scoreMenu != null){
+			_timeAlive = Time.timeSinceLevelLoad;
+			_coinsCollectedText = scoreMenu.transform.Find ("CoinsText").GetComponent<Text> ();
+			//_timeText = scoreMenu.GetComponentInChildren<Text> ();// transform.Find ("Text");
+			_image = scoreMenu.transform.Find("ImageParent").transform.Find("Image").GetComponent<Image>();// transform.Find("Image").GetComponent<RawImage>();
+		}
 		_coins = 0;
 	}
 	// Update is called once per frame
 	void Update () {
-		//Rotate the coin image
-		_image.transform.Rotate( 0, rotateCoinSpeed * Time.deltaTime, 0);
+		if (scoreMenu != null) {
+			//Rotate the coin image
+			_image.transform.Rotate (0, rotateCoinSpeed * Time.deltaTime, 0);
+			//Show number of coins on screen
+			_coinsCollectedText.text = _coins.ToString ();
+			//Show time on screen
+			//_timeText.text = "Time: " + Time.timeSinceLevelLoad.ToString ("0.0");
 
-		//Show number of coins on screen
-		_coinsCollectedText.text = _coins.ToString();
-		//Show time on screen
-		//_timeText.text = "Time: " + Time.timeSinceLevelLoad.ToString ("0.0");
-
-		//Pause/Unpause the game
-		if (Input.GetKeyDown (KeyCode.Escape) && !_gameOver) {
-			if(_paused) {
-				Time.timeScale = 1;
-				spotLight.enabled = true;
-				spotLight1.enabled = true;
+			//Pause/Unpause the game
+			if (Input.GetKeyDown (KeyCode.Escape) && !_gameOver) {
+				if (_paused) {
+					Time.timeScale = 1;
+					spotLight.enabled = true;
+					spotLight1.enabled = true;
+				} else {
+					Time.timeScale = 0;
+					spotLight.enabled = false;
+					spotLight1.enabled = false;
+				}
+				//Debug.Log("Setting TimeScale to " + Time.timeScale);
+				_paused = !_paused;
 			}
-			else {
-				Time.timeScale = 0;
-				spotLight.enabled = false;
-				spotLight1.enabled = false;
-			}
-			//Debug.Log("Setting TimeScale to " + Time.timeScale);
-			_paused = !_paused;
-		}
 
-		//Activate the pause menu
-		if (_paused) {
-			//Time.timeScale = 0;
-			pauseMenu.SetActive (true);
-		} 
-		//Deactivate the pause menu
-		else if (!_paused && pauseMenu != null) {
-			pauseMenu.SetActive (false);
+			//Activate the pause menu
+			if (_paused) {
+				//Time.timeScale = 0;
+				pauseMenu.SetActive (true);
+			} 
+			//Deactivate the pause menu
+			else if (!_paused && pauseMenu != null) {
+				pauseMenu.SetActive (false);
+			}
 		}
 	}
 	//Should be 1 to load Escape scene
