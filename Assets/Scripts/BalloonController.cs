@@ -81,5 +81,21 @@ public class BalloonController : MonoBehaviour {
 		}
 	}
 
+	public void setgrav(float scale)
+	{
+		rigid.gravityScale = scale;
+	}
+	public void forceModel(GameObject Mod)
+	{
+		GameObject newKid = Instantiate(Mod, transform);
+		Transform T = newKid.transform;
+		T.rotation = transform.rotation;
+		T.position = transform.position;
+		T.localScale = Vector3.one;
+		activeModel.SetActive(false);
+		models.Clear();
+		models.Add(newKid);
+		activeModel = newKid;
+	}
 
 }
