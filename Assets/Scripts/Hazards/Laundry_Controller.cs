@@ -32,7 +32,7 @@ public class Laundry_Controller : MonoBehaviour {
 					Debug.Log(child.gameObject.name);
 					Rigidbody kidRigid = child.gameObject.AddComponent<Rigidbody>();
 					Vector3 vec = new Vector3(Random.Range(-9f, 9f), Random.Range(5f, 12f));
-					Vector3 rot =new Vector3(Random.Range(-20f, 20f), Random.Range(20f, 20f), Random.Range(-55f, 55f));
+					Vector3 rot =new Vector3(Random.Range(-30f, 30f), Random.Range(30f, 30f), Random.Range(-75f, 75f));
 					kidRigid.velocity = vec;
 					kidRigid.SetDensity(0);
 					kidRigid.drag = 0.2f;
