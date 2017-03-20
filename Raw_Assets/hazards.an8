@@ -2266,3 +2266,5 @@ object { "object01"
     longlat { 12 8 }
   }
 }
+object { "Cloath"
+}

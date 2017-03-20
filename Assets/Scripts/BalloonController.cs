@@ -25,7 +25,12 @@ public class BalloonController : MonoBehaviour {
 	public bool useFart;
 
 	// Use this for initialization
-	void Start () {								  
+	void Start ()
+	{
+		for (int i = 1; i < models.Count; i++)
+		{
+			models[i].SetActive(false);
+		}
 		rigid = GetComponent<Rigidbody2D>();
 		transformer = GetComponent<Transform>();
 		activeModel = models[0];
@@ -76,5 +81,21 @@ public class BalloonController : MonoBehaviour {
 		}
 	}
 
+	public void setgrav(float scale)
+	{
+		rigid.gravityScale = scale;
+	}
+	public void forceModel(GameObject Mod)
+	{
+		GameObject newKid = Instantiate(Mod, transform);
+		Transform T = newKid.transform;
+		T.rotation = transform.rotation;
+		T.position = transform.position;
+		T.localScale = Vector3.one;
+		activeModel.SetActive(false);
+		models.Clear();
+		models.Add(newKid);
+		activeModel = newKid;
+	}
 
 }
