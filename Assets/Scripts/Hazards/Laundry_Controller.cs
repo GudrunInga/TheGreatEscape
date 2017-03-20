@@ -31,12 +31,12 @@ public class Laundry_Controller : MonoBehaviour {
 				{
 					Debug.Log(child.gameObject.name);
 					Rigidbody kidRigid = child.gameObject.AddComponent<Rigidbody>();
-					Vector3 vec = new Vector3(Random.Range(-13f, 13f), Random.Range(3f, 6f));
-					Quaternion rot = Random.rotation;
+					Vector3 vec = new Vector3(Random.Range(-9f, 9f), Random.Range(5f, 12f));
+					Vector3 rot =new Vector3(Random.Range(-30f, 30f), Random.Range(30f, 30f), Random.Range(-75f, 75f));
 					kidRigid.velocity = vec;
 					kidRigid.SetDensity(0);
 					kidRigid.drag = 0.2f;
-					kidRigid.rotation = rot;
+					kidRigid.AddTorque(rot);
 				}
 			}
 			else {
