@@ -6,7 +6,20 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour {
 
+	/*Begin Customize Menu*/
+	public GameObject customizeMenu;
+	public Text speedText;
+	public Button increaseSpeedButton;
+	public Button decreaseSpeedButton;
+	private int _speedLevel;
+	private int _currentSpeedLevel;
+	/*End Customize Menu*/
 
+	/*Begin Store Menu*/
+	public GameObject storeMenu;
+	//Needed for changing values such as mass (to increase speed)
+	public GameObject player;
+	/*End Store Menu*/
 
 	/*Begin Game Over Menu*/
 	//Text box for reason of death
@@ -68,6 +81,15 @@ public class UIController : MonoBehaviour {
 			_image = scoreMenu.transform.Find("ImageParent").transform.Find("Image").GetComponent<Image>();// transform.Find("Image").GetComponent<RawImage>();
 		}
 		_coins = 0;
+
+		//Customize speed
+		_currentSpeedLevel = 0;
+		_speedLevel = 0;
+		speedText.text = _currentSpeedLevel.ToString ();
+		//disable plus sign
+		disableButton (true);
+		//disable minus sign
+		disableButton(false);
 	}
 	// Update is called once per frame
 	void Update () {
@@ -166,7 +188,8 @@ public class UIController : MonoBehaviour {
 		spotLight1.enabled = false;
 		//Stop the game
         Time.timeScale = 0;
-		scoreMenu.SetActive (false);
+		//_coinsCollectedText.color = Color.black;
+		//scoreMenu.SetActive (false);
 	}
 
 	public int GetCoins()
@@ -177,4 +200,86 @@ public class UIController : MonoBehaviour {
 	{
 		++_coins;
 	}
+
+	//Store Menu and Customize menu
+	public void IncreaseSpeed()
+	{
+		if (_coins > 0 && storeMenu.activeSelf) {
+			--_coins;
+			player.GetComponent<Rigidbody2D> ().mass -= 0.1f;
+			_speedLevel++;
+			_currentSpeedLevel++;
+			speedText.text = _currentSpeedLevel.ToString();
+			if (_currentSpeedLevel == _speedLevel) {
+				disableButton (true);
+			}
+			if (_currentSpeedLevel > 0) {
+				enableButton (false);
+			}
+			if (_currentSpeedLevel < _speedLevel) {
+				enableButton (true);
+			}
+		}
+
+		else if(customizeMenu.activeSelf){
+			if (_currentSpeedLevel < _speedLevel) {
+				_currentSpeedLevel++;
+				player.GetComponent<Rigidbody2D> ().mass -= 0.1f;
+				speedText.text = _currentSpeedLevel.ToString ();
+			}
+			if (_currentSpeedLevel == _speedLevel) {
+				disableButton (true);
+			}
+			if (_currentSpeedLevel == 0) {
+				disableButton (false);
+			}
+			if (_currentSpeedLevel > 0) {
+				enableButton (false);
+			}
+			if (_currentSpeedLevel < _speedLevel) {
+				enableButton (true);
+			}
+		}
+	}
+
+	public void decreaseSpeed()
+	{
+		if (_currentSpeedLevel > 0) {
+			_currentSpeedLevel--;
+			player.GetComponent<Rigidbody2D> ().mass += 0.1f;
+			speedText.text = _currentSpeedLevel.ToString ();
+		}
+		if (_currentSpeedLevel == 0) {
+			disableButton (false);
+			enableButton (true);
+		}
+	}
+
+	void disableButton(bool plusSign)
+	{
+		if (plusSign) {
+			increaseSpeedButton.enabled = false;
+			increaseSpeedButton.GetComponent<Image> ().enabled = false;
+			increaseSpeedButton.GetComponentInChildren<Text> ().text = "";
+		} 
+		else {
+			decreaseSpeedButton.enabled = false;
+			decreaseSpeedButton.GetComponent<Image> ().enabled = false;
+			decreaseSpeedButton.GetComponentInChildren<Text> ().text = "";
+		}
+	}
+	void enableButton(bool plusSign)
+	{
+		if (plusSign) {
+			increaseSpeedButton.enabled = true;
+			increaseSpeedButton.GetComponent<Image> ().enabled = true;
+			increaseSpeedButton.GetComponentInChildren<Text> ().text = "+";
+		} 
+		else {
+			decreaseSpeedButton.enabled = true;
+			decreaseSpeedButton.GetComponent<Image> ().enabled = true;
+			decreaseSpeedButton.GetComponentInChildren<Text> ().text = "-";
+		}
+	}
+
 }
