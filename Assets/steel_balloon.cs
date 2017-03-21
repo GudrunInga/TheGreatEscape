@@ -16,6 +16,7 @@ public class steel_balloon : MonoBehaviour {
 		{
 			Dad.models.Clear();
 			rig.gravityScale = 2;
+            UIController.instance.steel = true;
 		}
 		else
 		{
