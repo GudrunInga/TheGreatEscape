@@ -6,10 +6,12 @@ public class animate_bird : MonoBehaviour {
 	public float animationSpeed;
 	private animateData head;
 	private animateData left_wing;
-	private animateData right_wing;	
+	private animateData right_wing;
+	private bool active;
 
 	// Use this for initialization
 	void Start () {
+		active = false;									   
 		head = new animateData();
 		left_wing = new animateData();
 		right_wing = new animateData();
@@ -35,16 +37,28 @@ public class animate_bird : MonoBehaviour {
 		right_wing.progress = 0;
 		right_wing.to = Quaternion.Euler(+65, -10, 0);
 		right_wing.from = Quaternion.Euler(-60, +10, 0);
+		transform.GetChild(0).gameObject.SetActive(false);
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (!active)
+		{
+			return;
+		}
 		head.animate(); 
 		left_wing.animate();
 		right_wing.animate();
 	}
-
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.gameObject.CompareTag("MainCamera"))
+		{
+			active = true;
+			transform.GetChild(0).gameObject.SetActive(true);
+		}
+	}
 	private class animateData
 	{
 		public Transform model;

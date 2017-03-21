@@ -11,18 +11,23 @@ public class Bird_Controller : MonoBehaviour {
 	private float velocity;
 	private Rigidbody2D rigid;
 	private bool afraid;
+	private bool inside;
 
 	// Use this for initialization
 	void Start () {
 		velocity = flightSpeed;
-		rigid = GetComponent<Rigidbody2D>();
-		rigid.AddForce(Vector2.left * flightSpeed*10);
+		rigid = GetComponent<Rigidbody2D>();		   
 		afraid = false;
 		var objects = Resources.FindObjectsOfTypeAll<GameObject>().Where(obj => obj.name == repellant.name);
 		repellant = objects.ElementAt(0);
+		inside = false;	 
 	}
 					
-	void Update(){			   
+	void Update(){
+		if (!inside)
+		{
+			return;
+		}		   
 		if (!afraid)
 		{					
 			if (repellant.activeInHierarchy)
@@ -48,10 +53,23 @@ public class Bird_Controller : MonoBehaviour {
 	}	
 					
 	void OnTriggerEnter2D(Collider2D other)
-	{
+	{		
+		if (other.gameObject.CompareTag("MainCamera")) { 
+			inside = true;
+			rigid.AddForce(Vector2.left * flightSpeed * 10);
+		}
 		if (other.gameObject.CompareTag("Player"))
 		{														 
 			UIController.instance.GameOver("Bird");		
 		}
+	}			
+	void OnTriggerExit2D(Collider2D other)
+	{					 
+		if (other.gameObject.CompareTag("MainCamera"))
+		{					  
+			Destroy(gameObject);
+		}
 	}
+
 }
+
