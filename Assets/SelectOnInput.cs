@@ -28,15 +28,17 @@ public class SelectOnInput : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if ((Input.GetKeyDown (KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) && i != 3) {
-			var move = new Vector3 (balloonObject.transform.position.x, balloonObject.transform.position.y - 0.9f, balloonObject.transform.position.z);
-			balloonObject.transform.position = move;
-			i++;
-		}
-		if ((Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && i != 1) {
-			var move = new Vector3 (balloonObject.transform.position.x, balloonObject.transform.position.y + 0.9f, balloonObject.transform.position.z);
-			balloonObject.transform.position = move;
-			i--;
+		if (balloonObject != null) {
+			if ((Input.GetKeyDown (KeyCode.DownArrow) || Input.GetKeyDown (KeyCode.S)) && i != 3) {
+				var move = new Vector3 (balloonObject.transform.position.x, balloonObject.transform.position.y - 0.9f, balloonObject.transform.position.z);
+				balloonObject.transform.position = move;
+				i++;
+			}
+			if ((Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.W)) && i != 1) {
+				var move = new Vector3 (balloonObject.transform.position.x, balloonObject.transform.position.y + 0.9f, balloonObject.transform.position.z);
+				balloonObject.transform.position = move;
+				i--;
+			}
 		}
 	}
 
