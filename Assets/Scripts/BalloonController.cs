@@ -13,7 +13,7 @@ public class BalloonController : MonoBehaviour {
 		 KeyCode.Alpha7,
 		 KeyCode.Alpha8,
 		 KeyCode.Alpha9,
-	 };
+	 };				
 
 	Rigidbody2D rigid;
 	Transform transformer;
@@ -21,12 +21,15 @@ public class BalloonController : MonoBehaviour {
 	public float rotationSpeed, movementspeed;
 
 	public List<GameObject> models;
+	public List<Texture2D> alpha_maps;
+	private int frame;
 	private GameObject activeModel;
 	public bool useFart;
 
 	// Use this for initialization
 	void Start ()
 	{
+		frame = 0;
 		for (int i = 1; i < models.Count; i++)
 		{
 			models[i].SetActive(false);
@@ -37,7 +40,7 @@ public class BalloonController : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update() {
+	void Update() {							   									
 		for (int i = 0; i < models.Count; i++)
 		{
 			if (Input.GetKeyDown(keyCodes[i]))
@@ -62,6 +65,7 @@ public class BalloonController : MonoBehaviour {
 		else {
 			if (Input.GetKey(KeyCode.Q)) {
 				rigid.AddTorque(rotationSpeed);
+				StartCoroutine("pop");
 			}
 			if (Input.GetKey(KeyCode.E)) {
 				rigid.AddTorque(-rotationSpeed);
@@ -98,4 +102,17 @@ public class BalloonController : MonoBehaviour {
 		activeModel = newKid;
 	}
 
+	public IEnumerator pop()
+	{
+		while(frame < alpha_maps.Count)
+		{
+			foreach (Transform child in activeModel.transform.GetComponentInChildren<Transform>())
+			{
+				Renderer R = child.gameObject.GetComponent<Renderer>();
+				R.material.mainTexture = alpha_maps[frame];	 
+			}
+			frame++;
+			yield return null;
+		}
+	}
 }
