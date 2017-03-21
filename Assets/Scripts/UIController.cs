@@ -28,6 +28,8 @@ public class UIController : MonoBehaviour {
 	private Text _finalScore;
 	//Game Over, u dead
 	private bool _gameOver;
+    //death by laundry
+    public bool laundry;
 
 	//GameOverCanvas
 	public GameObject gameOverMenu;
@@ -90,6 +92,8 @@ public class UIController : MonoBehaviour {
 		disableButton (true);
 		//disable minus sign
 		disableButton(false);
+        //death by laundry
+        laundry = false;
 	}
 	// Update is called once per frame
 	void Update () {
@@ -163,6 +167,7 @@ public class UIController : MonoBehaviour {
 	{
 		_paused = false;
 		_gameOver = false;
+        laundry = false;
 		spotLight.enabled = true;
 		spotLight1.enabled = true;
 		Time.timeScale = 1;
@@ -177,12 +182,9 @@ public class UIController : MonoBehaviour {
 		_killReason = gameOverMenu.transform.Find ("Panel").transform.Find("DeathReason").gameObject.GetComponent<Text>();
 		_finalScore = gameOverMenu.transform.Find ("Panel").transform.Find ("FinalScore").gameObject.GetComponent<Text> ();
 		_finalScore.text = _coins.ToString ();
-		if (deathReason == "Spike") {
-			_killReason.text = "Pointy things are bad for balloons";
-		} 
-		else if (deathReason == "Slow") {
-			_killReason.text = "You were way too slow";
-		}
+
+        DeathMessage(deathReason);
+		
 		gameOverMenu.SetActive (true);
         spotLight.enabled = false;
 		spotLight1.enabled = false;
@@ -191,6 +193,27 @@ public class UIController : MonoBehaviour {
 		//_coinsCollectedText.color = Color.black;
 		//scoreMenu.SetActive (false);
 	}
+
+    private void DeathMessage(string deathReason)
+    {
+        if (laundry)
+        {
+            _killReason.text = "Death by laundry....that is bad, maybe you need to cut through it?";
+            laundry = false;
+        }
+        else if (deathReason == "Spike")
+        {
+            _killReason.text = "Pointy things are bad for balloons, if only you could get better controls";
+        }
+        else if (deathReason == "Slow")
+        {
+            _killReason.text = "You were too slow, maybe go faster next time, if only you could increase your speed";
+        }
+        else if(deathReason == "Bird")
+        {
+            _killReason.text = "Birds ain't scared of you, what are birds scared of?";
+        }
+    }
 
 	public int GetCoins()
 	{
