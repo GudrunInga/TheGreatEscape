@@ -8,14 +8,14 @@ public class SelectOnInput : MonoBehaviour {
 	public GameObject selectedObject;
 	public GameObject balloonObject;
 
-	private bool buttonSelected;
+	//private bool buttonSelected;
 	float speed = 1000.0f;
 	int i;
 	// Use this for initialization
 	void Start () {
 		eventSystem.SetSelectedGameObject(selectedObject);
 
-		buttonSelected = true;
+		//buttonSelected = true;
 		i = 1;
 		/*if (Input.GetAxisRaw ("Vertical") != 0 && buttonSelected == false) 
 		{
@@ -42,8 +42,8 @@ public class SelectOnInput : MonoBehaviour {
 		}
 	}
 
-	private void OnDisable()
+	/*private void OnDisable()
 	{
 		buttonSelected = false;
-	}
+	}*/
 }
