@@ -102,7 +102,6 @@ public class UIController : MonoBehaviour {
 		steel = false;
 		if (SceneManager.GetActiveScene().name != "MainMenu") {
 			dead = false;
-
 			if (scoreMenu != null) {
 				scoreMenu.SetActive(true);
 				_timeAlive = Time.timeSinceLevelLoad;

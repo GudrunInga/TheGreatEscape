@@ -14,6 +14,11 @@ public class Checkpoint_manager : MonoBehaviour {
 		UIController inst = UIController.instance;			   
 		level = inst.getLevel();
 		if(level > 1) { 
+			for(int i = 1; i < level; i++)
+			{
+				CheckpointDistance = Mathf.CeilToInt(CheckpointDistance * (1 + level / 20));
+				moverScript.add_accel(moverScript.acceleration); 
+			}
 			float lastpos = transform.position.x;
 			Vector3 newvec= new Vector3(inst.get_respawn_x(), transform.position.y, transform.position.z);
 			transform.position = newvec;

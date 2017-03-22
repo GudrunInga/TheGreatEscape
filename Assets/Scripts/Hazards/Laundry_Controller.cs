@@ -12,8 +12,15 @@ public class Laundry_Controller : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		cut = false;
-		//var objects = Resources.FindObjectsOfTypeAll<GameObject>().Where(obj => obj.name == repellant.name);
-		//repellant = objects.ElementAt(0);
+		GameObject player = UIController.instance.player;
+		foreach (Transform t in player.GetComponentInChildren<Transform>())
+		{
+			if (t.gameObject.name == repellant.name)
+			{
+				repellant = t.gameObject;
+				break;
+			}
+		}
 	}
 	
 	// Update is called once per frame
@@ -43,7 +50,7 @@ public class Laundry_Controller : MonoBehaviour {
 				pants.SetActive(false);
 				shirt.SetActive(false);
 				BalloonController balloon = other.gameObject.transform.root.gameObject.GetComponent<BalloonController>();
-				balloon.setgrav(0.11f);
+				balloon.setgrav(0.07f);
 				balloon.forceModel(heavyballoon);
                 UIController.instance.laundry = true;
 			}

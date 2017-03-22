@@ -9,8 +9,15 @@ public class cat_hazard : MonoBehaviour {
 	private bool inside;
 	// Use this for initialization
 	void Start () {
-		//var objects = Resources.FindObjectsOfTypeAll<GameObject>().Where(obj => obj.name == repellant.name);
-		//repellant = objects.ElementAt(0);	 
+		GameObject player = UIController.instance.player;
+		foreach (Transform t in player.GetComponentInChildren<Transform>())
+		{
+			if (t.gameObject.name == repellant.name)
+			{
+				repellant = t.gameObject;
+				break;
+			}
+		}
 	}
 
 	// Update is called once per frame
