@@ -100,24 +100,28 @@ public class UIController : MonoBehaviour {
 		//death by laundry
 		laundry = false;
 		steel = false;
-		if (SceneManager.GetActiveScene().name != "MainMenu") {
-			dead = false;
-			if (scoreMenu != null) {
-				scoreMenu.SetActive(true);
-				_timeAlive = Time.timeSinceLevelLoad;
-				_coinsCollectedText = scoreMenu.transform.Find("CoinsText").GetComponent<Text>();
-				//_timeText = scoreMenu.GetComponentInChildren<Text> ();// transform.Find ("Text");
-				_image = scoreMenu.transform.Find("ImageParent").transform.Find("Image").GetComponent<Image>();// transform.Find("Image").GetComponent<RawImage>();
-			}
+		if (!mainMenu.activeSelf) {
+			if (SceneManager.GetActiveScene ().name != "MainMenu") {
+				dead = false;
 
-			//Customize speed
-			_currentSpeedLevel = 0;
-			_speedLevel = 0;
-			speedText.text = _currentSpeedLevel.ToString();
-			//disable plus sign
-			disableButton(true);
-			//disable minus sign
-			disableButton(false);
+				if (scoreMenu != null) {
+					scoreMenu.SetActive (true);
+					_timeAlive = Time.timeSinceLevelLoad;
+					_coinsCollectedText = scoreMenu.transform.Find ("CoinsText").GetComponent<Text> ();
+					//_timeText = scoreMenu.GetComponentInChildren<Text> ();// transform.Find ("Text");
+					_image = scoreMenu.transform.Find ("ImageParent").transform.Find ("Image").GetComponent<Image> ();// transform.Find("Image").GetComponent<RawImage>();
+				}
+
+
+				//Customize speed
+				_currentSpeedLevel = 0;
+				_speedLevel = 0;
+				speedText.text = _currentSpeedLevel.ToString ();
+				//disable plus sign
+				disableButton (true);
+				//disable minus sign
+				disableButton (false);
+			}
 		}
 	}
 	// Update is called once per frame
