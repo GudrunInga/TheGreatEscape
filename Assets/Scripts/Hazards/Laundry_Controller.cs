@@ -12,8 +12,8 @@ public class Laundry_Controller : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		cut = false;
-		var objects = Resources.FindObjectsOfTypeAll<GameObject>().Where(obj => obj.name == repellant.name);
-		repellant = objects.ElementAt(0);
+		//var objects = Resources.FindObjectsOfTypeAll<GameObject>().Where(obj => obj.name == repellant.name);
+		//repellant = objects.ElementAt(0);
 	}
 	
 	// Update is called once per frame
@@ -25,8 +25,8 @@ public class Laundry_Controller : MonoBehaviour {
 	{
 		if (other.gameObject.CompareTag("Player") && !cut)
 		{
-			cut = true;
-			if (repellant.activeInHierarchy){
+			cut = true;	   
+			if (repellant.activeInHierarchy){ 
 				foreach (Transform child in gameObject.transform.GetChild(0).GetComponentInChildren<Transform>())
 				{
 					Debug.Log(child.gameObject.name);
