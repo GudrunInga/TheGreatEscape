@@ -18,8 +18,8 @@ public class Bird_Controller : MonoBehaviour {
 		velocity = flightSpeed;
 		rigid = GetComponent<Rigidbody2D>();		   
 		afraid = false;
-		var objects = Resources.FindObjectsOfTypeAll<GameObject>().Where(obj => obj.name == repellant.name);
-		repellant = objects.ElementAt(0);
+		//var objects = Resources.FindObjectsOfTypeAll<GameObject>().Where(obj => obj.name == repellant.name);
+		//repellant = objects.ElementAt(0);
 		inside = false;	 
 	}
 					
