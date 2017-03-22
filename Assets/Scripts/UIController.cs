@@ -66,15 +66,17 @@ public class UIController : MonoBehaviour {
     //MainCamera SpotLights, turned off when paused or game over
 	public Light spotLight;
 	public Light spotLight1;
+	private bool dead;
 
 	public static UIController instance;
 	void Awake()
 	{
-		instance = this;
+		instance = this; 
 	}
 
 	// Use this for initialization
 	void Start () {
+		dead = false;
 		_paused = false;
 		_gameOver = false;
 		if(scoreMenu != null){
@@ -142,6 +144,7 @@ public class UIController : MonoBehaviour {
 		if (_paused || _gameOver) {
 			_paused = false;
 			_gameOver = false;
+			dead = false;
 			spotLight.enabled = true;
 			spotLight1.enabled = true;
 			Time.timeScale = 1;
@@ -182,6 +185,7 @@ public class UIController : MonoBehaviour {
 
 	public void GameOver(string deathReason)
 	{
+		if (!dead) { 
 		_timeAlive = Time.timeSinceLevelLoad;
 		//Debug.Log ("Time " + _timeAlive);
 		_gameOver = true;
@@ -190,14 +194,22 @@ public class UIController : MonoBehaviour {
 		_finalScore.text = _coins.ToString ();
 
         DeathMessage(deathReason);
-		
-		gameOverMenu.SetActive (true);
-        spotLight.enabled = false;
-		spotLight1.enabled = false;
-		//Stop the game
-        Time.timeScale = 0;
+
+		player.GetComponent<BalloonController>().pop();
+		StartCoroutine("CoGameOver");
+		dead = true;
+		}
 		//_coinsCollectedText.color = Color.black;
 		//scoreMenu.SetActive (false);
+	}
+	private IEnumerator CoGameOver()
+	{
+		yield return new WaitForSeconds(1); 
+		gameOverMenu.SetActive(true);
+		spotLight.enabled = false;
+		spotLight1.enabled = false;
+		//Stop the game
+		Time.timeScale = 0;	 
 	}
 
     private void DeathMessage(string deathReason)

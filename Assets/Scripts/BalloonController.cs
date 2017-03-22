@@ -62,14 +62,7 @@ public class BalloonController : MonoBehaviour {
 				rigid.AddForce(transform.right);
 			}
 		}
-		else {
-			if (Input.GetKey(KeyCode.Q)) {
-				rigid.AddTorque(rotationSpeed);
-				StartCoroutine("pop");
-			}
-			if (Input.GetKey(KeyCode.E)) {
-				rigid.AddTorque(-rotationSpeed);
-			}
+		else {	   
 			if (Input.GetKey(KeyCode.A)) {
 				rigid.AddForce(Vector2.left);
 			}
@@ -106,7 +99,11 @@ public class BalloonController : MonoBehaviour {
 	{
 		return frame >= alpha_maps.Count;
 	}
-	public IEnumerator pop()
+	public void pop()
+	{	  
+			StartCoroutine("copop");
+	}			   
+	public IEnumerator copop()
 	{
 		while(frame < alpha_maps.Count)
 		{
