@@ -32,7 +32,8 @@ public class UIController : MonoBehaviour {
     public bool laundry;
     //death by steel
     public bool steel;
-
+	//For death animation
+	private bool dead;
 	//GameOverCanvas
 	public GameObject gameOverMenu;
 	/*End Game Over Menu*/
@@ -66,7 +67,7 @@ public class UIController : MonoBehaviour {
     //MainCamera SpotLights, turned off when paused or game over
 	public Light spotLight;
 	public Light spotLight1;
-	private bool dead;
+
 
 	public static UIController instance;
 	void Awake()
@@ -76,63 +77,68 @@ public class UIController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		dead = false;
 		_paused = false;
 		_gameOver = false;
-		if(scoreMenu != null){
-			scoreMenu.SetActive (true);
-			_timeAlive = Time.timeSinceLevelLoad;
-			_coinsCollectedText = scoreMenu.transform.Find ("CoinsText").GetComponent<Text> ();
-			//_timeText = scoreMenu.GetComponentInChildren<Text> ();// transform.Find ("Text");
-			_image = scoreMenu.transform.Find("ImageParent").transform.Find("Image").GetComponent<Image>();// transform.Find("Image").GetComponent<RawImage>();
-		}
 		_coins = 0;
+		if (SceneManager.GetActiveScene ().name != "MainMenu"){
+			dead = false;
 
-		//Customize speed
-		_currentSpeedLevel = 0;
-		_speedLevel = 0;
-		speedText.text = _currentSpeedLevel.ToString ();
-		//disable plus sign
-		disableButton (true);
-		//disable minus sign
-		disableButton(false);
-        //death by laundry
-        laundry = false;
-        steel = false;
+			if (scoreMenu != null) {
+				scoreMenu.SetActive (true);
+				_timeAlive = Time.timeSinceLevelLoad;
+				_coinsCollectedText = scoreMenu.transform.Find ("CoinsText").GetComponent<Text> ();
+				//_timeText = scoreMenu.GetComponentInChildren<Text> ();// transform.Find ("Text");
+				_image = scoreMenu.transform.Find ("ImageParent").transform.Find ("Image").GetComponent<Image> ();// transform.Find("Image").GetComponent<RawImage>();
+			}
+
+			//Customize speed
+			_currentSpeedLevel = 0;
+			_speedLevel = 0;
+			speedText.text = _currentSpeedLevel.ToString ();
+			//disable plus sign
+			disableButton (true);
+			//disable minus sign
+			disableButton (false);
+			//death by laundry
+			laundry = false;
+			steel = false;
+		}
 	}
 	// Update is called once per frame
 	void Update () {
-		if (scoreMenu != null) {
-			//Rotate the coin image
-			_image.transform.Rotate (0, rotateCoinSpeed * Time.deltaTime, 0);
-			//Show number of coins on screen
-			_coinsCollectedText.text = _coins.ToString ();
-			//Show time on screen
-			//_timeText.text = "Time: " + Time.timeSinceLevelLoad.ToString ("0.0");
+		if (SceneManager.GetActiveScene ().name != "MainMenu") {
+			if (scoreMenu != null) {
+				//Rotate the coin image
+				_image.transform.Rotate (0, rotateCoinSpeed * Time.deltaTime, 0);
+				//Show number of coins on screen
+				_coinsCollectedText.text = _coins.ToString ();
+				//Show time on screen
+				//_timeText.text = "Time: " + Time.timeSinceLevelLoad.ToString ("0.0");
 
-			//Pause/Unpause the game
-			if (Input.GetKeyDown (KeyCode.Escape) && !_gameOver) {
-				if (_paused) {
-					Time.timeScale = 1;
-					spotLight.enabled = true;
-					spotLight1.enabled = true;
-				} else {
-					Time.timeScale = 0;
-					spotLight.enabled = false;
-					spotLight1.enabled = false;
+				//Pause/Unpause the game
+				if (Input.GetKeyDown (KeyCode.Escape) && !_gameOver) {
+					if (_paused) {
+						Time.timeScale = 1;
+						spotLight.enabled = true;
+						spotLight1.enabled = true;
+					} else {
+						Time.timeScale = 0;
+						spotLight.enabled = false;
+						spotLight1.enabled = false;
+					}
+					//Debug.Log("Setting TimeScale to " + Time.timeScale);
+					_paused = !_paused;
 				}
-				//Debug.Log("Setting TimeScale to " + Time.timeScale);
-				_paused = !_paused;
-			}
 
-			//Activate the pause menu
-			if (_paused) {
-				//Time.timeScale = 0;
-				pauseMenu.SetActive (true);
-			} 
+				//Activate the pause menu
+				if (_paused) {
+					//Time.timeScale = 0;
+					pauseMenu.SetActive (true);
+				} 
 			//Deactivate the pause menu
 			else if (!_paused && pauseMenu != null) {
-				pauseMenu.SetActive (false);
+					pauseMenu.SetActive (false);
+				}
 			}
 		}
 	}
@@ -191,7 +197,7 @@ public class UIController : MonoBehaviour {
 		_gameOver = true;
 		_killReason = gameOverMenu.transform.Find ("Panel").transform.Find("DeathReason").gameObject.GetComponent<Text>();
 		_finalScore = gameOverMenu.transform.Find ("Panel").transform.Find ("FinalScore").gameObject.GetComponent<Text> ();
-		_finalScore.text = _coins.ToString ();
+		_finalScore.text += _coins.ToString ();
 
         DeathMessage(deathReason);
 
