@@ -97,7 +97,7 @@ public class UIController : MonoBehaviour {
 		laundry = false;
 		steel = false;
 		if (!mainMenu.activeSelf) {
-			if (SceneManager.GetActiveScene ().name != "MainMenu") {
+			//if (SceneManager.GetActiveScene ().name != "MainMenu") {
 				dead = false;
 
 				if (scoreMenu != null) {
@@ -117,7 +117,7 @@ public class UIController : MonoBehaviour {
 				//disable minus sign
 				disableButton (false);
 
-			}
+			//}
 		}
 	}
 	// Update is called once per frame
