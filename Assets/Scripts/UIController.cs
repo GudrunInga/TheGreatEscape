@@ -64,6 +64,10 @@ public class UIController : MonoBehaviour {
 
 	//Time player has been alive
 	private float _timeAlive;
+	// Max level of player.
+	private static int _level = 1;
+	// Location of player at level
+	private static float _spawn_x = 0;
 	//Coins Collected, when player collides with coins the Coin_Rotate script calls an instance of this
 	private static int _coins;
 	private static bool _firstRun = true;
@@ -81,23 +85,23 @@ public class UIController : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
 		_paused = false;
 		_gameOver = false;
 		if (_firstRun) {
 			_coins = 0;
 			Time.timeScale = 0;
 			_firstRun = false;
-		} 
+		}
 		else {
-			mainMenu.SetActive (false);
+			mainMenu.SetActive(false);
 			Time.timeScale = 1;
 		}
 		//death by laundry
 		laundry = false;
 		steel = false;
 		if (!mainMenu.activeSelf) {
-			//if (SceneManager.GetActiveScene ().name != "MainMenu") {
+			if (SceneManager.GetActiveScene ().name != "MainMenu") {
 				dead = false;
 
 				if (scoreMenu != null) {
@@ -116,8 +120,7 @@ public class UIController : MonoBehaviour {
 				disableButton (true);
 				//disable minus sign
 				disableButton (false);
-
-			//}
+			}
 		}
 	}
 	// Update is called once per frame
@@ -357,4 +360,22 @@ public class UIController : MonoBehaviour {
 		}
 	}
 
+	public void setLevel(int level, float x)
+	{
+		Debug.Log("Setting level " + _level + " -> " + level);
+		if(_level < level)
+		{
+			Debug.Log("Set " + level + " at " + x);
+			_level = level;
+			_spawn_x = x;
+		}
+	}
+	public int getLevel()
+	{
+		return _level;
+	}
+	public float get_respawn_x()
+	{
+		return _spawn_x;
+	}
 }

@@ -6,15 +6,26 @@ public class Moveright : MonoBehaviour {
 
 	
     public float speed;
-    private Transform trans;
+	public float acceleration;
+	private Transform trans;
+	private float realAcceleration;
 	// Update is called once per frame
-    void Start() {
+	void Start() {
         trans = GetComponent<Transform>();
-    }
+		realAcceleration = acceleration;		 
+	}
 
-	void Update () {
-		
+	void Update () {			  
         Vector3 movement = new Vector3(speed * Time.deltaTime,0,0);
         trans.position = trans.position + movement;
+		speed += realAcceleration * Time.deltaTime;
+		if (UIController.instance.steel)
+		{
+			realAcceleration = 1.2f;
+		}
+	}
+	public void add_accel(float acc)
+	{
+		realAcceleration += acc;
 	}
 }
