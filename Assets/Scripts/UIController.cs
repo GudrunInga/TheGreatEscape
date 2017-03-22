@@ -62,7 +62,7 @@ public class UIController : MonoBehaviour {
 	//Time player has been alive
 	private float _timeAlive;
 	//Coins Collected, when player collides with coins the Coin_Rotate script calls an instance of this
-	private int _coins;
+	private int _coins = 0;
 
     //MainCamera SpotLights, turned off when paused or game over
 	public Light spotLight;
@@ -72,7 +72,8 @@ public class UIController : MonoBehaviour {
 	public static UIController instance;
 	void Awake()
 	{
-		instance = this; 
+		instance = this;
+
 	}
 
 	// Use this for initialization
@@ -254,6 +255,7 @@ public class UIController : MonoBehaviour {
 	}
 
 	//Store Menu and Customize menu
+	//Increase the mass of the balloon
 	public void IncreaseSpeed()
 	{
 		if (_coins > 0 && storeMenu.activeSelf) {
@@ -293,7 +295,7 @@ public class UIController : MonoBehaviour {
 			}
 		}
 	}
-
+	/*decrease the mass of the balloon*/
 	public void decreaseSpeed()
 	{
 		if (_currentSpeedLevel > 0) {
@@ -306,7 +308,7 @@ public class UIController : MonoBehaviour {
 			enableButton (true);
 		}
 	}
-
+	/*Hide button (in customize control menu)*/
 	void disableButton(bool plusSign)
 	{
 		if (plusSign) {
@@ -320,6 +322,7 @@ public class UIController : MonoBehaviour {
 			decreaseSpeedButton.GetComponentInChildren<Text> ().text = "";
 		}
 	}
+	/*Show button (in customize control menu)*/
 	void enableButton(bool plusSign)
 	{
 		if (plusSign) {
