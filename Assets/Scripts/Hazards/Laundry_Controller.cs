@@ -45,6 +45,7 @@ public class Laundry_Controller : MonoBehaviour {
 				BalloonController balloon = other.gameObject.transform.root.gameObject.GetComponent<BalloonController>();
 				balloon.setgrav(0.11f);
 				balloon.forceModel(heavyballoon);
+                UIController.instance.laundry = true;
 			}
 		}
 	}
