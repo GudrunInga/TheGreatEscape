@@ -22,7 +22,7 @@ public class BalloonController : MonoBehaviour {
 
 	public List<GameObject> models;
 	public List<Texture2D> alpha_maps;
-	private int frame;
+	private float frame;
 	private GameObject activeModel;
 	public bool useFart;
 
@@ -102,6 +102,10 @@ public class BalloonController : MonoBehaviour {
 		activeModel = newKid;
 	}
 
+	public bool is_popped()
+	{
+		return frame >= alpha_maps.Count;
+	}
 	public IEnumerator pop()
 	{
 		while(frame < alpha_maps.Count)
@@ -109,9 +113,9 @@ public class BalloonController : MonoBehaviour {
 			foreach (Transform child in activeModel.transform.GetComponentInChildren<Transform>())
 			{
 				Renderer R = child.gameObject.GetComponent<Renderer>();
-				R.material.mainTexture = alpha_maps[frame];	 
+				R.material.mainTexture = alpha_maps[Mathf.FloorToInt(frame)];	 
 			}
-			frame++;
+			frame += 0.5f;
 			yield return null;
 		}
 	}
