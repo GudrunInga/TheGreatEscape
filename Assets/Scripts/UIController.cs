@@ -30,6 +30,8 @@ public class UIController : MonoBehaviour {
 	private bool _gameOver;
     //death by laundry
     public bool laundry;
+    //death by steel
+    public bool steel;
 
 	//GameOverCanvas
 	public GameObject gameOverMenu;
@@ -94,6 +96,7 @@ public class UIController : MonoBehaviour {
 		disableButton(false);
         //death by laundry
         laundry = false;
+        steel = false;
 	}
 	// Update is called once per frame
 	void Update () {
@@ -143,6 +146,8 @@ public class UIController : MonoBehaviour {
 			spotLight1.enabled = true;
 			Time.timeScale = 1;
 		}
+        laundry = false;
+        steel = false;
 		SceneManager.LoadScene (i);
 	}
 	//Call if quitting the application
@@ -168,6 +173,7 @@ public class UIController : MonoBehaviour {
 		_paused = false;
 		_gameOver = false;
         laundry = false;
+        steel = false;
 		spotLight.enabled = true;
 		spotLight1.enabled = true;
 		Time.timeScale = 1;
@@ -201,6 +207,11 @@ public class UIController : MonoBehaviour {
             _killReason.text = "Death by laundry....that is bad, maybe you need to cut through it?";
             laundry = false;
         }
+        if (steel)
+        {
+            _killReason.text = "Steel is heavy....who knew?";
+            steel = true;
+        }
         else if (deathReason == "Spike")
         {
             _killReason.text = "Pointy things are bad for balloons, if only you could get better controls";
@@ -211,7 +222,7 @@ public class UIController : MonoBehaviour {
         }
         else if(deathReason == "Bird")
         {
-            _killReason.text = "Birds ain't scared of you, what are birds scared of?";
+            _killReason.text = "Birds ain't scared of you, what are birds scared off?";
         }
     }
 
