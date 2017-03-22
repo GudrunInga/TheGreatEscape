@@ -80,6 +80,9 @@ public class UIController : MonoBehaviour {
 		_paused = false;
 		_gameOver = false;
 		_coins = 0;
+		//death by laundry
+		laundry = false;
+		steel = false;
 		if (SceneManager.GetActiveScene ().name != "MainMenu"){
 			dead = false;
 
@@ -99,9 +102,7 @@ public class UIController : MonoBehaviour {
 			disableButton (true);
 			//disable minus sign
 			disableButton (false);
-			//death by laundry
-			laundry = false;
-			steel = false;
+
 		}
 	}
 	// Update is called once per frame
