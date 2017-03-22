@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIController : MonoBehaviour {
+	/*Begin Main Menu*/
+	public GameObject mainMenu;
+	/*End Main Menu*/
 
 	/*Begin Customize Menu*/
 	public GameObject customizeMenu;
@@ -66,7 +69,8 @@ public class UIController : MonoBehaviour {
 	// Location of player at level
 	private static float _spawn_x = 0;
 	//Coins Collected, when player collides with coins the Coin_Rotate script calls an instance of this
-	private int _coins = 0;
+	private static int _coins;
+	private static bool _firstRun = true;
 
     //MainCamera SpotLights, turned off when paused or game over
 	public Light spotLight;
@@ -81,38 +85,45 @@ public class UIController : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
 		_paused = false;
 		_gameOver = false;
-		_coins = 0;
+		if (_firstRun) {
+			_coins = 0;
+			Time.timeScale = 0;
+			_firstRun = false;
+		}
+		else {
+			mainMenu.SetActive(false);
+			Time.timeScale = 1;
+		}
 		//death by laundry
 		laundry = false;
-		steel = false;	 
-		if (SceneManager.GetActiveScene ().name != "MainMenu"){
+		steel = false;
+		if (SceneManager.GetActiveScene().name != "MainMenu") {
 			dead = false;
 
 			if (scoreMenu != null) {
-				scoreMenu.SetActive (true);
+				scoreMenu.SetActive(true);
 				_timeAlive = Time.timeSinceLevelLoad;
-				_coinsCollectedText = scoreMenu.transform.Find ("CoinsText").GetComponent<Text> ();
+				_coinsCollectedText = scoreMenu.transform.Find("CoinsText").GetComponent<Text>();
 				//_timeText = scoreMenu.GetComponentInChildren<Text> ();// transform.Find ("Text");
-				_image = scoreMenu.transform.Find ("ImageParent").transform.Find ("Image").GetComponent<Image> ();// transform.Find("Image").GetComponent<RawImage>();
+				_image = scoreMenu.transform.Find("ImageParent").transform.Find("Image").GetComponent<Image>();// transform.Find("Image").GetComponent<RawImage>();
 			}
 
 			//Customize speed
 			_currentSpeedLevel = 0;
 			_speedLevel = 0;
-			speedText.text = _currentSpeedLevel.ToString ();
+			speedText.text = _currentSpeedLevel.ToString();
 			//disable plus sign
-			disableButton (true);
+			disableButton(true);
 			//disable minus sign
-			disableButton (false);
-
+			disableButton(false);
 		}
 	}
 	// Update is called once per frame
 	void Update () {
-		if (SceneManager.GetActiveScene ().name != "MainMenu") {
+		if (!mainMenu.activeSelf) {
 			if (scoreMenu != null) {
 				//Rotate the coin image
 				_image.transform.Rotate (0, rotateCoinSpeed * Time.deltaTime, 0);
@@ -182,7 +193,12 @@ public class UIController : MonoBehaviour {
 		spotLight1.enabled = true;
 		Time.timeScale = 1;
 	}
-
+	public void StartGame()
+	{
+		//mainMenu.SetActive (false);
+		//Time.timeScale = 1;
+		Start();
+	}
 	public void RestartScene()
 	{
 		_paused = false;
@@ -208,6 +224,7 @@ public class UIController : MonoBehaviour {
 	        DeathMessage(deathReason);
 
 			player.GetComponent<BalloonController>().pop();
+			
 			StartCoroutine("CoGameOver");
 			dead = true;
 		}
