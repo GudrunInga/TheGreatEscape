@@ -58,14 +58,17 @@ public class Bird_Controller : MonoBehaviour {
 			inside = true;
 			rigid.AddForce(Vector2.left * flightSpeed * 10);
 		}
-		if (repellant.activeInHierarchy)
+		if (other.gameObject.CompareTag("Player"))
 		{
-			Destroy(gameObject);
-		}
-		else
-		{
-			UIController.instance.GameOver("Bird");
-		}
+			if (repellant.activeInHierarchy)
+			{
+				Destroy(gameObject);
+			}
+			else
+			{
+				UIController.instance.GameOver("Bird");
+			}
+		}	
 	}			
 	void OnTriggerExit2D(Collider2D other)
 	{					 
