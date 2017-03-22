@@ -61,6 +61,10 @@ public class UIController : MonoBehaviour {
 
 	//Time player has been alive
 	private float _timeAlive;
+	// Max level of player.
+	private static int _level = 1;
+	// Location of player at level
+	private static float _spawn_x = 0;
 	//Coins Collected, when player collides with coins the Coin_Rotate script calls an instance of this
 	private int _coins = 0;
 
@@ -83,7 +87,7 @@ public class UIController : MonoBehaviour {
 		_coins = 0;
 		//death by laundry
 		laundry = false;
-		steel = false;
+		steel = false;	 
 		if (SceneManager.GetActiveScene ().name != "MainMenu"){
 			dead = false;
 
@@ -337,4 +341,22 @@ public class UIController : MonoBehaviour {
 		}
 	}
 
+	public void setLevel(int level, float x)
+	{
+		Debug.Log("Setting level " + _level + " -> " + level);
+		if(_level < level)
+		{
+			Debug.Log("Set " + level + " at " + x);
+			_level = level;
+			_spawn_x = x;
+		}
+	}
+	public int getLevel()
+	{
+		return _level;
+	}
+	public float get_respawn_x()
+	{
+		return _spawn_x;
+	}
 }

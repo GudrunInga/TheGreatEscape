@@ -19,6 +19,7 @@ public class BalloonController : MonoBehaviour {
 	Transform transformer;
 
 	public float rotationSpeed, movementspeed;
+	public float SafeTime;
 
 	public List<GameObject> models;
 	public List<Texture2D> alpha_maps;
@@ -28,7 +29,7 @@ public class BalloonController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start ()
-	{
+	{			
 		frame = 0;
 		for (int i = 1; i < models.Count; i++)
 		{
@@ -37,10 +38,34 @@ public class BalloonController : MonoBehaviour {
 		rigid = GetComponent<Rigidbody2D>();
 		transformer = GetComponent<Transform>();
 		activeModel = models[0];
+
+		activeModel.tag = "SafeTag";
 	}
 
 	// Update is called once per frame
-	void Update() {							   									
+	void Update() {
+		if(SafeTime > 0)
+		{
+			activeModel.tag = "SafeTag";
+			SafeTime -= Time.deltaTime;
+			if(SafeTime <= 0)
+			{
+				gameObject.tag = "Player";
+				activeModel.tag = "Player";
+			}
+			if (Mathf.Round(5*SafeTime) == Mathf.Ceil(5*SafeTime))
+			{
+				activeModel.SetActive(true);
+			}
+			else
+			{
+				activeModel.SetActive(false);
+			}
+		}
+		else
+		{
+			activeModel.tag = "Player";
+		}					   									
 		for (int i = 0; i < models.Count; i++)
 		{
 			if (Input.GetKeyDown(keyCodes[i]))
