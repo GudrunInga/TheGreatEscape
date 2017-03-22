@@ -193,18 +193,18 @@ public class UIController : MonoBehaviour {
 	public void GameOver(string deathReason)
 	{
 		if (!dead) { 
-		_timeAlive = Time.timeSinceLevelLoad;
-		//Debug.Log ("Time " + _timeAlive);
-		_gameOver = true;
-		_killReason = gameOverMenu.transform.Find ("Panel").transform.Find("DeathReason").gameObject.GetComponent<Text>();
-		_finalScore = gameOverMenu.transform.Find ("Panel").transform.Find ("FinalScore").gameObject.GetComponent<Text> ();
-		_finalScore.text += _coins.ToString ();
+			_timeAlive = Time.timeSinceLevelLoad;
+			//Debug.Log ("Time " + _timeAlive);
+			_gameOver = true;
+			_killReason = gameOverMenu.transform.Find ("Panel").transform.Find("DeathReason").gameObject.GetComponent<Text>();
+			_finalScore = gameOverMenu.transform.Find ("Panel").transform.Find ("FinalScore").gameObject.GetComponent<Text> ();
+			_finalScore.text += _coins.ToString ();
 
-        DeathMessage(deathReason);
+	        DeathMessage(deathReason);
 
-		player.GetComponent<BalloonController>().pop();
-		StartCoroutine("CoGameOver");
-		dead = true;
+			player.GetComponent<BalloonController>().pop();
+			StartCoroutine("CoGameOver");
+			dead = true;
 		}
 		//_coinsCollectedText.color = Color.black;
 		//scoreMenu.SetActive (false);
@@ -226,23 +226,22 @@ public class UIController : MonoBehaviour {
             _killReason.text = "Death by laundry....that is bad, maybe you need to cut through it?";
             laundry = false;
         }
-        if (steel)
-        {
-            _killReason.text = "Steel is heavy....who knew?";
-            steel = true;
-        }
-        else if (deathReason == "Spike")
-        {
-            _killReason.text = "Pointy things are bad for balloons, if only you could get better controls";
-        }
-        else if (deathReason == "Slow")
-        {
-            _killReason.text = "You were too slow, maybe go faster next time, if only you could increase your speed";
-        }
-        else if(deathReason == "Bird")
-        {
-            _killReason.text = "Birds ain't scared of you, what are birds scared off?";
-        }
+		if (steel) {
+			_killReason.text = "Steel is heavy....who knew?";
+			steel = true;
+		} 
+		else if (deathReason == "Spike") {
+			_killReason.text = "Pointy things are bad for balloons, if only you could get better controls";
+		} 
+		else if (deathReason == "Slow") {
+			_killReason.text = "You were too slow, maybe go faster next time, if only you could increase your speed";
+		} 
+		else if (deathReason == "Bird") {
+			_killReason.text = "Birds ain't scared of you, what are birds scared off?";
+		} 
+		else if (deathReason == "Cat") {
+			_killReason.text = "Cats ain't afraid of you";
+		}
     }
 
 	public int GetCoins()
