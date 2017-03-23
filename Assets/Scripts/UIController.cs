@@ -125,7 +125,7 @@ public class UIController : MonoBehaviour {
 		}
 	}
 	// Update is called once per frame
-	void Update () {
+	void Update (){
 		if (!mainMenu.activeSelf) {
 			if (scoreMenu != null) {
 				//Rotate the coin image
