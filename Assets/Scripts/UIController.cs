@@ -71,6 +71,7 @@ public class UIController : MonoBehaviour {
 	// Use this for initialization
 	void Start() {
 		_gameOverScript = gameObject.GetComponent<GameOverFunctions> ();
+		_storeScript = gameObject.GetComponent<Store> ();
 		if (_firstRun) {
 			_coins = 0;
 			Time.timeScale = 0;
