@@ -8,13 +8,14 @@ public class animate_bird : MonoBehaviour {
 	private animateData left_wing;
 	private animateData right_wing;
 	private bool active;
+	public bool startActive = false;
 
 	// Use this for initialization
 	void Start () {
-		active = false;									   
+		active = startActive;									   
 		head = new animateData();
 		left_wing = new animateData();
-		right_wing = new animateData();
+		right_wing = new animateData();		
 
 		head.model = transform.Find("Body/head");
 		head.direction = 1;
@@ -37,7 +38,7 @@ public class animate_bird : MonoBehaviour {
 		right_wing.progress = 0;
 		right_wing.to = Quaternion.Euler(+65, -10, 0);
 		right_wing.from = Quaternion.Euler(-60, +10, 0);
-		transform.GetChild(0).gameObject.SetActive(false);
+		transform.GetChild(0).gameObject.SetActive(startActive);
 
 	}
 	
@@ -66,7 +67,7 @@ public class animate_bird : MonoBehaviour {
 		public Quaternion to;
 		public Quaternion from;
 		public float animationSpeed;
-		public int direction;
+		public int direction;			 
 		public void animate()
 		{
 			model.rotation = Quaternion.Lerp(model.rotation, to, Time.deltaTime * animationSpeed);
