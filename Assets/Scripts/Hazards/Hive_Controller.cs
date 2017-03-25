@@ -16,7 +16,8 @@ public class Hive_Controller : MonoBehaviour {
 		if (!active && GetComponentInChildren<Renderer>().isVisible)
 		{
 			active = true;
-			Instantiate(bees);
+			GameObject b  = Instantiate(bees,transform);
+			b.transform.position = transform.position;
 		}
 	}
 }

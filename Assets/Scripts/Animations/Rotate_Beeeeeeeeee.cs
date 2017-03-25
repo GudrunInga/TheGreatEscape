@@ -38,9 +38,9 @@ public class Rotate_Beeeeeeeeee : MonoBehaviour {
 			}
 		}
 		f.torque += Random.insideUnitSphere * 2;
-		rig.AddForce(new Vector3(0.025f, 0.01f, 0)); 
+		rig.AddForce(new Vector3(0.025f, 0.011f, 0)); 
 
-		if(Vector3.Distance(transform.position,repellant.transform.position) < 3)
+		if(repellant.activeInHierarchy && Vector3.Distance(transform.position,repellant.transform.position) < 3)
 		{
 			rig.useGravity = true;	 
 		}
