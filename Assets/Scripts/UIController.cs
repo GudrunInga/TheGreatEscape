@@ -152,6 +152,16 @@ public class UIController : MonoBehaviour {
 	{
 		--_coins;
 	}
+	public void SpendCoins(int i)
+	{
+		_coins -= i;
+	}
+
+	//Check if player owns the form he is going to change into
+	public bool ownsForm(int i)
+	{
+		return gameObject.GetComponent<Store> ().OwnsForm (i);
+	}
 		
 	public void setLevel(int level, float x)
 	{

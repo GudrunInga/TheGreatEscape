@@ -68,7 +68,7 @@ public class BalloonController : MonoBehaviour {
 		}					   									
 		for (int i = 0; i < models.Count; i++)
 		{
-			if (Input.GetKeyDown(keyCodes[i]))
+			if (Input.GetKeyDown(keyCodes[i]) && UIController.instance.ownsForm(i))
 			{
 				activeModel.SetActive(false);
 				activeModel = models[i];
