@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour {
 	/*Scripts*/
 	private GameOverFunctions _gameOverScript;
-	private Store _storeScript;
+	//private Store _storeScript;
 	private PauseFunctions _pauseScript;
 
 	/*The Player object*/
@@ -71,7 +71,7 @@ public class UIController : MonoBehaviour {
 	// Use this for initialization
 	void Start() {
 		_gameOverScript = gameObject.GetComponent<GameOverFunctions> ();
-		_storeScript = gameObject.GetComponent<Store> ();
+		//_storeScript = gameObject.GetComponent<Store> ();
 		if (_firstRun) {
 			_coins = 0;
 			Time.timeScale = 0;

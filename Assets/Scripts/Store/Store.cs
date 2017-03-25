@@ -41,7 +41,7 @@ public class Store : MonoBehaviour {
 
 		moveCameraScript = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Moveright> ();
 
-		_cameraAccScript = new AssemblyCSharp.StoreCameraAcceleration (cameraAcc, buyCameraAcc, currentSpeedLevel, increaseCameraAccButton, decreaseCameraAccButton, moveCameraScript);
+		_cameraAccScript = new AssemblyCSharp.StoreCameraAcceleration (cameraAcc, buyCameraAcc, currentCameraAccLevel, increaseCameraAccButton, decreaseCameraAccButton, moveCameraScript);
 
 
 		DisableAllButtons ();
