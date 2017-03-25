@@ -35,6 +35,10 @@ public class Moveright : MonoBehaviour {
 
 	public void decrease_accel(float acc)
 	{
-		realAcceleration -= acc;
+		acceleration -= acc;
+	}
+	public void increase_accel(float acc)
+	{
+		acceleration += acc;
 	}
 }
