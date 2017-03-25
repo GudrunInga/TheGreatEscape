@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Checkpoint_manager : MonoBehaviour {
 
+	public Animator notifier;
 	public Moveright moverScript;
 	public float CheckpointDistance;
 	private float DistanceTravelled;
@@ -32,6 +33,7 @@ public class Checkpoint_manager : MonoBehaviour {
 		DistanceTravelled += moverScript.speed * Time.deltaTime;
 		if (DistanceTravelled >= CheckpointDistance)
 		{
+			notifier.SetTrigger("Checkit");
 			UIController inst = UIController.instance;
 			DistanceTravelled = 0;
 			CheckpointDistance = Mathf.CeilToInt(CheckpointDistance * ( 1 + level/20));
