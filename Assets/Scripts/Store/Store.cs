@@ -29,7 +29,8 @@ public class Store : MonoBehaviour {
 	private AssemblyCSharp.StoreSpeed _speedScript;
 	private AssemblyCSharp.StoreCameraAcceleration _cameraAccScript;
 
-
+	private static List<bool> _ownedForms;
+	private static bool _firstRun = true;
 
 	//To get access decrease increase the acceliration of the camera
 	private Moveright moveCameraScript;
@@ -40,12 +41,14 @@ public class Store : MonoBehaviour {
 		_speedScript = new AssemblyCSharp.StoreSpeed (speed, buySpeed, currentSpeedLevel, increaseSpeedButton, decreaseSpeedButton);
 
 		moveCameraScript = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Moveright> ();
-
 		_cameraAccScript = new AssemblyCSharp.StoreCameraAcceleration (cameraAcc, buyCameraAcc, currentCameraAccLevel, increaseCameraAccButton, decreaseCameraAccButton, moveCameraScript);
-
 
 		DisableAllButtons ();
 		GotMoney ();
+		if (_firstRun) {
+			InitializeForms ();
+			_firstRun = false;
+		}
 	}
 		
 	/*Buy Speed (The legal kind)*/
@@ -130,5 +133,68 @@ public class Store : MonoBehaviour {
 		_gravityScript.EnableBuy ();
 		_cameraAccScript.EnableBuy ();
 	}
+
+	void InitializeForms()
+	{
+		int size = UIController.instance.player.GetComponent<BalloonController> ().models.Count;
+		_ownedForms = new List<bool> ();
+		_ownedForms.Add(true);
+		for(int i = 1; i < size; i++){
+			_ownedForms.Add(false);
+		}
+	}
+
+	public bool OwnsForm(int i)
+	{
+		return _ownedForms [i];
+	}
+	
+	public void BuyCat()
+	{
+		if (UIController.instance.GetCoins () >= 10) {
+			UIController.instance.SpendCoins (10);
+			_ownedForms.Insert (1, true);
+		}
+	}
+
+	public void BuyDog()
+	{
+		if (UIController.instance.GetCoins () >= 10) {
+			UIController.instance.SpendCoins (10);
+			_ownedForms.Insert (2, true);
+		}
+	}
+
+	public void BuyScissor()
+	{
+		if (UIController.instance.GetCoins () >= 10) {
+			UIController.instance.SpendCoins (10);
+			_ownedForms.Insert (3, true);
+		}
+	}
+	public void BuyGas()
+	{
+		if (UIController.instance.GetCoins () >= 10) {
+			UIController.instance.SpendCoins (10);
+			_ownedForms.Insert (4, true);
+		}
+	}
+
+	public void BuySword()
+	{
+		if (UIController.instance.GetCoins () >= 10) {
+			UIController.instance.SpendCoins (10);
+			_ownedForms.Insert (5, true);
+		}
+	}
+
+	public void BuyLead()
+	{
+		if (UIController.instance.GetCoins () >= 10) {
+			UIController.instance.SpendCoins (10);
+			_ownedForms.Insert (6, true);
+		}
+	}
+
 
 }
