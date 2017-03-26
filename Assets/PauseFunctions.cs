@@ -17,7 +17,8 @@ public class PauseFunctions : MonoBehaviour {
 			if (_paused) {
 				UIController.instance.TurnOn (true);
 			} else {
-				UIController.instance.TurnOn (false);
+                //UIController.instance.TurnOn (false);
+                Time.timeScale = 0;
 			}
 			_paused = !_paused;
 		}
@@ -42,4 +43,9 @@ public class PauseFunctions : MonoBehaviour {
 		_paused = false;
 		UIController.instance.pauseMenu.SetActive (false);
 	}
+
+    public void SetPause()
+    {
+        _paused = !_paused;
+    }
 }

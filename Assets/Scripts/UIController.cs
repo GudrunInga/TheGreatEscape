@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIController : MonoBehaviour {
+    //For Go back button
+    private GameObject _lastActiveMenu;
+
 	/*Scripts*/
 	private GameOverFunctions _gameOverScript;
 	//private Store _storeScript;
@@ -71,6 +74,7 @@ public class UIController : MonoBehaviour {
 	// Use this for initialization
 	void Start() {
 		_gameOverScript = gameObject.GetComponent<GameOverFunctions> ();
+        _pauseScript = gameObject.GetComponent<PauseFunctions>();
 		//_storeScript = gameObject.GetComponent<Store> ();
 		if (_firstRun) {
 			_coins = 0;
@@ -191,4 +195,20 @@ public class UIController : MonoBehaviour {
 		Application.Quit ();
 		#endif
 	}
+
+    public void SetActiveCanvas(GameObject canvas)
+    {
+        _lastActiveMenu = canvas;   
+    }
+
+    public void SetLastActiveCanvas()
+    {
+        if(_lastActiveMenu.name == "PauseMenuCanvas")
+        {
+            _pauseScript.SetPause();
+            spotLight.enabled = true;
+            spotLight1.enabled = true;
+        }
+        _lastActiveMenu.SetActive(true);
+    }
 }
