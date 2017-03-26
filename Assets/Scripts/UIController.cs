@@ -92,9 +92,9 @@ public class UIController : MonoBehaviour {
 		_timeAlive = Time.timeSinceLevelLoad;
 
 		/*ScoreMenu*/
-		_coinsCollectedText = scoreMenu.transform.Find ("CoinsText").GetComponent<Text> ();
+		_coinsCollectedText = scoreMenu.transform.Find("CoinsOwned").transform.Find ("CoinsText").GetComponent<Text> ();
 		//_timeText = scoreMenu.GetComponentInChildren<Text> ();// transform.Find ("Text");
-		_image = scoreMenu.transform.Find ("ImageParent").transform.Find ("Image").GetComponent<Image> ();
+		_image = scoreMenu.transform.Find("CoinsOwned").transform.Find ("ImageParent").transform.Find ("Image").GetComponent<Image> ();
 	}
 	// Update is called once per frame
 	void Update () {
