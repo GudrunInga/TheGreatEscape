@@ -8,6 +8,8 @@ public class GameOverFunctions : MonoBehaviour {
 	private bool _dead;
 	//Text box for reason of death
 	private Text _killReason;
+	//Text box for coins collected during play
+	private Text _coinsCollected;
 	//Text box for final score
 	private Text _finalScore;
 	//Game Over, u dead
@@ -41,6 +43,7 @@ public class GameOverFunctions : MonoBehaviour {
 		if (!_dead) {
 			_gameOver = true;
 			_SetKillReason ();
+			_SetCoinsCollected ();
 			_SetFinalScore ();
 			_DeathMessage (deathReason);
 			_BalloonDeath ();
@@ -53,6 +56,12 @@ public class GameOverFunctions : MonoBehaviour {
 		_killReason = UIController.instance.gameOverMenu.transform.Find ("Panel").transform.Find("DeathReason").gameObject.GetComponent<Text>();
 	}
 
+	private void _SetCoinsCollected ()
+	{
+		_coinsCollected = UIController.instance.gameOverMenu.transform.Find ("Panel").transform.Find ("CoinsCollected").gameObject.GetComponent<Text> ();
+
+		_coinsCollected.text += UIController.instance.GetCoinsCollected().ToString();
+	}
 	private void _SetFinalScore()
 	{
 		_finalScore = UIController.instance.gameOverMenu.transform.Find ("Panel").transform.Find ("FinalScore").gameObject.GetComponent<Text> ();

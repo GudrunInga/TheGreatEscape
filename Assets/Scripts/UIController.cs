@@ -64,6 +64,8 @@ public class UIController : MonoBehaviour {
 	public Light spotLight;
 	public Light spotLight1;
 
+	private int _tempCoins;
+
 
 	public static UIController instance;
 	void Awake()
@@ -140,6 +142,7 @@ public class UIController : MonoBehaviour {
 	/*Player has died*/
 	public void GameOver(string deathReason)
 	{
+		_coins += _tempCoins;
 		_gameOverScript.GameOver (deathReason);
 	}
 
@@ -148,13 +151,18 @@ public class UIController : MonoBehaviour {
 	{
 		return _coins;
 	}
+	//Coins collected during gameplay
+	public int GetCoinsCollected()
+	{
+		return _tempCoins;
+	}
 	public void AddCoins()
 	{
-		++_coins;
+		++_tempCoins;
 	}
 	public void SpendCoins()
 	{
-		--_coins;
+		--_tempCoins;
 	}
 	public void SpendCoins(int i)
 	{
