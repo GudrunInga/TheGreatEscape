@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIController : MonoBehaviour {
+    //For Go back button
+    private GameObject _lastActiveMenu;
+
 	/*Scripts*/
 	private GameOverFunctions _gameOverScript;
 	//private Store _storeScript;
@@ -61,6 +64,8 @@ public class UIController : MonoBehaviour {
 	public Light spotLight;
 	public Light spotLight1;
 
+	private int _tempCoins;
+
 
 	public static UIController instance;
 	void Awake()
@@ -71,6 +76,7 @@ public class UIController : MonoBehaviour {
 	// Use this for initialization
 	void Start() {
 		_gameOverScript = gameObject.GetComponent<GameOverFunctions> ();
+        _pauseScript = gameObject.GetComponent<PauseFunctions>();
 		//_storeScript = gameObject.GetComponent<Store> ();
 		if (_firstRun) {
 			_coins = 0;
@@ -86,18 +92,22 @@ public class UIController : MonoBehaviour {
 		steel = false;
 
 		_timeAlive = Time.timeSinceLevelLoad;
-
+		_tempCoins = 0;
 		/*ScoreMenu*/
-		_coinsCollectedText = scoreMenu.transform.Find ("CoinsText").GetComponent<Text> ();
+		_coinsCollectedText = scoreMenu.transform.Find("Coins").transform.Find ("CoinsText").GetComponent<Text> ();
 		//_timeText = scoreMenu.GetComponentInChildren<Text> ();// transform.Find ("Text");
-		_image = scoreMenu.transform.Find ("ImageParent").transform.Find ("Image").GetComponent<Image> ();
+		_image = scoreMenu.transform.Find("Coins").transform.Find ("ImageParent").transform.Find ("Image").GetComponent<Image> ();
 	}
 	// Update is called once per frame
 	void Update () {
 		//Rotate the coin image
 		_image.transform.Rotate (0, rotateCoinSpeed * Time.deltaTime, 0);
 		//Show number of coins on screen
-		_coinsCollectedText.text = _coins.ToString ();
+		if (GameActive ()) {
+			_coinsCollectedText.text = _tempCoins.ToString ();
+		} else {
+			_coinsCollectedText.text = _coins.ToString ();
+		}
 		//Show time on screen
 		//_timeText.text = "Time: " + Time.timeSinceLevelLoad.ToString ("0.0");
 	}
@@ -136,6 +146,7 @@ public class UIController : MonoBehaviour {
 	/*Player has died*/
 	public void GameOver(string deathReason)
 	{
+		_coins += _tempCoins;
 		_gameOverScript.GameOver (deathReason);
 	}
 
@@ -144,9 +155,14 @@ public class UIController : MonoBehaviour {
 	{
 		return _coins;
 	}
+	//Coins collected during gameplay
+	public int GetCoinsCollected()
+	{
+		return _tempCoins;
+	}
 	public void AddCoins()
 	{
-		++_coins;
+		++_tempCoins;
 	}
 	public void SpendCoins()
 	{
@@ -191,4 +207,20 @@ public class UIController : MonoBehaviour {
 		Application.Quit ();
 		#endif
 	}
+
+    public void SetActiveCanvas(GameObject canvas)
+    {
+        _lastActiveMenu = canvas;   
+    }
+
+    public void SetLastActiveCanvas()
+    {
+        if(_lastActiveMenu.name == "PauseMenuCanvas")
+        {
+            _pauseScript.SetPause();
+            spotLight.enabled = true;
+            spotLight1.enabled = true;
+        }
+        _lastActiveMenu.SetActive(true);
+    }
 }

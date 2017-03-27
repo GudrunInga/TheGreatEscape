@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Store : MonoBehaviour {
 
+    public bool IamTesting;
+
 	//Gravity
 	public float gravity;
 	public Button buyGravity;
@@ -139,9 +141,16 @@ public class Store : MonoBehaviour {
 		int size = UIController.instance.player.GetComponent<BalloonController> ().models.Count;
 		_ownedForms = new List<bool> ();
 		_ownedForms.Add(true);
-		for(int i = 1; i < size; i++){
-			_ownedForms.Add(false);
-		}
+        for (int i = 1; i < size; i++)
+        {
+            if (!IamTesting) { 
+                _ownedForms.Add(false);
+            }
+            else
+            {
+                _ownedForms.Add(true);
+            }
+        }
 	}
 
 	public bool OwnsForm(int i)
