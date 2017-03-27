@@ -92,18 +92,22 @@ public class UIController : MonoBehaviour {
 		steel = false;
 
 		_timeAlive = Time.timeSinceLevelLoad;
-
+		_tempCoins = 0;
 		/*ScoreMenu*/
-		_coinsCollectedText = scoreMenu.transform.Find("CoinsOwned").transform.Find ("CoinsText").GetComponent<Text> ();
+		_coinsCollectedText = scoreMenu.transform.Find("Coins").transform.Find ("CoinsText").GetComponent<Text> ();
 		//_timeText = scoreMenu.GetComponentInChildren<Text> ();// transform.Find ("Text");
-		_image = scoreMenu.transform.Find("CoinsOwned").transform.Find ("ImageParent").transform.Find ("Image").GetComponent<Image> ();
+		_image = scoreMenu.transform.Find("Coins").transform.Find ("ImageParent").transform.Find ("Image").GetComponent<Image> ();
 	}
 	// Update is called once per frame
 	void Update () {
 		//Rotate the coin image
 		_image.transform.Rotate (0, rotateCoinSpeed * Time.deltaTime, 0);
 		//Show number of coins on screen
-		_coinsCollectedText.text = _coins.ToString ();
+		if (GameActive ()) {
+			_coinsCollectedText.text = _tempCoins.ToString ();
+		} else {
+			_coinsCollectedText.text = _coins.ToString ();
+		}
 		//Show time on screen
 		//_timeText.text = "Time: " + Time.timeSinceLevelLoad.ToString ("0.0");
 	}
@@ -162,7 +166,7 @@ public class UIController : MonoBehaviour {
 	}
 	public void SpendCoins()
 	{
-		--_tempCoins;
+		--_coins;
 	}
 	public void SpendCoins(int i)
 	{
