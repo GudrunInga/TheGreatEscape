@@ -36,6 +36,8 @@ public class ShopScrollList : MonoBehaviour {
 			newToggle.transform.SetParent (contentPanel);
 			SampleButton sampleButton = newToggle.GetComponent<SampleButton> ();
 			sampleButton.Setup (item, this);
+			sampleButton.transform.localScale = new Vector3(1,1,1);
+			sampleButton.transform.localPosition = new Vector3 (sampleButton.transform.localPosition.x, sampleButton.transform.localPosition.y, 0); 
 		}
 	}
 }
