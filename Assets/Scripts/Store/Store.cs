@@ -30,12 +30,23 @@ public class Store : MonoBehaviour {
 	private AssemblyCSharp.StoreGravity _gravityScript;
 	private AssemblyCSharp.StoreSpeed _speedScript;
 	private AssemblyCSharp.StoreCameraAcceleration _cameraAccScript;
+	public ShopScrollList _shopScrollList;
 
 	private static List<bool> _ownedForms;
 	private static bool _firstRun = true;
 
 	//To get access decrease increase the acceliration of the camera
 	private Moveright moveCameraScript;
+	//For playerInfo
+	public Sprite cat;
+	public Sprite dog;
+	public Sprite scissors;
+	public Sprite sword;
+	public Sprite gas;
+	public Sprite steel;
+
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -44,6 +55,8 @@ public class Store : MonoBehaviour {
 
 		moveCameraScript = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Moveright> ();
 		_cameraAccScript = new AssemblyCSharp.StoreCameraAcceleration (cameraAcc, buyCameraAcc, currentCameraAccLevel, increaseCameraAccButton, decreaseCameraAccButton, moveCameraScript);
+
+		//_shopScrollList = GameObject.FindGameObjectWithTag ("PlayerInfoForms").GetComponent<ShopScrollList> ();
 
 		DisableAllButtons ();
 		GotMoney ();
@@ -160,48 +173,78 @@ public class Store : MonoBehaviour {
 	
 	public void BuyCat()
 	{
-		if (UIController.instance.GetCoins () >= 10) {
+		if (UIController.instance.GetCoins () >= 10 || IamTesting) {
 			UIController.instance.SpendCoins (10);
 			_ownedForms.Insert (1, true);
+			Item item = new Item ();
+			item.icon = cat;
+			item.itemName = "Cat";
+			_shopScrollList.itemList.Add (item);
+			_shopScrollList.RefreshDisplay ();
 		}
 	}
 
 	public void BuyDog()
 	{
-		if (UIController.instance.GetCoins () >= 10) {
+		if (UIController.instance.GetCoins () >= 10 || IamTesting) {
 			UIController.instance.SpendCoins (10);
 			_ownedForms.Insert (2, true);
+			Item item = new Item ();
+			item.icon = dog;
+			item.itemName = "Dog";
+			_shopScrollList.itemList.Add (item);
+			_shopScrollList.RefreshDisplay ();
 		}
 	}
 
 	public void BuyScissor()
 	{
-		if (UIController.instance.GetCoins () >= 10) {
+		if (UIController.instance.GetCoins () >= 10 || IamTesting) {
 			UIController.instance.SpendCoins (10);
 			_ownedForms.Insert (3, true);
+			Item item = new Item ();
+			item.icon = scissors;
+			item.itemName = "Scissors";
+			_shopScrollList.itemList.Add (item);
+			_shopScrollList.RefreshDisplay ();
 		}
 	}
 	public void BuyGas()
 	{
-		if (UIController.instance.GetCoins () >= 10) {
+		if (UIController.instance.GetCoins () >= 10 || IamTesting) {
 			UIController.instance.SpendCoins (10);
 			_ownedForms.Insert (4, true);
+			Item item = new Item ();
+			item.icon = gas;
+			item.itemName = "Gas";
+			_shopScrollList.itemList.Add (item);
+			_shopScrollList.RefreshDisplay ();
 		}
 	}
 
 	public void BuySword()
 	{
-		if (UIController.instance.GetCoins () >= 10) {
+		if (UIController.instance.GetCoins () >= 10 || IamTesting) {
 			UIController.instance.SpendCoins (10);
 			_ownedForms.Insert (5, true);
+			Item item = new Item ();
+			item.icon = sword;
+			item.itemName = "Sword";
+			_shopScrollList.itemList.Add (item);
+			_shopScrollList.RefreshDisplay ();
 		}
 	}
 
 	public void BuyLead()
 	{
-		if (UIController.instance.GetCoins () >= 10) {
+		if (UIController.instance.GetCoins () >= 10 || IamTesting) {
 			UIController.instance.SpendCoins (10);
 			_ownedForms.Insert (6, true);
+			Item item = new Item ();
+			item.icon = steel;
+			item.itemName = "Lead";
+			_shopScrollList.itemList.Add (item);
+			_shopScrollList.RefreshDisplay ();
 		}
 	}
 

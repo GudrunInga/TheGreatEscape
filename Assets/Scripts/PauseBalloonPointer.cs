@@ -6,44 +6,51 @@ public class PauseBalloonPointer : MonoBehaviour {
 
 	public Animator pauseSelect;
 	int position;
+	int lastPosition;
 
 	// Use this for initialization
 	void Start() {
-		position = 4;
+		position = lastPosition = 4;
 	}
 
 	// Update is called once per frame
 	void Update() {
 		if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) && position != 0) {
 			position--;
-			Debug.Log(position);
+			//Debug.Log(position);
 		}
 		if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && position != 4) {
 			position++;
-			Debug.Log(position);
+			//Debug.Log(position);
 		}
-		pauseSelect.ResetTrigger("PContinue");
-		pauseSelect.ResetTrigger("PRestart");
-		pauseSelect.ResetTrigger("PStore");
-		pauseSelect.ResetTrigger("PQuit");
-		pauseSelect.ResetTrigger("PExit");
-		switch (position) {
-			case 4:
-				pauseSelect.SetTrigger("PContinue");
-				break;
-			case 3:
-				pauseSelect.SetTrigger("PRestart");
-				break;
-			case 2:
-				pauseSelect.SetTrigger("PStore");
-				break;
-			case 1:
-				pauseSelect.SetTrigger("PQuit");
-				break;
-			case 0:
-				pauseSelect.SetTrigger("PExit");
-				break;
+
+		if (lastPosition != position) {
+			switch (position) {
+				case 4:
+					AnimTrigger("PContinue");
+					break;
+				case 3:
+					AnimTrigger("PRestart");
+					break;
+				case 2:
+					AnimTrigger("PStore");
+					break;
+				case 1:
+					AnimTrigger("PQuit");
+					break;
+				case 0:
+					AnimTrigger("PExit");
+					break;
+			}
+			lastPosition = position;
 		}
+	}
+
+	void AnimTrigger(string triggerName) {
+		foreach (AnimatorControllerParameter p in pauseSelect.parameters)
+			if (p.type == AnimatorControllerParameterType.Trigger)
+				pauseSelect.ResetTrigger(p.name);
+		pauseSelect.SetTrigger(triggerName);
 	}
 
 	private void OnDisable() {
