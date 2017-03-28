@@ -10,7 +10,7 @@ public class UIController : MonoBehaviour {
 
 	/*Scripts*/
 	private GameOverFunctions _gameOverScript;
-	//private Store _storeScript;
+	private Store storeScript;
 	private PauseFunctions _pauseScript;
 
 	/*The Player object*/
@@ -77,7 +77,7 @@ public class UIController : MonoBehaviour {
 	void Start() {
 		_gameOverScript = gameObject.GetComponent<GameOverFunctions> ();
         _pauseScript = gameObject.GetComponent<PauseFunctions>();
-		//_storeScript = gameObject.GetComponent<Store> ();
+		storeScript = gameObject.GetComponent<Store> ();
 		if (_firstRun) {
 			_coins = 0;
 			Time.timeScale = 0;
@@ -149,6 +149,7 @@ public class UIController : MonoBehaviour {
 		BalloonController bs = player.GetComponent<BalloonController>();
 		if (bs.getShield())
 		{
+            Debug.Log("Shield saved you");
 			bs.setShield(false);
 			bs.SafeTime = 4;
 			return;
@@ -229,5 +230,10 @@ public class UIController : MonoBehaviour {
             spotLight1.enabled = true;
         }
         _lastActiveMenu.SetActive(true);
+    }
+
+    public Store GetStoreScript()
+    {
+        return storeScript;
     }
 }
