@@ -30,6 +30,10 @@ public class Checkpoint_manager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(UIController.instance.player.transform.position.x < transform.position.x - 10)
+		{
+			UIController.instance.GameOver("Slow");
+		}
 		DistanceTravelled += moverScript.speed * Time.deltaTime;
 		if (DistanceTravelled >= CheckpointDistance)
 		{

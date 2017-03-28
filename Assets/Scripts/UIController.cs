@@ -146,6 +146,13 @@ public class UIController : MonoBehaviour {
 	/*Player has died*/
 	public void GameOver(string deathReason)
 	{
+		BalloonController bs = player.GetComponent<BalloonController>();
+		if (bs.getShield())
+		{
+			bs.setShield(false);
+			bs.SafeTime = 4;
+			return;
+		}
 		_coins += _tempCoins;
 		_gameOverScript.GameOver (deathReason);
 	}

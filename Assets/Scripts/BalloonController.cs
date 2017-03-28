@@ -26,6 +26,7 @@ public class BalloonController : MonoBehaviour {
 	private float frame;
 	private GameObject activeModel;
 	public bool useFart;
+	public bool hasShield;
 
 	// Use this for initialization
 	void Start ()
@@ -127,7 +128,15 @@ public class BalloonController : MonoBehaviour {
 	public void pop()
 	{	  
 			StartCoroutine("copop");
-	}			   
+	}		
+	public bool getShield()
+	{
+		return hasShield;
+	}	
+	public void setShield(bool shield)
+	{
+		hasShield = shield;
+	}   
 	public IEnumerator copop()
 	{
 		while(frame < alpha_maps.Count)
