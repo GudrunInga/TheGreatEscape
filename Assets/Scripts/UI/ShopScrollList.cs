@@ -50,8 +50,8 @@ public class ShopScrollList : MonoBehaviour {
     
     public void ActivateDeactivate(bool isActive, ItemManager.Item item)
     {
-		//Debug.Log ("Item: " + item.itemName + " script " + storeScript);
-		storeScript.SetOwned (ItemManager.instance.GetId (item), isActive);
+		//Debug.Log ("Item: " + item.itemName + " script " + UIController.instance.GetStoreScript ());
+		UIController.instance.GetStoreScript ().SetOwned (ItemManager.instance.GetId (item), isActive);
         //Debug.Log("Toggle me " + item.itemName + " " + isActive);
     }
 	private void RemoveButtons()
@@ -74,7 +74,54 @@ public class ShopScrollList : MonoBehaviour {
 
 				newToggle.transform.SetParent(contentPanel);
             	SampleButton sampleButton = newToggle.GetComponent<SampleButton>();
+
 				sampleButton.Setup(itemInfo, this);
+				if (itemList [i].itemID >= 6) {
+					if (itemList [i].itemID == 6) {
+						sampleButton.tag = "ToggleHat";
+					} else if (itemList [i].itemID == 7) {
+						sampleButton.tag = "ToggleBow";
+					} else {
+						sampleButton.tag = "ToggleCap";
+					}
+					//UIController.instance.SetFancyItem (itemList [i].itemID - 6);
+					if (!UIController.instance.GetStoreScript ().GetStoreOwnedItem (itemList [i].itemID)) {
+						UIController.instance.SetActiveFancyStuff (itemList [i].itemID - 6, true);
+					} else {
+						if (sampleButton.tag == "ToggleHat") {
+							var obj = GameObject.FindGameObjectWithTag ("Tophat");
+							if(obj != null){
+								if (obj.activeSelf) {
+									sampleButton.GetComponent<Toggle> ().isOn = true;
+								} else {
+									sampleButton.GetComponent<Toggle> ().isOn = false;
+								}
+							}
+						}
+						if (sampleButton.tag == "ToggleBow") {
+							var obj = GameObject.FindGameObjectWithTag ("Bow");
+							if(obj != null){
+								if (obj.activeSelf) {
+									sampleButton.GetComponent<Toggle> ().isOn = true;
+								} else {
+									sampleButton.GetComponent<Toggle> ().isOn = false;
+								}
+							}
+						}
+						if (sampleButton.tag == "ToggleCap") {
+							var obj = GameObject.FindGameObjectWithTag ("BaseballCap");
+							if(obj != null){
+								if (obj.activeSelf) {
+									sampleButton.GetComponent<Toggle> ().isOn = true;
+								} else {
+									sampleButton.GetComponent<Toggle> ().isOn = false;
+								}
+							}
+						}
+
+						//UIController.instance.SetActiveFancyStuff (itemList [i].itemID - 6, false);
+					}
+				}
 	            sampleButton.transform.localScale = new Vector3(1, 1, 1);
 	            sampleButton.transform.localPosition = new Vector3(sampleButton.transform.localPosition.x, sampleButton.transform.localPosition.y, 0);
 			}

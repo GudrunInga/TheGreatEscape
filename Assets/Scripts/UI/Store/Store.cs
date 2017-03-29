@@ -291,12 +291,12 @@ public class Store : MonoBehaviour {
 				UIController.instance.SpendCoins (cost);
 			}
 
-			if (formID < 7) {
+			if (formID < 6) {
 				_ownedForms [formID+1] = true;
 			}
 			if (!_storeOwnedItems [formID]) {
-				_storeOwnedItems [formID] = true;
 				DisableBuyButton (text, sprite, formID);
+				_storeOwnedItems [formID] = true;
 			}
 		}
 		GotMoney();
@@ -348,11 +348,19 @@ public class Store : MonoBehaviour {
     public void SetOwned(int i, bool enabled)
     {
 		//Debug.Log ("I AM HERE");
-        _ownedForms[i+1] = enabled;
+		if (i < 6) {
+			_ownedForms [i + 1] = enabled;
+		} else {
+			UIController.instance.SetActiveFancyStuff (i - 6, enabled);
+		}
     }
 
     public List<bool> GetOwnedForms()
     {
         return _ownedForms;
     }
+	public bool GetStoreOwnedItem(int id)
+	{
+		return _storeOwnedItems [id];
+	}
 }

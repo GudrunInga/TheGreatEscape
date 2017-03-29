@@ -33,7 +33,7 @@ public class ItemManager : MonoBehaviour {
 	}
 	public int GetId(ItemManager.Item item)
 	{
-		Debug.Log ("Item Manager get id: " + items.IndexOf(item));
+		//Debug.Log ("Item Manager get id: " + items.IndexOf(item));
 		return items.IndexOf (item);
 	}
 }

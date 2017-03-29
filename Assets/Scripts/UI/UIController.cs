@@ -62,6 +62,8 @@ public class UIController : MonoBehaviour {
 	private static int _coins;
 	private static bool _firstRun = true;
 
+	private static List<bool> _fancyItems;
+
     //MainCamera SpotLights, turned off when paused or game over
 	public Light spotLight;
 	public Light spotLight1;
@@ -74,7 +76,33 @@ public class UIController : MonoBehaviour {
 	{
 		instance = this;
 	}
-
+	/*public void SetFancyItem(int id){
+		Debug.Log ("SET FANCY ITEM");
+		if(storeScript.GetStoreOwnedItem(id+6)){
+			_fancyItems [id] = true;
+		}
+	}*/
+	void InitializeFancyItems()
+	{
+		_fancyItems = new List<bool> ();
+		for (int i = 0; i < 3; i++) {
+			_fancyItems.Add (false);
+		}
+	}
+	void CheckFancyItems()
+	{
+		for (int i = 0; i < 3; i++) {
+			if (_fancyItems [i]) {
+				if (i != 2) {
+					var obj = player.transform.GetChild (i).gameObject;
+					obj.SetActive (!obj.activeSelf);
+				} else {
+					var obj = player.transform.GetChild (3).gameObject;
+					obj.SetActive (!obj.activeSelf);
+				}
+			}
+		}
+	}
 	// Use this for initialization
 	void Start() {
 		_gameOverScript = gameObject.GetComponent<GameOverFunctions> ();
@@ -83,6 +111,7 @@ public class UIController : MonoBehaviour {
 		if (_firstRun) {
 			_coins = 0;
 			Time.timeScale = 0;
+			InitializeFancyItems ();
 			_firstRun = false;
 		}
 		else {
@@ -93,6 +122,8 @@ public class UIController : MonoBehaviour {
 		laundry = false;
 		steel = false;
 		dead = false;
+
+		CheckFancyItems ();
 
 		_timeAlive = Time.timeSinceLevelLoad;
 		_tempCoins = 0;
@@ -244,4 +275,85 @@ public class UIController : MonoBehaviour {
     {
         return storeScript;
     }
+
+	public void SetActiveFancyStuff(int id, bool enabled){
+		var topHat = player.transform.GetChild (0).gameObject;
+		var bow = player.transform.GetChild (1).gameObject;
+		var cap = player.transform.GetChild (3).gameObject;
+
+		var hatobj = GameObject.FindGameObjectWithTag ("ToggleHat");
+		var bowobj = GameObject.FindGameObjectWithTag ("ToggleBow");
+		var capobj = GameObject.FindGameObjectWithTag ("ToggleBow");
+		Debug.Log ("ID: " + id + " enabled: " + enabled);
+		//topHat
+		if (id == 0) {
+			if (enabled) {
+				if (bow.activeSelf) {
+					var obj = GameObject.FindGameObjectWithTag ("ToggleBow"); //.isOn = false;
+					if(obj != null){
+						obj.GetComponent<Toggle> ().isOn = false;
+					}
+					bow.SetActive (false);
+					_fancyItems [1] = false;
+				} 
+				if (cap.activeSelf) {
+					var obj = GameObject.FindGameObjectWithTag ("ToggleCap"); //.isOn = false;
+					if(obj != null){
+						obj.GetComponent<Toggle> ().isOn = false;
+					}
+					cap.SetActive (false);
+					_fancyItems [2] = false;
+				}
+			}
+			topHat.SetActive (enabled);
+			_fancyItems [id] = enabled;
+		}
+		//bow
+		else if (id == 1) {
+			if (enabled) {
+				if (topHat.activeSelf) {
+					var obj = GameObject.FindGameObjectWithTag ("ToggleHat");
+					if(obj != null){
+						obj.GetComponent<Toggle> ().isOn = false;
+					}
+					topHat.SetActive (false);
+					_fancyItems [0] = false;
+				} 
+				if (cap.activeSelf) {
+					var obj = GameObject.FindGameObjectWithTag ("ToggleCap");
+					if (obj != null) {
+						obj.GetComponent<Toggle> ().isOn = false;
+					}
+					cap.SetActive (false);
+					_fancyItems [2] = false;
+				}
+			}
+			bow.SetActive (enabled);
+			_fancyItems [id] = enabled;
+		}
+		//cap
+		else if (id == 2) {
+			if (enabled) {
+				if(hatobj != null){
+					Debug.Log ("I am toggling hat off ");
+					hatobj.GetComponent<Toggle> ().isOn = false;
+				}
+				if (topHat.activeSelf) {
+					topHat.SetActive (false);
+					_fancyItems [0] = false;
+				} 
+					
+				if(bowobj != null){
+					bowobj.GetComponent<Toggle> ().isOn = false;
+				}
+				if (bow.activeSelf) {
+					
+					bow.SetActive (false);
+					_fancyItems [1] = false;
+				}
+			}
+			cap.SetActive (enabled);
+			_fancyItems [id] = enabled;
+		}
+	}
 }
