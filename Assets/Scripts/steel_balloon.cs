@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class steel_balloon : MonoBehaviour {
+	public AudioSource clunk;
+
 	bool active;
 	BalloonController Dad;
 	Rigidbody2D rig;
@@ -23,6 +25,12 @@ public class steel_balloon : MonoBehaviour {
 		else
 		{
 			active = true;
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.CompareTag("Floor")) {
+			clunk.Play();
 		}
 	}
 }
