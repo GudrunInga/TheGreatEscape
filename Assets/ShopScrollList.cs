@@ -16,10 +16,13 @@ public class ShopScrollList : MonoBehaviour {
 	public Transform contentPanel;
 	//public ShopScrollList otherShop;
 	public SimpleObjectPool toggleObjectPool;
+    private Store storeScript;
 
 	// Use this for initialization
 	void Start () {
 		RefreshDisplay ();
+        storeScript = UIController.instance.GetStoreScript();
+
 	}
 
 	public void RefreshDisplay()
@@ -32,8 +35,30 @@ public class ShopScrollList : MonoBehaviour {
         //Very ugly code:
         if(item.itemName == "Cat")
         {
-
+            storeScript.SetOwned(1, isActive);
         }
+        if (item.itemName == "Dog")
+        {
+            storeScript.SetOwned(2, isActive);
+        }
+        if (item.itemName == "Scissors")
+        {
+            storeScript.SetOwned(3, isActive);
+        }
+        if (item.itemName == "Gas")
+        {
+            storeScript.SetOwned(4, isActive);
+        }
+        if (item.itemName == "Sword")
+        {
+            storeScript.SetOwned(5, isActive);
+        }
+        if (item.itemName == "Lead")
+        {
+            storeScript.SetOwned(6, isActive);
+        }
+
+
         Debug.Log("Toggle me " + item.itemName + " " + isActive);
     }
 

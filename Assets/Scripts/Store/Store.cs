@@ -297,7 +297,7 @@ public class Store : MonoBehaviour {
         }
         else if(UIController.instance.GetCoins() >= 10 || IamTesting)
         {
-
+            UIController.instance.SpendCoins(10);
             bg.setShield(true);
             Debug.Log("Shield is here? " + bg.hasShield + " " + bg.getShield());
             text.text = "BOUGHT!";
@@ -306,5 +306,10 @@ public class Store : MonoBehaviour {
             button.GetComponent<Button>().interactable = false;
         }
         GotMoney();
+    }
+
+    public void SetOwned(int i, bool enabled)
+    {
+        _ownedForms[i] = enabled;
     }
 }
