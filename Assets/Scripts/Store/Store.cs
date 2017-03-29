@@ -180,13 +180,7 @@ public class Store : MonoBehaviour {
             Button button = text.GetComponentInChildren<Button>();
             button.GetComponent<Button>().interactable = false;
 
-            //Player Info
-            Item item = new Item ();
-			item.icon = cat;
-			item.itemName = "Cat";
-			_shopScrollList.itemList.Add (item);
-			_shopScrollList.RefreshDisplay ();
-
+            AddToPlayerInfo(cat, "Cat");
 		}
         GotMoney();
 	}
@@ -202,11 +196,7 @@ public class Store : MonoBehaviour {
             Button button = text.GetComponentInChildren<Button>();
             button.GetComponent<Button>().interactable = false;
 
-            Item item = new Item ();
-			item.icon = dog;
-			item.itemName = "Dog";
-			_shopScrollList.itemList.Add (item);
-			_shopScrollList.RefreshDisplay ();
+            AddToPlayerInfo(dog, "Dog");
         }
         GotMoney();
     }
@@ -221,11 +211,7 @@ public class Store : MonoBehaviour {
             Button button = text.GetComponentInChildren<Button>();
             button.GetComponent<Button>().interactable = false;
 
-            Item item = new Item ();
-			item.icon = scissors;
-			item.itemName = "Scissors";
-			_shopScrollList.itemList.Add (item);
-			_shopScrollList.RefreshDisplay ();
+            AddToPlayerInfo(scissors, "Scissors");
         }
         GotMoney();
     }
@@ -239,13 +225,7 @@ public class Store : MonoBehaviour {
             Button button = text.GetComponentInChildren<Button>();
             button.GetComponent<Button>().interactable = false;
 
-            Item item = new Item ();
-			item.icon = gas;
-			item.itemName = "Gas";
-			_shopScrollList.itemList.Add (item);
-			_shopScrollList.RefreshDisplay ();
-
-
+            AddToPlayerInfo(gas, "Gas");
         }
         GotMoney();
     }
@@ -260,11 +240,7 @@ public class Store : MonoBehaviour {
             Button button = text.GetComponentInChildren<Button>();
             button.GetComponent<Button>().interactable = false;
 
-            Item item = new Item ();
-			item.icon = sword;
-			item.itemName = "Sword";
-			_shopScrollList.itemList.Add (item);
-			_shopScrollList.RefreshDisplay ();
+            AddToPlayerInfo(sword, "Sword");
         }
         GotMoney();
     }
@@ -279,13 +255,18 @@ public class Store : MonoBehaviour {
             Button button = text.GetComponentInChildren<Button>();
             button.GetComponent<Button>().interactable = false;
 
-            Item item = new Item ();
-			item.icon = steel;
-			item.itemName = "Lead";
-			_shopScrollList.itemList.Add (item);
-			_shopScrollList.RefreshDisplay ();
+            AddToPlayerInfo(steel, "Lead");
         }
         GotMoney();
+    }
+
+    private void AddToPlayerInfo(Sprite sprite, string name)
+    {
+        Item item = new Item();
+        item.icon = sprite;
+        item.itemName = name;
+        _shopScrollList.itemList.Add(item);
+        _shopScrollList.RefreshDisplay();
     }
 
     public void BuyShield(Text text)
@@ -308,8 +289,15 @@ public class Store : MonoBehaviour {
         GotMoney();
     }
 
+   
+
     public void SetOwned(int i, bool enabled)
     {
         _ownedForms[i] = enabled;
+    }
+
+    public List<bool> GetOwnedForms()
+    {
+        return _ownedForms;
     }
 }

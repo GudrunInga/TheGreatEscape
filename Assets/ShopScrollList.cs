@@ -27,9 +27,17 @@ public class ShopScrollList : MonoBehaviour {
 
 	public void RefreshDisplay()
 	{
+
 		AddButtons ();
 	}
+    private void InitializeItemList()
+    {
+        List<bool> tempList = storeScript.GetOwnedForms();
+        for(int i = 1; i < 7; i++)
+        {
 
+        }
+    }
     public void ActivateDeactivate(bool isActive, Item item)
     {
         //Very ugly code:
