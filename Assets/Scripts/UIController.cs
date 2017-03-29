@@ -149,6 +149,7 @@ public class UIController : MonoBehaviour {
 		BalloonController bs = player.GetComponent<BalloonController>();
 		if (bs.getShield())
 		{
+            Debug.Log("Shield saved you");
 			bs.setShield(false);
 			bs.SafeTime = 4;
 			return;

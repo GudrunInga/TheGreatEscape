@@ -182,6 +182,7 @@ public class Store : MonoBehaviour {
 			_shopScrollList.itemList.Add (item);
 			_shopScrollList.RefreshDisplay ();
 		}
+        GotMoney();
 	}
 
 	public void BuyDog()
@@ -194,8 +195,9 @@ public class Store : MonoBehaviour {
 			item.itemName = "Dog";
 			_shopScrollList.itemList.Add (item);
 			_shopScrollList.RefreshDisplay ();
-		}
-	}
+        }
+        GotMoney();
+    }
 
 	public void BuyScissor()
 	{
@@ -207,8 +209,9 @@ public class Store : MonoBehaviour {
 			item.itemName = "Scissors";
 			_shopScrollList.itemList.Add (item);
 			_shopScrollList.RefreshDisplay ();
-		}
-	}
+        }
+        GotMoney();
+    }
 	public void BuyGas()
 	{
 		if (UIController.instance.GetCoins () >= 10 || IamTesting) {
@@ -219,8 +222,9 @@ public class Store : MonoBehaviour {
 			item.itemName = "Gas";
 			_shopScrollList.itemList.Add (item);
 			_shopScrollList.RefreshDisplay ();
-		}
-	}
+        }
+        GotMoney();
+    }
 
 	public void BuySword()
 	{
@@ -232,8 +236,9 @@ public class Store : MonoBehaviour {
 			item.itemName = "Sword";
 			_shopScrollList.itemList.Add (item);
 			_shopScrollList.RefreshDisplay ();
-		}
-	}
+        }
+        GotMoney();
+    }
 
 	public void BuyLead()
 	{
@@ -245,8 +250,23 @@ public class Store : MonoBehaviour {
 			item.itemName = "Lead";
 			_shopScrollList.itemList.Add (item);
 			_shopScrollList.RefreshDisplay ();
-		}
-	}
+        }
+        GotMoney();
+    }
 
+    public void BuyShield()
+    {
+        BalloonController bg = UIController.instance.player.GetComponent<BalloonController>();
+        if (bg.hasShield)
+        {
+            Debug.Log("You already have a fucking shield");
+        }
+        else if(UIController.instance.GetCoins() >= 10 || IamTesting)
+        {
 
+            bg.setShield(true);
+            Debug.Log("Shield is here? " + bg.hasShield + " " + bg.getShield());
+        }
+        GotMoney();
+    }
 }
