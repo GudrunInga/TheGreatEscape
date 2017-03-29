@@ -9,7 +9,7 @@ public class SampleButton : MonoBehaviour {
 	public Text activateLabel;
 	public Image iconImage;
 
-	private Item item;
+	private ItemManager.Item item;
 	private ShopScrollList scrollList;
 	// Use this for initialization
 	void Start () 
@@ -20,7 +20,7 @@ public class SampleButton : MonoBehaviour {
         });
     }
 
-	public void Setup(Item currentItem, ShopScrollList currentScrollList)
+	public void Setup(ItemManager.Item currentItem, ShopScrollList currentScrollList)
 	{
 		item = currentItem;
 		iconImage.sprite = item.icon;

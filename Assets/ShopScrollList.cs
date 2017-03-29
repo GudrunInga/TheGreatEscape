@@ -4,84 +4,80 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
-public class Item
+public class ItemBought
 {
-	public string itemName;
-	public Sprite icon;
-	//public float prize = 1f;
+	public int itemID;
+	public bool bought;
 }
 
 public class ShopScrollList : MonoBehaviour {
-	public List<Item> itemList;
+	public static List<ItemBought> itemList = new List<ItemBought>();
+	private static bool _firstRun = true;
 	public Transform contentPanel;
+	//public static Transform safeContentPanel;
+
 	//public ShopScrollList otherShop;
 	public SimpleObjectPool toggleObjectPool;
     private Store storeScript;
 
+	/*public List<ItemBought> GetItemList()
+	{
+		return itemList;
+	}*/
+	public void AddItem(ItemBought item)
+	{
+		itemList.Add (item);
+	}
+	public bool GetItemByID(int i)
+	{
+		if (i < itemList.Count) {
+			return itemList [i].bought;
+		}
+		return false;
+	}
 	// Use this for initialization
 	void Start () {
+	//	safeContentPanel = contentPanel;
 		RefreshDisplay ();
-        storeScript = UIController.instance.GetStoreScript();
-
+		storeScript = UIController.instance.GetStoreScript ();
 	}
 
 	public void RefreshDisplay()
 	{
-
+		RemoveButtons ();
 		AddButtons ();
 	}
-    private void InitializeItemList()
+    
+    public void ActivateDeactivate(bool isActive, ItemManager.Item item)
     {
-        List<bool> tempList = storeScript.GetOwnedForms();
-        for(int i = 1; i < 7; i++)
-        {
-
-        }
+		//Debug.Log ("Item: " + item.itemName + " script " + storeScript);
+		storeScript.SetOwned (ItemManager.instance.GetId (item), isActive);
+        //Debug.Log("Toggle me " + item.itemName + " " + isActive);
     }
-    public void ActivateDeactivate(bool isActive, Item item)
-    {
-        //Very ugly code:
-        if(item.itemName == "Cat")
-        {
-            storeScript.SetOwned(1, isActive);
-        }
-        if (item.itemName == "Dog")
-        {
-            storeScript.SetOwned(2, isActive);
-        }
-        if (item.itemName == "Scissors")
-        {
-            storeScript.SetOwned(3, isActive);
-        }
-        if (item.itemName == "Gas")
-        {
-            storeScript.SetOwned(4, isActive);
-        }
-        if (item.itemName == "Sword")
-        {
-            storeScript.SetOwned(5, isActive);
-        }
-        if (item.itemName == "Lead")
-        {
-            storeScript.SetOwned(6, isActive);
-        }
-
-
-        Debug.Log("Toggle me " + item.itemName + " " + isActive);
-    }
-
+	private void RemoveButtons()
+	{
+		while (contentPanel.childCount > 0) 
+		{
+			GameObject toRemove = transform.GetChild(0).gameObject;
+			toggleObjectPool.ReturnObject(toRemove);
+		}
+	}
 	private void AddButtons()
 	{
-        if (itemList.Count > 0)
+        if (itemList != null && itemList.Count > 0)
         {
-            Debug.Log("Size of itemlist" + itemList.Count);
-            Item item = itemList[itemList.Count - 1];
-            GameObject newToggle = toggleObjectPool.GetObject();
-            newToggle.transform.SetParent(contentPanel);
-            SampleButton sampleButton = newToggle.GetComponent<SampleButton>();
-            sampleButton.Setup(item, this);
-            sampleButton.transform.localScale = new Vector3(1, 1, 1);
-            sampleButton.transform.localPosition = new Vector3(sampleButton.transform.localPosition.x, sampleButton.transform.localPosition.y, 0);
-        }
+			for (int i = 0; i < itemList.Count; i++) {
+				//Debug.Log("Size of itemlist" + itemList.Count + " Size of ItemManagerList " + ItemManager.instance.items.Count);
+				ItemBought item = itemList [i];//itemList.Count - 1];
+				ItemManager.Item itemInfo = ItemManager.instance.items [item.itemID];//itemList.Count - 1];
+            	GameObject newToggle = toggleObjectPool.GetObject();
+
+				newToggle.transform.SetParent(contentPanel);
+            	SampleButton sampleButton = newToggle.GetComponent<SampleButton>();
+				sampleButton.Setup(itemInfo, this);
+	            sampleButton.transform.localScale = new Vector3(1, 1, 1);
+	            sampleButton.transform.localPosition = new Vector3(sampleButton.transform.localPosition.x, sampleButton.transform.localPosition.y, 0);
+			}
+		}
 	}
 }

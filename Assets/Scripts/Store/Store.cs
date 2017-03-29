@@ -30,21 +30,16 @@ public class Store : MonoBehaviour {
 	private AssemblyCSharp.StoreGravity _gravityScript;
 	private AssemblyCSharp.StoreSpeed _speedScript;
 	private AssemblyCSharp.StoreCameraAcceleration _cameraAccScript;
-	public ShopScrollList _shopScrollList;
+	public ShopScrollList shopScrollList;
 
 	private static List<bool> _ownedForms;
 	private static bool _firstRun = true;
+	private static List<bool> _storeOwnedItems;
 
 	//To get access decrease increase the acceliration of the camera
 	private Moveright moveCameraScript;
-	//For playerInfo
-	public Sprite cat;
-	public Sprite dog;
-	public Sprite scissors;
-	public Sprite sword;
-	public Sprite gas;
-	public Sprite steel;
 
+	public GameObject contentOfPlayerInfo;
 
 	// Use this for initialization
 	void Start () {
@@ -54,16 +49,80 @@ public class Store : MonoBehaviour {
 		moveCameraScript = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Moveright> ();
 		_cameraAccScript = new AssemblyCSharp.StoreCameraAcceleration (cameraAcc, buyCameraAcc, currentCameraAccLevel, increaseCameraAccButton, decreaseCameraAccButton, moveCameraScript);
 
-		//_shopScrollList = GameObject.FindGameObjectWithTag ("PlayerInfoForms").GetComponent<ShopScrollList> ();
-
 		DisableAllButtons ();
 		GotMoney ();
+
 		if (_firstRun) {
+			_storeOwnedItems = new List<bool> ();
+			InitializeStoreItems ();
 			InitializeForms ();
+
 			_firstRun = false;
 		}
+		InitializeButtons ();
+
+
+		//InitializeItems ();
+		//Debug.Log ("Owned forms: " + _ownedForms.Count);
+		//Debug.Log ("Store Owned Forms: " + _storeOwnedItems.Count);
 	}
-		
+	void InitializeStoreItems()
+	{
+		for (int i = 0; i < ItemManager.instance.items.Count; i++) {
+			_storeOwnedItems.Add (false);
+		}
+	}
+	void InitializeButtons()
+	{
+		for (int i = 0; i < _storeOwnedItems.Count; i++) {
+			if (_storeOwnedItems [i]) {
+				
+				var item = ItemManager.instance.items [i];
+				Debug.Log ("Store Item: " + i + " Item: " + item.itemName);
+				Button button = item.text.GetComponentInChildren<Button> ();
+				item.text.text = "BOUGHT!";
+				button.GetComponent<Button> ().interactable = false;
+			}
+		}
+	}
+	void InitializeItems()
+	{
+		for (int i = 0; i < ItemManager.instance.items.Count; i++) {
+			if (_storeOwnedItems [i]) {
+				switch (i) {
+					case 0:
+						BuyCat(true);
+						break;
+					case 1:
+						BuyDog (true);
+						break;
+					case 2:
+						BuyScissors (true);
+						break;
+					case 3:
+						BuyGas (true);
+						break;
+					case 4:
+						BuySword (true);
+						break;
+					case 5:
+						BuySteel (true);
+						break;
+					case 6:
+						BuyTopHat (true);
+						break;
+					case 7:
+						BuyBow (true);
+						break;
+					case 8:
+						BuyCap (true);
+						break;
+				}
+			}
+
+		}
+
+	}
 	/*Buy Speed (The legal kind)*/
 	public void BuySpeed()
 	{
@@ -160,6 +219,7 @@ public class Store : MonoBehaviour {
             else
             {
                 _ownedForms.Add(true);
+				_storeOwnedItems [i-1] = true;
             }
         }
 	}
@@ -168,105 +228,100 @@ public class Store : MonoBehaviour {
 	{
 		return _ownedForms [i];
 	}
-
-	public void BuyCat(Text text)
+		
+	public void BuyCat(bool buyForFree = false)
 	{
-		if ((UIController.instance.GetCoins () >= 10 || IamTesting)) {
-			UIController.instance.SpendCoins (10);
-			_ownedForms.Insert (1, true);
-
-            text.text = "BOUGHT!";
-            //Disable the button
-            Button button = text.GetComponentInChildren<Button>();
-            button.GetComponent<Button>().interactable = false;
-
-            AddToPlayerInfo(cat, "Cat");
-		}
-        GotMoney();
+		var item = ItemManager.instance.items [0];
+		BuyItem (item.text, buyForFree, item.cost, item.icon, item.itemName, 0);
 	}
 
-	public void BuyDog(Text text)
+	public void BuyDog(bool buyForFree = false)
 	{
-		if (UIController.instance.GetCoins () >= 10 || IamTesting) {
-			UIController.instance.SpendCoins (10);
-			_ownedForms.Insert (2, true);
+		var item = ItemManager.instance.items [1];
+		BuyItem (item.text, buyForFree, item.cost, item.icon, item.itemName, 1);
+	}
 
-            text.text = "BOUGHT!";
-            //Disable the button
-            Button button = text.GetComponentInChildren<Button>();
-            button.GetComponent<Button>().interactable = false;
-
-            AddToPlayerInfo(dog, "Dog");
-        }
-        GotMoney();
-    }
-
-	public void BuyScissor(Text text)
+	public void BuyScissors(bool buyForFree = false)
 	{
-		if (UIController.instance.GetCoins () >= 10 || IamTesting) {
-			UIController.instance.SpendCoins (10);
-			_ownedForms.Insert (3, true);
-            text.text = "BOUGHT!";
-            //Disable the button
-            Button button = text.GetComponentInChildren<Button>();
-            button.GetComponent<Button>().interactable = false;
+		var item = ItemManager.instance.items [2];
+		BuyItem (item.text, buyForFree, item.cost, item.icon, item.itemName, 2);
+	}
 
-            AddToPlayerInfo(scissors, "Scissors");
-        }
-        GotMoney();
-    }
-	public void BuyGas(Text text)
+	public void BuyGas(bool buyForFree = false)
 	{
-		if (UIController.instance.GetCoins () >= 10 || IamTesting) {
-			UIController.instance.SpendCoins (10);
-			_ownedForms.Insert (4, true);
-            text.text = "BOUGHT!";
-            //Disable the button
-            Button button = text.GetComponentInChildren<Button>();
-            button.GetComponent<Button>().interactable = false;
+		var item = ItemManager.instance.items [3];
+		BuyItem (item.text, buyForFree, item.cost, item.icon, item.itemName, 3);
+	}
 
-            AddToPlayerInfo(gas, "Gas");
-        }
-        GotMoney();
-    }
-
-	public void BuySword(Text text)
+	public void BuySword(bool buyForFree = false)
 	{
-		if (UIController.instance.GetCoins () >= 10 || IamTesting) {
-			UIController.instance.SpendCoins (10);
-			_ownedForms.Insert (5, true);
-            text.text = "BOUGHT!";
-            //Disable the button
-            Button button = text.GetComponentInChildren<Button>();
-            button.GetComponent<Button>().interactable = false;
+//		Debug.Log ("Size of this bloody list is: " + ItemManager.instance.items.Count);
+		var item = ItemManager.instance.items [4];
+		BuyItem (item.text, buyForFree, item.cost, item.icon, item.itemName, 4);
+	}
 
-            AddToPlayerInfo(sword, "Sword");
-        }
-        GotMoney();
-    }
-
-	public void BuyLead(Text text)
+	public void BuySteel(bool buyForFree = false)
 	{
-		if (UIController.instance.GetCoins () >= 10 || IamTesting) {
-			UIController.instance.SpendCoins (10);
-			_ownedForms.Insert (6, true);
-            text.text = "BOUGHT!";
-            //Disable the button
-            Button button = text.GetComponentInChildren<Button>();
-            button.GetComponent<Button>().interactable = false;
+		var item = ItemManager.instance.items [5];
+		BuyItem (item.text, buyForFree, item.cost, item.icon, item.itemName, 5);
+	}
 
-            AddToPlayerInfo(steel, "Lead");
-        }
-        GotMoney();
-    }
+	public void BuyTopHat(bool buyForFree = false)
+	{
+		var item = ItemManager.instance.items [6];
+		BuyItem (item.text, buyForFree, item.cost, item.icon, item.itemName, 6);
+	}
 
-    private void AddToPlayerInfo(Sprite sprite, string name)
+	public void BuyBow(bool buyForFree = false)
+	{
+		var item = ItemManager.instance.items [7];
+		BuyItem (item.text, buyForFree, item.cost, item.icon, item.itemName, 7);
+	}
+
+	public void BuyCap(bool buyForFree = false)
+	{
+		var item = ItemManager.instance.items [8];
+		BuyItem (item.text, buyForFree, item.cost, item.icon, item.itemName, 8);
+	}
+
+	void BuyItem (Text text, bool buyForFree, int cost, Sprite sprite, string itemName, int formID)
+	{
+		if ((UIController.instance.GetCoins () >= cost || IamTesting)) {
+			if (!buyForFree) {
+				UIController.instance.SpendCoins (cost);
+			}
+
+			if (formID < 7) {
+				_ownedForms [formID+1] = true;
+			}
+			if (!_storeOwnedItems [formID]) {
+				_storeOwnedItems [formID] = true;
+				DisableBuyButton (text, sprite, formID);
+			}
+		}
+		GotMoney();
+	}
+
+	void DisableBuyButton (Text text, Sprite sprite, int id)
+	{
+		text.text = "BOUGHT!";
+		//Disable the button
+		Button button = text.GetComponentInChildren<Button> ();
+		button.GetComponent<Button> ().interactable = false;
+		if (sprite.name != "Shield_icon") {
+			Debug.Log ("AddToPlayerinfo" + " Sprite: " + sprite.name);
+
+			AddToPlayerInfo (sprite, id);
+		}
+	}
+
+    private void AddToPlayerInfo(Sprite sprite, int id)
     {
-        Item item = new Item();
-        item.icon = sprite;
-        item.itemName = name;
-        _shopScrollList.itemList.Add(item);
-        _shopScrollList.RefreshDisplay();
+		ItemBought item = new ItemBought ();
+		item.itemID = id;
+		item.bought = true;
+		shopScrollList.AddItem (item);// .itemList.Add(item);
+        shopScrollList.RefreshDisplay();
     }
 
     public void BuyShield(Text text)
@@ -289,11 +344,11 @@ public class Store : MonoBehaviour {
         GotMoney();
     }
 
-   
 
     public void SetOwned(int i, bool enabled)
     {
-        _ownedForms[i] = enabled;
+		//Debug.Log ("I AM HERE");
+        _ownedForms[i+1] = enabled;
     }
 
     public List<bool> GetOwnedForms()
