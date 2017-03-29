@@ -27,6 +27,16 @@ public class ShopScrollList : MonoBehaviour {
 		AddButtons ();
 	}
 
+    public void ActivateDeactivate(bool isActive, Item item)
+    {
+        //Very ugly code:
+        if(item.itemName == "Cat")
+        {
+
+        }
+        Debug.Log("Toggle me " + item.itemName + " " + isActive);
+    }
+
 	private void AddButtons()
 	{
         if (itemList.Count > 0)

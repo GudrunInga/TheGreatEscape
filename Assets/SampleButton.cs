@@ -14,8 +14,11 @@ public class SampleButton : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		
-	}
+        toggleButton.onValueChanged.AddListener((value) =>
+        {
+            ToggleChanged(value);
+        });
+    }
 
 	public void Setup(Item currentItem, ShopScrollList currentScrollList)
 	{
@@ -23,5 +26,10 @@ public class SampleButton : MonoBehaviour {
 		iconImage.sprite = item.icon;
 		scrollList = currentScrollList;
 	}
+
+    public void ToggleChanged(bool newValue)
+    {
+        scrollList.ActivateDeactivate(newValue, item);
+    }
 
 }
