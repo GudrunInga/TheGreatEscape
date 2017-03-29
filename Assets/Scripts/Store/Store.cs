@@ -46,8 +46,6 @@ public class Store : MonoBehaviour {
 	public Sprite steel;
 
 
-
-
 	// Use this for initialization
 	void Start () {
 		_gravityScript = new AssemblyCSharp.StoreGravity(gravity, buyGravity, currentGravityLevel, increaseGravityButton, decreaseGravityButton);
@@ -170,27 +168,41 @@ public class Store : MonoBehaviour {
 	{
 		return _ownedForms [i];
 	}
-	
-	public void BuyCat()
+
+	public void BuyCat(Text text)
 	{
-		if (UIController.instance.GetCoins () >= 10 || IamTesting) {
+		if ((UIController.instance.GetCoins () >= 10 || IamTesting)) {
 			UIController.instance.SpendCoins (10);
 			_ownedForms.Insert (1, true);
-			Item item = new Item ();
+
+            text.text = "BOUGHT!";
+            //Disable the button
+            Button button = text.GetComponentInChildren<Button>();
+            button.GetComponent<Button>().interactable = false;
+
+            //Player Info
+            Item item = new Item ();
 			item.icon = cat;
 			item.itemName = "Cat";
 			_shopScrollList.itemList.Add (item);
 			_shopScrollList.RefreshDisplay ();
+
 		}
         GotMoney();
 	}
 
-	public void BuyDog()
+	public void BuyDog(Text text)
 	{
 		if (UIController.instance.GetCoins () >= 10 || IamTesting) {
 			UIController.instance.SpendCoins (10);
 			_ownedForms.Insert (2, true);
-			Item item = new Item ();
+
+            text.text = "BOUGHT!";
+            //Disable the button
+            Button button = text.GetComponentInChildren<Button>();
+            button.GetComponent<Button>().interactable = false;
+
+            Item item = new Item ();
 			item.icon = dog;
 			item.itemName = "Dog";
 			_shopScrollList.itemList.Add (item);
@@ -199,12 +211,17 @@ public class Store : MonoBehaviour {
         GotMoney();
     }
 
-	public void BuyScissor()
+	public void BuyScissor(Text text)
 	{
 		if (UIController.instance.GetCoins () >= 10 || IamTesting) {
 			UIController.instance.SpendCoins (10);
 			_ownedForms.Insert (3, true);
-			Item item = new Item ();
+            text.text = "BOUGHT!";
+            //Disable the button
+            Button button = text.GetComponentInChildren<Button>();
+            button.GetComponent<Button>().interactable = false;
+
+            Item item = new Item ();
 			item.icon = scissors;
 			item.itemName = "Scissors";
 			_shopScrollList.itemList.Add (item);
@@ -212,26 +229,38 @@ public class Store : MonoBehaviour {
         }
         GotMoney();
     }
-	public void BuyGas()
+	public void BuyGas(Text text)
 	{
 		if (UIController.instance.GetCoins () >= 10 || IamTesting) {
 			UIController.instance.SpendCoins (10);
 			_ownedForms.Insert (4, true);
-			Item item = new Item ();
+            text.text = "BOUGHT!";
+            //Disable the button
+            Button button = text.GetComponentInChildren<Button>();
+            button.GetComponent<Button>().interactable = false;
+
+            Item item = new Item ();
 			item.icon = gas;
 			item.itemName = "Gas";
 			_shopScrollList.itemList.Add (item);
 			_shopScrollList.RefreshDisplay ();
+
+
         }
         GotMoney();
     }
 
-	public void BuySword()
+	public void BuySword(Text text)
 	{
 		if (UIController.instance.GetCoins () >= 10 || IamTesting) {
 			UIController.instance.SpendCoins (10);
 			_ownedForms.Insert (5, true);
-			Item item = new Item ();
+            text.text = "BOUGHT!";
+            //Disable the button
+            Button button = text.GetComponentInChildren<Button>();
+            button.GetComponent<Button>().interactable = false;
+
+            Item item = new Item ();
 			item.icon = sword;
 			item.itemName = "Sword";
 			_shopScrollList.itemList.Add (item);
@@ -240,12 +269,17 @@ public class Store : MonoBehaviour {
         GotMoney();
     }
 
-	public void BuyLead()
+	public void BuyLead(Text text)
 	{
 		if (UIController.instance.GetCoins () >= 10 || IamTesting) {
 			UIController.instance.SpendCoins (10);
 			_ownedForms.Insert (6, true);
-			Item item = new Item ();
+            text.text = "BOUGHT!";
+            //Disable the button
+            Button button = text.GetComponentInChildren<Button>();
+            button.GetComponent<Button>().interactable = false;
+
+            Item item = new Item ();
 			item.icon = steel;
 			item.itemName = "Lead";
 			_shopScrollList.itemList.Add (item);
@@ -254,7 +288,7 @@ public class Store : MonoBehaviour {
         GotMoney();
     }
 
-    public void BuyShield()
+    public void BuyShield(Text text)
     {
         BalloonController bg = UIController.instance.player.GetComponent<BalloonController>();
         if (bg.hasShield)
@@ -266,6 +300,10 @@ public class Store : MonoBehaviour {
 
             bg.setShield(true);
             Debug.Log("Shield is here? " + bg.hasShield + " " + bg.getShield());
+            text.text = "BOUGHT!";
+            //Disable the button
+            Button button = text.GetComponentInChildren<Button>();
+            button.GetComponent<Button>().interactable = false;
         }
         GotMoney();
     }
