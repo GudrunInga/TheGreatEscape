@@ -29,15 +29,16 @@ public class ShopScrollList : MonoBehaviour {
 
 	private void AddButtons()
 	{
-		//Check the items we have in our item list
-		for (int i = 0; i < itemList.Count; i++) {
-			Item item = itemList [i];
-			GameObject newToggle = toggleObjectPool.GetObject ();
-			newToggle.transform.SetParent (contentPanel);
-			SampleButton sampleButton = newToggle.GetComponent<SampleButton> ();
-			sampleButton.Setup (item, this);
-			sampleButton.transform.localScale = new Vector3(1,1,1);
-			sampleButton.transform.localPosition = new Vector3 (sampleButton.transform.localPosition.x, sampleButton.transform.localPosition.y, 0); 
-		}
+        if (itemList.Count > 0)
+        {
+            Debug.Log("Size of itemlist" + itemList.Count);
+            Item item = itemList[itemList.Count - 1];
+            GameObject newToggle = toggleObjectPool.GetObject();
+            newToggle.transform.SetParent(contentPanel);
+            SampleButton sampleButton = newToggle.GetComponent<SampleButton>();
+            sampleButton.Setup(item, this);
+            sampleButton.transform.localScale = new Vector3(1, 1, 1);
+            sampleButton.transform.localPosition = new Vector3(sampleButton.transform.localPosition.x, sampleButton.transform.localPosition.y, 0);
+        }
 	}
 }
