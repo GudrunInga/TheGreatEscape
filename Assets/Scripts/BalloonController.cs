@@ -22,6 +22,7 @@ public class BalloonController : MonoBehaviour {
 	public float SafeTime;
 
 	public List<GameObject> models;
+	public List<GameObject> hats;
 	public List<Texture2D> alpha_maps;
 	private float frame;
 	private GameObject activeModel;

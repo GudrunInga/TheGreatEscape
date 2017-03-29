@@ -13,6 +13,9 @@ environment {
     size { 400 300 }
     ratio { 4 3 }
   }
+  image {
+    size { 800 800 }
+  }
 }
 object { "object01"
   material { "mat_tophat"
