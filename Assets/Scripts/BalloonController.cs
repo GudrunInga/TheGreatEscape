@@ -46,36 +46,38 @@ public class BalloonController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
-		if(SafeTime > 0)
-		{
-			activeModel.tag = "SafeTag";
-			SafeTime -= Time.deltaTime;
-			if(SafeTime <= 0)
+		if(activeModel != null) { 
+			if(SafeTime > 0)
 			{
-				gameObject.tag = "Player";
-				activeModel.tag = "Player";
-			}
-			if (Mathf.Round(5*SafeTime) == Mathf.Ceil(5*SafeTime))
-			{
-				activeModel.SetActive(true);
+				activeModel.tag = "SafeTag";
+				SafeTime -= Time.deltaTime;
+				if(SafeTime <= 0)
+				{
+					gameObject.tag = "Player";
+					activeModel.tag = "Player";
+				}
+				if (Mathf.Round(5*SafeTime) == Mathf.Ceil(5*SafeTime))
+				{
+					activeModel.SetActive(true);
+				}
+				else
+				{
+					activeModel.SetActive(false);
+				}
 			}
 			else
 			{
-				activeModel.SetActive(false);
-			}
-		}
-		else
-		{
-			activeModel.tag = "Player";
-		}					   									
-		for (int i = 0; i < models.Count; i++)
-		{
-			if (Input.GetKeyDown(keyCodes[i]) && UIController.instance.ownsForm(i))
+				activeModel.tag = "Player";
+			}					   									
+			for (int i = 0; i < models.Count; i++)
 			{
-				activeModel.SetActive(false);
-				activeModel = models[i];
-				activeModel.SetActive(true);
-			}							  
+				if (Input.GetKeyDown(keyCodes[i]) && UIController.instance.ownsForm(i))
+				{
+					activeModel.SetActive(false);
+					activeModel = models[i];
+					activeModel.SetActive(true);
+				}
+			}
 		}
 
 		if (useFart) {
