@@ -11,7 +11,7 @@ public class UIController : MonoBehaviour {
 	/*Scripts*/
 	private GameOverFunctions _gameOverScript;
 	private Store storeScript;
-	private PauseFunctions _pauseScript;
+	private PauseFunctions _pauseScript;  
 
 	/*The Player object*/
 	public GameObject player;
@@ -25,6 +25,8 @@ public class UIController : MonoBehaviour {
 	public bool laundry;
 	//death by steel
 	public bool steel;
+	//died?	  
+	private bool dead;
 	//GameOverCanvas
 	public GameObject gameOverMenu;
 	/*End Game Over Menu*/
@@ -90,6 +92,7 @@ public class UIController : MonoBehaviour {
 		//death by laundry
 		laundry = false;
 		steel = false;
+		dead = false;
 
 		_timeAlive = Time.timeSinceLevelLoad;
 		_tempCoins = 0;
@@ -146,6 +149,10 @@ public class UIController : MonoBehaviour {
 	/*Player has died*/
 	public void GameOver(string deathReason)
 	{
+		if(dead)
+		{
+			return;
+		}
 		BalloonController bs = player.GetComponent<BalloonController>();
 		if (bs.getShield())
 		{
@@ -154,6 +161,7 @@ public class UIController : MonoBehaviour {
 			bs.SafeTime = 4;
 			return;
 		}
+		dead = true;	  
 		_coins += _tempCoins;
 		_gameOverScript.GameOver (deathReason);
 	}

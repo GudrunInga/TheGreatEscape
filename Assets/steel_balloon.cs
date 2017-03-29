@@ -9,12 +9,14 @@ public class steel_balloon : MonoBehaviour {
 	void Start () {
 		Dad = transform.parent.gameObject.GetComponent<BalloonController>();
 		rig = transform.parent.gameObject.GetComponent<Rigidbody2D>();
+		active = false;
 	}
 	void Update()
 	{
 		if (active)
 		{
-			Dad.models.Clear();
+			Dad.models.Clear();					 
+			rig.sharedMaterial = (PhysicsMaterial2D)Resources.Load("Assets/Scripts/Physics Material/Super-heavy");
 			rig.gravityScale = 2;
             UIController.instance.steel = true;
 		}
