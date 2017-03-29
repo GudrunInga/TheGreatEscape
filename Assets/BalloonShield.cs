@@ -7,7 +7,7 @@ public class BalloonShield : MonoBehaviour {
 	public GameObject Daddy;
 	public GameObject MyShield;
 	private BalloonController BobCat;
-	private bool active;
+	private bool active = true;
 	// Use this for initialization
 	void Start () {
 		BobCat = Daddy.GetComponent<BalloonController>();

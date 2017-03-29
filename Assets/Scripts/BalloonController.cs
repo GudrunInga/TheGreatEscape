@@ -144,6 +144,10 @@ public class BalloonController : MonoBehaviour {
 		{
 			foreach (Transform child in activeModel.transform.GetComponentInChildren<Transform>())
 			{
+				if(child.gameObject.CompareTag("SafeTag"))
+				{
+					continue;
+				}
 				Renderer R = child.gameObject.GetComponent<Renderer>();
 				R.material.mainTexture = alpha_maps[Mathf.FloorToInt(frame)];	 
 			}
