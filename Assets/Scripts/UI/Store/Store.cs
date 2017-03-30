@@ -35,6 +35,7 @@ public class Store : MonoBehaviour {
 	private static List<bool> _ownedForms;
 	private static bool _firstRun = true;
 	private static List<bool> _storeOwnedItems;
+	private static List<bool> _ownedHats;
 
 	//To get access decrease increase the acceliration of the camera
 	private Moveright moveCameraScript;
@@ -56,6 +57,7 @@ public class Store : MonoBehaviour {
 			_storeOwnedItems = new List<bool> ();
 			InitializeStoreItems ();
 			InitializeForms ();
+			InitializeHats ();
 
 			_firstRun = false;
 		} else {
@@ -88,6 +90,7 @@ public class Store : MonoBehaviour {
 			}
 		}
 	}
+
 	void InitializeItems()
 	{
 		for (int i = 0; i < ItemManager.instance.items.Count; i++) {
@@ -209,6 +212,13 @@ public class Store : MonoBehaviour {
 		_cameraAccScript.EnableBuy ();
 	}
 
+	void InitializeHats()
+	{
+		_ownedHats = new List<bool> ();
+		for (int i = 0; i < 3; i++) {
+			_ownedHats.Add (false);
+		}
+	}
 	void InitializeForms()
 	{
 		int size = UIController.instance.player.GetComponent<BalloonController> ().models.Count;
@@ -295,13 +305,18 @@ public class Store : MonoBehaviour {
 			}
 
 			if (formID < 6) {
-				_ownedForms [formID+1] = true;
+				_ownedForms [formID + 1] = true;
+				if (!_storeOwnedItems [formID]) {
+					DisableBuyButton (text, sprite, formID);
+					_storeOwnedItems [formID] = true;
+				}
+			} else {
+				_ownedHats [formID - 6] = true;
 				if (!_storeOwnedItems [formID]) {
 					DisableBuyButton (text, sprite, formID);
 					_storeOwnedItems [formID] = true;
 				}
 			}
-
 		}
 		GotMoney();
 	}
@@ -335,9 +350,9 @@ public class Store : MonoBehaviour {
         {
             Debug.Log("You already have a fucking shield");
         }
-        else if(UIController.instance.GetCoins() >= 10 || IamTesting)
+        else if(UIController.instance.GetCoins() >= 5 || IamTesting)
         {
-            UIController.instance.SpendCoins(10);
+            UIController.instance.SpendCoins(5);
             bg.setShield(true);
             Debug.Log("Shield is here? " + bg.hasShield + " " + bg.getShield());
             text.text = "BOUGHT!";
@@ -351,11 +366,10 @@ public class Store : MonoBehaviour {
 
     public void SetOwned(int i, bool enabled)
     {
-		//Debug.Log ("I AM HERE");
 		if (i < 6 && UIController.instance.IsToggleInteractive()) {
 			_ownedForms [i + 1] = enabled;
-		} else {
-		//	UIController.instance.SetActiveFancyStuff (i - 6, enabled);
+		} else if(i >= 6 && UIController.instance.IsToggleInteractive()){
+			_ownedHats [i - 6] = enabled;
 		}
     }
 
@@ -366,6 +380,10 @@ public class Store : MonoBehaviour {
 	public bool GetOwnedFormByID(int id)
 	{
 		return _ownedForms [id];
+	}
+	public bool GetOwnedHatByID(int id)
+	{
+		return _ownedHats [id - 6];
 	}
 	public bool GetStoreOwnedItem(int id)
 	{

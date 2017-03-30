@@ -57,7 +57,7 @@ public class ShopScrollList : MonoBehaviour {
     
     public void ActivateDeactivate(bool isActive, ItemManager.Item item)
     {
-		Debug.Log ("ACTIVATE DEACTIVATE " + item.itemName + " ACTIVE? " + isActive);
+		//Debug.Log ("ACTIVATE DEACTIVATE " + item.itemName + " ACTIVE? " + isActive);
 		UIController.instance.GetStoreScript ().SetOwned (ItemManager.instance.GetId (item), isActive);
     }
 	private void RemoveButtons()
@@ -72,37 +72,50 @@ public class ShopScrollList : MonoBehaviour {
 	{
         if (itemList != null && itemList.Count > 0)
         {
-			//Debug.Log ("ADDBUTTONS: " + itemList.Count);
 			foreach (var item in itemList) {
-				//ItemBought itemBought = item;
-				//Debug.Log ("ITEM ID: " + item.itemID);
 				ItemManager.Item itemInfo = ItemManager.instance.items [item.itemID];//itemList.Count - 1];
 				GameObject newToggle = toggleObjectPool.GetObject();
 				newToggle.transform.SetParent(contentPanel);
 				SampleButton sampleButton = newToggle.GetComponent<SampleButton>();
-				//Debug.Log ("ID OF BUTTON: " + sampleButton.tag);
 				sampleButton.Setup(itemInfo, this);
 
-				if (!UIController.instance.GetStoreScript ().GetOwnedFormByID (item.itemID + 1)) {
-					UIController.instance.SetToggleInteractive (false);
-					sampleButton.GetComponent<Toggle> ().interactable = false;
-					sampleButton.GetComponent<Toggle> ().isOn = false;
-					sampleButton.GetComponent<Toggle> ().interactable = true;
-					UIController.instance.SetToggleInteractive (true);
-				} else {
-					UIController.instance.SetToggleInteractive (true);
-					sampleButton.GetComponent<Toggle> ().interactable = true;
-					sampleButton.GetComponent<Toggle> ().isOn = true;
-					sampleButton.GetComponent<Toggle> ().interactable = true;
-					UIController.instance.SetToggleInteractive (true);
-				}
-				if (item.itemID >= 6) {
+				if (item.itemID < 6) {
+					if (!UIController.instance.GetStoreScript ().GetOwnedFormByID (item.itemID + 1)) {
+						UIController.instance.SetToggleInteractive (false);
+						sampleButton.GetComponent<Toggle> ().interactable = false;
+						sampleButton.GetComponent<Toggle> ().isOn = false;
+						sampleButton.GetComponent<Toggle> ().interactable = true;
+						UIController.instance.SetToggleInteractive (true);
+					} else {
+						UIController.instance.SetToggleInteractive (true);
+						sampleButton.GetComponent<Toggle> ().interactable = true;
+						sampleButton.GetComponent<Toggle> ().isOn = true;
+						sampleButton.GetComponent<Toggle> ().interactable = true;
+						UIController.instance.SetToggleInteractive (true);
+					}
+				} /*else {
+					if (!UIController.instance.GetStoreScript ().GetOwnedHatByID (item.itemID)) {
+						UIController.instance.SetToggleInteractive (false);
+						sampleButton.GetComponent<Toggle> ().interactable = false;
+						sampleButton.GetComponent<Toggle> ().isOn = false;
+						sampleButton.GetComponent<Toggle> ().interactable = true;
+						UIController.instance.SetToggleInteractive (true);
+					} else {
+						UIController.instance.SetToggleInteractive (true);
+						sampleButton.GetComponent<Toggle> ().interactable = true;
+						sampleButton.GetComponent<Toggle> ().isOn = true;
+						sampleButton.GetComponent<Toggle> ().interactable = true;
+						UIController.instance.SetToggleInteractive (true);
+					}
+					AddFancyButtons (sampleButton, item.itemID);
+				}*/
+				//if (item.itemID >= 6) {
 					
 					//AddFancyButtons (sampleButton, itemList [i].itemID);
-				} else {
+				//} else {
 					//if (sampleButton.tag == "Untagged") {
 					//sampleButton.tag = "balloonForm";
-				}
+				//}
 				//}
 				sampleButton.transform.localScale = new Vector3(1, 1, 1);
 				sampleButton.transform.localPosition = new Vector3(sampleButton.transform.localPosition.x, sampleButton.transform.localPosition.y, 0);
@@ -131,22 +144,62 @@ public class ShopScrollList : MonoBehaviour {
 	}
 	private void AddFancyButtons(SampleButton button, int id)
 	{
-		/*Debug.Log ("WE ARE IN ITEM LIST! " + button.tag + " ID " + id);
-		if (button.tag != "balloonForm") {
+		//Debug.Log ("WE ARE IN ITEM LIST! " + button.tag + " ID " + id);
+		//if (button.tag != "balloonForm") {
+		GameObject topHat = UIController.instance.player.transform.GetChild (0).gameObject;;
+		GameObject bow = UIController.instance.player.transform.GetChild (1).gameObject;
+		GameObject cap = UIController.instance.player.transform.GetChild (3).gameObject;
+		if (id == 6) {
+			button.tag = "ToggleHat";
+		} else if (id == 7) {
+			button.tag = "ToggleBow";
+		} else if (id == 8) {
+			button.tag = "ToggleCap";
+		}
+		//}
+
+		/*if (UIController.instance.GetStoreScript ().GetOwnedHatByID (id)) {
+			UIController.instance.SetActiveFancyStuff (id - 6, true);
+		}*/
+		//This seems to be okay and working as it is supposed to
+		if (UIController.instance.GetStoreScript ().GetStoreOwnedItem (id)) {
 			if (id == 6) {
-				button.tag = "ToggleHat";
+				topHat.SetActive (true);
+				if (bow.activeSelf) {
+					bow.SetActive (false);
+				}
+				if (cap.activeSelf) {
+					cap.SetActive (false);
+				}
+			}
+			if (id == 7) {
+				bow.SetActive (true);
+				if (topHat.activeSelf) {
+					topHat.SetActive (false);
+				}
+				if (cap.activeSelf) {
+					cap.SetActive (false);
+				}
+			}
+			if (id == 8) {
+				cap.SetActive (true);
+				if (topHat.activeSelf) {
+					topHat.SetActive (false);
+				}
+				if (bow.activeSelf) {
+					bow.SetActive (false);
+				}
+			}
+		} else {
+			if (id == 6) {
+				topHat.SetActive (false);
 			} else if (id == 7) {
-				button.tag = "ToggleBow";
+				bow.SetActive (false);
 			} else if (id == 8) {
-				button.tag = "ToggleCap";
+				cap.SetActive (false);
 			}
 		}
-
-		//This seems to be okay and working as it is supposed to
-		if (!UIController.instance.GetStoreScript ().GetStoreOwnedItem (id)) {
-			UIController.instance.SetActiveFancyStuff (id - 6, true);
-		} 
-		button.GetComponent<Toggle> ().interactable = false;
+		/*button.GetComponent<Toggle> ().interactable = false;
 
 		if (button.tag == "ToggleHat") {
 			Debug.Log ("Tag is a togglehat");

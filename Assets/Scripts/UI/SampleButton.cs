@@ -14,18 +14,12 @@ public class SampleButton : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-        /*toggleButton.onValueChanged.AddListener((value) =>
-        {
-            ToggleChanged(value);
-        });*/
 		toggleButton.onValueChanged.AddListener((value) =>
 			{
-				//Debug.Log("VALUE CHANGED " + value);
 				if(UIController.instance.IsToggleInteractive()){
-					//Debug.Log("INTERACTABLE " + toggleButton.interactable);
 					ToggleChanged(value);
 				}
-			});
+			});a
 	}
 
 	public void Setup(ItemManager.Item currentItem, ShopScrollList currentScrollList)
