@@ -17,7 +17,7 @@ public class PauseFunctions : MonoBehaviour {
 			if (_paused) {
 				UIController.instance.TurnOn (true);
 			} else {
-                //UIController.instance.TurnOn (false);
+                UIController.instance.TurnOn (false);
                 Time.timeScale = 0;
 			}
 			_paused = !_paused;
