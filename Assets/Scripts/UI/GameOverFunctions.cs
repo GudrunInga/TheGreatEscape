@@ -73,9 +73,9 @@ public class GameOverFunctions : MonoBehaviour {
 	private void _SetFinalScore()
 	{
 		_finalScore = UIController.instance.gameOverMenu.transform.Find ("Panel").transform.Find ("FinalScore").gameObject.GetComponent<Text> ();
-		_finalScore.text += (int)((UIController.instance.GetCoins()*5) + Time.timeSinceLevelLoad);
+		_finalScore.text += (int)((UIController.instance.GetCoinsCollected() * 5) + Time.timeSinceLevelLoad);
 		HighScore_Manager high = HighScore_Manager.instance();
-		high.addScore((int)((UIController.instance.GetCoins() * 5) + Time.timeSinceLevelLoad), 2, 2, 2);
+		high.addScore((int)((UIController.instance.GetCoinsCollected() * 5) + Time.timeSinceLevelLoad), UIController.runs, UIController.instance.GetCoins(), Time.timeSinceLevelLoad);
 		high.save();  
 	}
 		
