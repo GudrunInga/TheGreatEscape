@@ -9,7 +9,7 @@ public class MainBalloonPointer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		position = lastPosition = 3;
+		position = lastPosition = 5;
 	}
 
 	// Update is called once per frame
@@ -18,24 +18,30 @@ public class MainBalloonPointer : MonoBehaviour {
 			position--;
 			//Debug.Log(position);
 		}
-		if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && position != 3) {
+		if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && position != 5) {
 			position++;
 			//Debug.Log(position);
 		}
 
 		if (lastPosition != position) {
 			switch (position) {
-				case 3:
+				case 5:
 					AnimTrigger("Start");
 					break;
-				case 2:
+				case 4:
 					AnimTrigger("Controls");
 					break;
-				case 1:
+				case 3:
 					AnimTrigger("Store");
 					break;
-				case 0:
+				case 2:
+					AnimTrigger("High");
+					break;
+				case 1:
 					AnimTrigger("Quit");
+					break;
+				case 0:
+					AnimTrigger("Reset");
 					break;
 			}
 			lastPosition = position;
@@ -50,6 +56,6 @@ public class MainBalloonPointer : MonoBehaviour {
 	}
 
 	private void OnDisable() {
-		position = 3;
+		position = 4;
 	}
 }
