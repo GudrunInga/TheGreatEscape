@@ -22,6 +22,8 @@ public class HighScore_Manager : MonoBehaviour {
 		{
 			scores.Add(new ScoreData());
 		}
+		sortList();
+		load();
 	}
 
 	public void save()
@@ -38,6 +40,30 @@ public class HighScore_Manager : MonoBehaviour {
 		Debug.Log(Application.persistentDataPath);
 		System.IO.File.WriteAllText(path, text);
 	}	  
+
+	public void load()
+	{
+		string path = Application.persistentDataPath + "/List.dat";
+		string[] data = System.IO.File.ReadAllLines(path);
+		foreach (String entry in data)
+		{
+			ScoreData newEntry = JsonUtility.FromJson<ScoreData>(entry);
+			scores.Add(newEntry);
+			Debug.Log(entry);
+			Debug.Log(newEntry.ToString());
+		}
+		sortList();
+		Debug.Log("loading done.");
+	}
+
+	private void sortList()
+	{
+		scores.Sort();
+		while (scores.Count > slots)
+		{
+			scores.RemoveAt(scores.Count - 1);
+		}
+	}
 	public void addScore(int score, int run, int coins, float time)
 	{
 		ScoreData newscore = new ScoreData(score, run, coins, time);
@@ -117,8 +143,8 @@ public class HighScore_Manager : MonoBehaviour {
 				return "No score! (yet)";
 			}
 			string text = "";
-			text += score.ToString() + " Points!";
-			text += "[Run " + run + ". " + coins + " coins collected. " + time + " seconds survived";
+			text += score.ToString() + " Points!\n";
+			text += "[Run #" + run + " | " + coins + " coins collected |" + time + " seconds survived]";
 			return text;
 		}
 	} 
