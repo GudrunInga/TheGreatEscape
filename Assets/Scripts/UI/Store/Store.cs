@@ -398,4 +398,46 @@ public class Store : MonoBehaviour {
 	{
 		return _firstRun;
 	}
+
+	public bool GetFormByName(string name)
+	{
+		switch (name) {
+		case "Balloon":
+			return true;
+		case "Cat":
+			if (_ownedForms [0]) {
+				return true;
+			}
+			return false;
+		case "Dog":
+			if (_ownedForms [1]) {
+				return true;
+			}
+			return false;
+		case "Scissor":
+			if (_ownedForms [2]) {
+				return true;
+			}
+			return false;
+		case "Gas":
+			if (_ownedForms [3]) {
+				return true;
+			}
+			return false;
+		case "Sword-ish":
+			if (_ownedForms [4]) {
+				return true;
+			}
+			return false;
+		case "iron_balloon":
+			if (_ownedForms [5]) {
+				return true;
+			}
+			return false;
+		default:
+			return false;
+		}
+
+
+	}
 }
