@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -441,11 +442,16 @@ public class UIController : MonoBehaviour {
 	}
 
 	public void load(bool reset = false)
-	{
+	{	   
 		string path = Application.persistentDataPath + "/Progress.dat";
 		if (reset)
 		{
 			path = Application.persistentDataPath + "/Def.dat";
+		}
+		if (!File.Exists(path))
+		{
+			Debug.Log("No file with that path.");
+			return;
 		}
 		string[] data = System.IO.File.ReadAllLines(path);
 		Store mystore = gameObject.GetComponent<Store>();

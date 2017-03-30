@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine; 
+using System.IO;
+using UnityEngine;
 
 public class HighScore_Manager : MonoBehaviour { 
 	//Singleton pattern
@@ -44,6 +45,12 @@ public class HighScore_Manager : MonoBehaviour {
 	public void load()
 	{
 		string path = Application.persistentDataPath + "/List.dat";
+
+		if (!File.Exists(path))
+		{
+			Debug.Log("No List file with that path.");
+			return;
+		}
 		string[] data = System.IO.File.ReadAllLines(path);
 		foreach (String entry in data)
 		{
