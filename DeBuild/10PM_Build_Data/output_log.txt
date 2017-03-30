@@ -1,0 +1,246 @@
+Initialize engine version: 5.5.2f1 (3829d7f588f3)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 4000 (ID=0x166)
+    Vendor:   Intel
+    VRAM:     912 MB
+    Driver:   9.18.13.3489
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\10PM_Build_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\10PM_Build_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\10PM_Build_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\10PM_Build_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\10PM_Build_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\10PM_Build_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\10PM_Build_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\10PM_Build_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\10PM_Build_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\10PM_Build_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\10PM_Build_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\10PM_Build_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.468 seconds
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\10PM_Build_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\10PM_Build_Data\Managed\System.dll (this message is harmless)
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+The referenced script on this Behaviour (Game Object 'Game_Controller') is missing!
+ 
+(Filename:  Line: 1754)
+
+UnloadTime: 1.877319 ms
+{"score":36,"run":1,"coins":2,"time":26.255361557006837}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  1                  			36              					2             											26.26
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":8,"run":1,"coins":2,"time":8.254341125488282}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  1                  			8              					2             											8.25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":-1,"run":-1,"coins":-1,"time":-1.0}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+No score! (yet)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":-1,"run":-1,"coins":-1,"time":-1.0}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+No score! (yet)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":-1,"run":-1,"coins":-1,"time":-1.0}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+No score! (yet)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":-1,"run":-1,"coins":-1,"time":-1.0}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+No score! (yet)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":-1,"run":-1,"coins":-1,"time":-1.0}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+No score! (yet)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":-1,"run":-1,"coins":-1,"time":-1.0}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+No score! (yet)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":-1,"run":-1,"coins":-1,"time":-1.0}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+No score! (yet)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":-1,"run":-1,"coins":-1,"time":-1.0}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+No score! (yet)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+loading done.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Saving
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:/Users/MagnusMagnusson/AppData/LocalLow/DefaultCompany/The Great Escape/Def.dat
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"level":1,"spawn":0.0,"coins":0,"runs":1,"gravity":0.009999999776482582,"speed":0.10000000149011612,"cameraAcc":0.0010000000474974514,"ownedForms":[true,false,false,false,false,false,false],"ownedItems":[false,false,false,false,false,false,false,false,false],"itemList":[]}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Loaded {"level":2,"spawn":9.994908332824707,"coins":2,"runs":1,"gravity":0.009999999776482582,"speed":0.10000000149011612,"cameraAcc":0.0010000000474974514,"ownedForms":[true,false,false,false,false,false,false],"ownedItems":[false,false,false,false,false,false,false,false,false],"itemList":[]}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Game Loaded.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Saving
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 29.924650 ms
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 20523.
+Total: 8.100698 ms (FindLiveObjects: 2.210020 ms CreateObjectMapping: 0.831323 ms MarkObjects: 4.896854 ms  DeleteObjects: 0.159935 ms)
+
+{"score":36,"run":1,"coins":2,"time":26.255361557006837}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  1                  			36              					2             											26.26
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":8,"run":1,"coins":2,"time":8.254341125488282}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  1                  			8              					2             											8.25
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":-1,"run":-1,"coins":-1,"time":-1.0}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+No score! (yet)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":-1,"run":-1,"coins":-1,"time":-1.0}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+No score! (yet)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":-1,"run":-1,"coins":-1,"time":-1.0}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+No score! (yet)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":-1,"run":-1,"coins":-1,"time":-1.0}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+No score! (yet)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":-1,"run":-1,"coins":-1,"time":-1.0}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+No score! (yet)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":-1,"run":-1,"coins":-1,"time":-1.0}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+No score! (yet)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":-1,"run":-1,"coins":-1,"time":-1.0}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+No score! (yet)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":-1,"run":-1,"coins":-1,"time":-1.0}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+No score! (yet)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+loading done.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting level 2 -> 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Set 3 at 19.99337
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+starting level 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 3750 -> priority: 1 
+  Thread -> id: 29f8 -> priority: 1 

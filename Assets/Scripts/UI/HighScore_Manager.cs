@@ -155,7 +155,7 @@ public class HighScore_Manager : MonoBehaviour {
 			}
 			string text = "  ";
 			text += run + "                  \t\t\t";
-			text += score.ToString() + "              \t\t\t\t\t" + coins + "             \t\t\t\t\t\t\t\t\t\t\t" + time;
+			text += score.ToString() + "              \t\t\t\t\t" + coins + "             \t\t\t\t\t\t\t\t\t\t\t" + time.ToString("F2") ;
 			return text;
 		}
 	} 
