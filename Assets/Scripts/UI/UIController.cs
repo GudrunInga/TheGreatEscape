@@ -131,6 +131,7 @@ public class UIController : MonoBehaviour {
 			InitializeFancyItems ();
 			_firstRun = false;
 			toggleIsInteractive = true;
+			load();
 		}
 		else {
 			mainMenu.SetActive(false);
@@ -421,9 +422,13 @@ public class UIController : MonoBehaviour {
 		System.IO.File.WriteAllText(path, Json);
 	}
 
-	public void load()
+	public void load(bool reset = false)
 	{
 		string path = Application.persistentDataPath + "/Progress.dat";
+		if (reset)
+		{
+			path = Application.persistentDataPath + "/Def.dat";
+		}
 		string[] data = System.IO.File.ReadAllLines(path);
 		Store mystore = gameObject.GetComponent<Store>();
 		foreach (String entry in data)
@@ -442,10 +447,16 @@ public class UIController : MonoBehaviour {
 			mystore.SetOwnedLists(S.ownedForms, S.ownedItems);
 			mystore.setFirst(S.storeFirstRun);		
 		}
-		Debug.Log("Game Loaded.");
-
-	}
-
+		if (reset)
+		{
+			save();
+			Debug.Log("Save file reset."); 
+		}
+		else { 
+			Debug.Log("Game Loaded.");
+		}
+}
+		   
 	[Serializable]
 	private class SaveFile
 	{
