@@ -389,4 +389,13 @@ public class Store : MonoBehaviour {
 	{
 		return _storeOwnedItems [id];
 	}
+
+	public List<bool> getStoreOwnedItems()
+	{
+		return _storeOwnedItems;
+	}
+	public bool getFirstRun()
+	{
+		return _firstRun;
+	}
 }
