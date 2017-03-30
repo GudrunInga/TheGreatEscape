@@ -1,0 +1,299 @@
+Initialize engine version: 5.5.1f1 (88d00a7498cd)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA NVS 5200M (ID=0xdfc)
+    Vendor:   NVIDIA
+    VRAM:     978 MB
+    Driver:   10.18.10.4358
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\einar\Dropbox\Námskeið\Advanced Game Design\TheGreatEscape\Leikurinn\TheGreatEscape_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\einar\Dropbox\Námskeið\Advanced Game Design\TheGreatEscape\Leikurinn\TheGreatEscape_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\einar\Dropbox\Námskeið\Advanced Game Design\TheGreatEscape\Leikurinn\TheGreatEscape_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\einar\Dropbox\Námskeið\Advanced Game Design\TheGreatEscape\Leikurinn\TheGreatEscape_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\einar\Dropbox\Námskeið\Advanced Game Design\TheGreatEscape\Leikurinn\TheGreatEscape_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\einar\Dropbox\Námskeið\Advanced Game Design\TheGreatEscape\Leikurinn\TheGreatEscape_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\einar\Dropbox\Námskeið\Advanced Game Design\TheGreatEscape\Leikurinn\TheGreatEscape_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\einar\Dropbox\Námskeið\Advanced Game Design\TheGreatEscape\Leikurinn\TheGreatEscape_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\einar\Dropbox\Námskeið\Advanced Game Design\TheGreatEscape\Leikurinn\TheGreatEscape_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\einar\Dropbox\Námskeið\Advanced Game Design\TheGreatEscape\Leikurinn\TheGreatEscape_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\einar\Dropbox\Námskeið\Advanced Game Design\TheGreatEscape\Leikurinn\TheGreatEscape_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\einar\Dropbox\Námskeið\Advanced Game Design\TheGreatEscape\Leikurinn\TheGreatEscape_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.136 seconds
+Platform assembly: C:\Users\einar\Dropbox\Námskeið\Advanced Game Design\TheGreatEscape\Leikurinn\TheGreatEscape_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\einar\Dropbox\Námskeið\Advanced Game Design\TheGreatEscape\Leikurinn\TheGreatEscape_Data\Managed\System.dll (this message is harmless)
+desktop: 1600x900 40Hz; virtual: 1600x900 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+The referenced script on this Behaviour (Game Object 'Game_Controller') is missing!
+ 
+(Filename:  Line: 1754)
+
+UnloadTime: 1.647271 ms
+{"score":74,"run":3,"coins":9,"time":54.8638801574707}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  3                  			74              					9             											54.86
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":42,"run":1,"coins":3,"time":27.71546173095703}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  1                  			42              					3             											27.72
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":28,"run":2,"coins":5,"time":18.283422470092775}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  2                  			28              					5             											18.28
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":24,"run":11,"coins":3,"time":14.210686683654786}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  11                  			24              					3             											14.21
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":16,"run":6,"coins":7,"time":11.881928443908692}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  6                  			16              					7             											11.88
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":15,"run":4,"coins":10,"time":10.149978637695313}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  4                  			15              					10             											10.15
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":14,"run":7,"coins":8,"time":9.468754768371582}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  7                  			14              					8             											9.47
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":14,"run":5,"coins":6,"time":9.171910285949707}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  5                  			14              					6             											9.17
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":12,"run":8,"coins":9,"time":7.485721588134766}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  8                  			12              					9             											7.49
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":11,"run":10,"coins":11,"time":6.970855712890625}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  10                  			11              					11             											6.97
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+loading done.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Saving
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:/Users/einar/AppData/LocalLow/Balloon Twisters/The Great Escape/Def.dat
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"level":1,"spawn":0.0,"coins":0,"runs":1,"gravity":0.009999999776482582,"speed":0.10000000149011612,"cameraAcc":0.0010000000474974514,"ownedForms":[true,false,false,false,false,false,false],"ownedItems":[false,false,false,false,false,false,false,false,false],"itemList":[]}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Loaded {"level":8,"spawn":70.04054260253906,"coins":6,"runs":13,"gravity":0.009999999776482582,"speed":0.10000000149011612,"cameraAcc":0.0010000000474974514,"ownedForms":[true,false,true,false,false,false,true],"ownedItems":[false,true,false,false,false,true,false,false,false],"itemList":[{"itemID":5,"bought":true},{"itemID":1,"bought":true}]}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Game Loaded.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Saving
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 13.054101 ms
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 20541.
+Total: 4.206488 ms (FindLiveObjects: 0.930911 ms CreateObjectMapping: 0.406582 ms MarkObjects: 2.758754 ms  DeleteObjects: 0.101546 ms)
+
+{"score":74,"run":3,"coins":9,"time":54.8638801574707}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  3                  			74              					9             											54.86
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":42,"run":1,"coins":3,"time":27.71546173095703}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  1                  			42              					3             											27.72
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":28,"run":2,"coins":5,"time":18.283422470092775}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  2                  			28              					5             											18.28
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":24,"run":11,"coins":3,"time":14.210686683654786}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  11                  			24              					3             											14.21
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":16,"run":6,"coins":7,"time":11.881928443908692}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  6                  			16              					7             											11.88
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":15,"run":4,"coins":10,"time":10.149978637695313}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  4                  			15              					10             											10.15
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":14,"run":7,"coins":8,"time":9.468754768371582}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  7                  			14              					8             											9.47
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":14,"run":5,"coins":6,"time":9.171910285949707}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  5                  			14              					6             											9.17
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":12,"run":8,"coins":9,"time":7.485721588134766}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  8                  			12              					9             											7.49
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":11,"run":10,"coins":11,"time":6.970855712890625}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+  10                  			11              					11             											6.97
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+loading done.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":74,"run":3,"coins":9,"time":54.8638801574707}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":42,"run":1,"coins":3,"time":27.71546173095703}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":28,"run":2,"coins":5,"time":18.283422470092775}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":24,"run":11,"coins":3,"time":14.210686683654786}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":16,"run":6,"coins":7,"time":11.881928443908692}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":15,"run":4,"coins":10,"time":10.149978637695313}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":14,"run":7,"coins":8,"time":9.468754768371582}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":14,"run":5,"coins":6,"time":9.171910285949707}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":12,"run":13,"coins":7,"time":7.4719929695129398}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+{"score":12,"run":8,"coins":9,"time":7.485721588134766}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+C:/Users/einar/AppData/LocalLow/Balloon Twisters/The Great Escape
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at BalloonController+<copop>c__Iterator0.MoveNext () [0x00000] in <filename unknown>:0 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) [0x00000] in <filename unknown>:0 
+UnityEngine.MonoBehaviour:StartCoroutine(String, Object)
+UnityEngine.MonoBehaviour:StartCoroutine(String)
+BalloonController:pop()
+GameOverFunctions:_BalloonDeath()
+GameOverFunctions:GameOver(String)
+UIController:GameOver(String)
+KillOnExit:OnTriggerExit2D(Collider2D)
+ 
+(Filename:  Line: -1)
+
+Saving
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 31c4 -> priority: 1 
+  Thread -> id: 2d50 -> priority: 1 
