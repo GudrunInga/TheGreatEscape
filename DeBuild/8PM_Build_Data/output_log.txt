@@ -7,21 +7,21 @@ Direct3D:
     VRAM:     912 MB
     Driver:   9.18.13.3489
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\Builds\8PM_Build_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\Builds\8PM_Build_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\Builds\8PM_Build_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\Builds\8PM_Build_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\Builds\8PM_Build_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\Builds\8PM_Build_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\Builds\8PM_Build_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\Builds\8PM_Build_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\Builds\8PM_Build_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
-Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\Builds\8PM_Build_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\Builds\8PM_Build_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\Builds\8PM_Build_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.415 seconds
-Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\Builds\8PM_Build_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\Builds\8PM_Build_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\8PM_Build_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\8PM_Build_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\8PM_Build_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\8PM_Build_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\8PM_Build_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\8PM_Build_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\8PM_Build_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\8PM_Build_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\8PM_Build_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\8PM_Build_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\8PM_Build_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\8PM_Build_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.066 seconds
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\8PM_Build_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\DeBuild\8PM_Build_Data\Managed\System.dll (this message is harmless)
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -30,100 +30,84 @@ The referenced script on this Behaviour (Game Object 'Game_Controller') is missi
  
 (Filename:  Line: 1754)
 
-UnloadTime: 2.793315 ms
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at animate_bird.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-{"score":87,"run":2,"coins":2,"time":2.0}
+UnloadTime: 2.972066 ms
+{"score":76,"run":2,"coins":10,"time":56.566654205322269}
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-87 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
+  2                  			76              					10             											56.56665
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-{"score":74,"run":2,"coins":2,"time":2.0}
+{"score":66,"run":1,"coins":5,"time":61.65714645385742}
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-74 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
+  1                  			66              					5             											61.65715
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-{"score":72,"run":2,"coins":2,"time":2.0}
+{"score":62,"run":1,"coins":4,"time":52.920379638671878}
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-72 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
+  1                  			62              					4             											52.92038
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-{"score":68,"run":2,"coins":2,"time":2.0}
+{"score":55,"run":1,"coins":6,"time":50.98125076293945}
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-68 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
+  1                  			55              					6             											50.98125
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-{"score":60,"run":2,"coins":2,"time":2.0}
+{"score":26,"run":3,"coins":11,"time":21.218097686767579}
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-60 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
+  3                  			26              					11             											21.2181
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-{"score":58,"run":2,"coins":2,"time":2.0}
+{"score":26,"run":1,"coins":1,"time":21.766666412353517}
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-58 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
+  1                  			26              					1             											21.76667
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-{"score":57,"run":2,"coins":2,"time":2.0}
+{"score":12,"run":1,"coins":2,"time":7.438398838043213}
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-57 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
+  1                  			12              					2             											7.438399
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-{"score":29,"run":2,"coins":2,"time":2.0}
+{"score":9,"run":1,"coins":0,"time":9.912496566772461}
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-29 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
+  1                  			9              					0             											9.912497
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-{"score":18,"run":2,"coins":2,"time":2.0}
+{"score":-1,"run":-1,"coins":-1,"time":-1.0}
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-18 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
+No score! (yet)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-{"score":15,"run":0,"coins":1,"time":15.560981750488282}
+{"score":-1,"run":-1,"coins":-1,"time":-1.0}
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-15 Points!
-[Run #0 | 1 coins collected |15.56098 seconds survived]
+No score! (yet)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -135,7 +119,7 @@ Saving
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-C:/Users/MagnusMagnusson/AppData/LocalLow/DefaultCompany/TheGreatEscape/Def.dat
+C:/Users/MagnusMagnusson/AppData/LocalLow/DefaultCompany/The Great Escape/Def.dat
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -143,7 +127,7 @@ C:/Users/MagnusMagnusson/AppData/LocalLow/DefaultCompany/TheGreatEscape/Def.dat
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Loaded {"level":2,"spawn":9.999595642089844,"firstRun":false,"coins":1,"runs":0,"gravity":0.009999999776482582,"speed":0.10000000149011612,"cameraAcc":0.0010000000474974514,"ownedForms":[true,true,true,false,false,false,false],"ownedItems":[true,true,false,false,false,false,false,false,false],"storeFirstRun":false,"itemList":[{"itemID":0,"bought":true},{"itemID":1,"bought":true}],"shop_firstrun":true}
+Loaded {"level":21,"spawn":200.12474060058595,"firstRun":false,"coins":11,"runs":3,"gravity":0.009999999776482582,"speed":0.10000000149011612,"cameraAcc":0.0010000000474974514,"ownedForms":[true,false,false,false,false,false,false],"ownedItems":[false,false,false,false,false,false,false,false,false],"storeFirstRun":false,"itemList":[],"shop_firstrun":true}
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -151,469 +135,6 @@ Game Loaded.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Saving
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 27.082584 ms
-
-Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 19242.
-Total: 6.731410 ms (FindLiveObjects: 1.644258 ms CreateObjectMapping: 0.750072 ms MarkObjects: 4.182702 ms  DeleteObjects: 0.153093 ms)
-
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at animate_bird.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-{"score":87,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-87 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":74,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-74 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":72,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-72 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":68,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-68 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":60,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-60 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":58,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-58 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":57,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-57 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":29,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-29 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":18,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-18 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":15,"run":0,"coins":1,"time":15.560981750488282}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-15 Points!
-[Run #0 | 1 coins collected |15.56098 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-loading done.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Shield saved you
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-10
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":87,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":74,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":72,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":68,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":60,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":58,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":57,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":29,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":18,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":15,"run":0,"coins":1,"time":15.560981750488282}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-C:/Users/MagnusMagnusson/AppData/LocalLow/DefaultCompany/TheGreatEscape
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Saving
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Saving
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 13.987102 ms
-
-Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 19243.
-Total: 6.226800 ms (FindLiveObjects: 1.542053 ms CreateObjectMapping: 0.511024 ms MarkObjects: 4.035596 ms  DeleteObjects: 0.137271 ms)
-
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at animate_bird.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Move_Spike.OnCollisionEnter2D (UnityEngine.Collision2D collision) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-{"score":87,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-87 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":74,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-74 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":72,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-72 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":68,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-68 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":60,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-60 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":58,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-58 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":57,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-57 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":29,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-29 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":18,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-18 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":15,"run":0,"coins":1,"time":15.560981750488282}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-15 Points!
-[Run #0 | 1 coins collected |15.56098 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-loading done.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Shield saved you
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Setting level 2 -> 3
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Set 3 at 19.9974
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-starting level 3
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Saving
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 19.939787 ms
-
-Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 19243.
-Total: 6.772463 ms (FindLiveObjects: 1.707120 ms CreateObjectMapping: 0.528557 ms MarkObjects: 4.427310 ms  DeleteObjects: 0.108191 ms)
-
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at animate_bird.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-{"score":87,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-87 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":74,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-74 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":72,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-72 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":68,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-68 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":60,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-60 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":58,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-58 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":57,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-57 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":29,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-29 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":18,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-18 Points!
-[Run #2 | 2 coins collected |2 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":15,"run":0,"coins":1,"time":15.560981750488282}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-15 Points!
-[Run #0 | 1 coins collected |15.56098 seconds survived]
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-loading done.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Shield saved you
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-10
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":87,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":74,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":72,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":68,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":60,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":58,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":57,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":29,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":18,"run":2,"coins":2,"time":2.0}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-{"score":15,"run":0,"coins":1,"time":15.560981750488282}
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-C:/Users/MagnusMagnusson/AppData/LocalLow/DefaultCompany/TheGreatEscape
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Saving
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 2fa0 -> priority: 1 
-  Thread -> id: 273c -> priority: 1 
+  Thread -> id: 2ea4 -> priority: 1 
+  Thread -> id: afc -> priority: 1 

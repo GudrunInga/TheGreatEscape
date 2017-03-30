@@ -9,7 +9,7 @@ public class GameOverBalloonPointer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
-		position = lastPosition = 3;
+		position = lastPosition = 4;
 	}
 
 	// Update is called once per frame
@@ -25,8 +25,11 @@ public class GameOverBalloonPointer : MonoBehaviour {
 
 		if (lastPosition != position) {
 			switch (position) {
-				case 3:
+				case 4:
 					AnimTrigger("GRestart");
+					break;
+				case 3:
+					AnimTrigger("GHelp");
 					break;
 				case 2:
 					AnimTrigger("GStore");
@@ -50,6 +53,6 @@ public class GameOverBalloonPointer : MonoBehaviour {
 	}
 
 	private void OnDisable() {
-		position = 3;
+		position = 4;
 	}
 }
