@@ -13,7 +13,7 @@ public class BalloonController : MonoBehaviour {
 		 KeyCode.Alpha7,
 		 KeyCode.Alpha8,
 		 KeyCode.Alpha9,
-	 };				
+	 };	
 
 	Rigidbody2D rigid;
 	Transform transformer;
@@ -79,7 +79,36 @@ public class BalloonController : MonoBehaviour {
 				}
 			}
 		}
-
+		/*if(Input.GetKeyDown(KeyCode.E)){
+			var tempvar = UIController.instance.GetStoreScript().GetOwnedForms();
+			//Get the current active model
+			int currItem = UIController.instance.GetStoreScript().GetFormByName(activeModel.name);
+			//Check the next owned item
+			for (int i = currItem+1; i < models.Count; i++) {
+				if (UIController.instance.GetStoreScript ().GetOwnedFormByID (i)) {
+					activeModel.SetActive (false);
+					activeModel = models [i];
+					activeModel.SetActive (true);
+				}
+			}
+			//set to next owned item
+		}
+		if(Input.GetKeyDown(KeyCode.Q)){
+			var tempvar = UIController.instance.GetStoreScript().GetOwnedForms();
+			//Get the current active model
+			int currItem = UIController.instance.GetStoreScript().GetFormByName(activeModel.name);
+			//Check the next owned item
+			if (currItem != -1) {
+				for (int i = currItem - 1; i >= 0; i--) {
+					if (UIController.instance.GetStoreScript ().GetOwnedFormByID (i)) {
+						activeModel.SetActive (false);
+						activeModel = models [i];
+						activeModel.SetActive (true);
+					}
+				}
+			}
+			//set to next owned item
+		}*/
 		if (useFart) {
 			if (Input.GetKey(KeyCode.A)) {
 				rigid.AddTorque(rotationSpeed);
