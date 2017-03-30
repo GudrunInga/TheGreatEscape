@@ -184,12 +184,12 @@ public class UIController : MonoBehaviour {
 	/*Called when Start button in any menu is "clicked"*/
 	public void RestartScene()
 	{
-		//Debug.Log ("LET'S RESTART THE SCENE!");
+		//Debug.Log ("LET'S RESTART THE SCENE!");  
+		save();
 		_gameOverScript.ResetScene (false, false);
         laundry = false;
         steel = false;
 		TurnOn (true);
-		save();
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 	}
 
@@ -403,18 +403,24 @@ public class UIController : MonoBehaviour {
 
 	public void save(bool firstSave = false)
 	{
+		Debug.Log("Saving");
 		Store mystore = gameObject.GetComponent<Store>();
 		SaveFile S = new SaveFile();
 		S.level = _level;
 		S.spawn = _spawn_x;
 		S.firstRun = _firstRun;
 		S.coins = _coins;
+
 		S.gravity = mystore.gravity;
 		S.speed = mystore.speed;
 		S.cameraAcc = mystore.cameraAcc;
 		S.ownedForms = mystore.GetOwnedForms();
 		S.ownedItems = mystore.getStoreOwnedItems();
 		S.storeFirstRun = mystore.getFirstRun();
+
+		S.itemList = ShopScrollList.itemList;
+		S.shop_firstrun = ShopScrollList._firstRun;
+
 		string Json = JsonUtility.ToJson(S);
 
 		string path = Application.persistentDataPath + "/Progress.dat";
@@ -425,8 +431,8 @@ public class UIController : MonoBehaviour {
 		{
 			Debug.Log(path);
 			Debug.Log(Json);
-			System.IO.File.WriteAllText(path, Json);
 		}
+		System.IO.File.WriteAllText(path, Json);
 	}
 
 	public void load(bool reset = false)
@@ -452,7 +458,10 @@ public class UIController : MonoBehaviour {
 			mystore.speed = S.speed;
 			mystore.cameraAcc = S.cameraAcc;
 			mystore.SetOwnedLists(S.ownedForms, S.ownedItems);
-			mystore.setFirst(S.storeFirstRun);		
+			mystore.setFirst(S.storeFirstRun);
+
+			ShopScrollList.itemList = new List<ItemBought>(S.itemList);
+			ShopScrollList._firstRun = S.shop_firstrun;
 		}
 		if (reset)
 		{
@@ -467,7 +476,7 @@ public class UIController : MonoBehaviour {
 	[Serializable]
 	private class SaveFile
 	{
-
+		//UIController
 		public int level;
 		public float spawn;
 		public bool firstRun;
@@ -479,5 +488,8 @@ public class UIController : MonoBehaviour {
 		public List<bool> ownedForms;
 		public List<bool> ownedItems;	   
 		public bool storeFirstRun;
+		//ShopScrollList	 
+		public List<ItemBought> itemList;
+		public bool shop_firstrun = true;
 	}
 }

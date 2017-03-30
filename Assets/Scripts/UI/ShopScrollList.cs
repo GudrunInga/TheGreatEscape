@@ -12,7 +12,7 @@ public class ItemBought
 
 public class ShopScrollList : MonoBehaviour {
 	public static List<ItemBought> itemList = new List<ItemBought>();
-	private static bool _firstRun = true;
+	public static bool _firstRun = true;
 	public Transform contentPanel;
 	//public static Transform safeContentPanel;
 
