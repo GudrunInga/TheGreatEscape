@@ -131,6 +131,7 @@ public class UIController : MonoBehaviour {
 			InitializeFancyItems ();
 			_firstRun = false;
 			toggleIsInteractive = true;
+			save(true);
 			load();
 		}
 		else {
@@ -400,7 +401,7 @@ public class UIController : MonoBehaviour {
 		}*/
 	}
 
-	public void save()
+	public void save(bool firstSave = false)
 	{
 		Store mystore = gameObject.GetComponent<Store>();
 		SaveFile S = new SaveFile();
@@ -416,10 +417,16 @@ public class UIController : MonoBehaviour {
 		S.storeFirstRun = mystore.getFirstRun();
 		string Json = JsonUtility.ToJson(S);
 
-		string path = Application.persistentDataPath + "/Progress.dat";	 
-		Debug.Log(path);
-		Debug.Log(Json);
-		System.IO.File.WriteAllText(path, Json);
+		string path = Application.persistentDataPath + "/Progress.dat";
+		if (firstSave){
+			path = Application.persistentDataPath + "/Def.dat";
+		}
+		if (firstSave)
+		{
+			Debug.Log(path);
+			Debug.Log(Json);
+			System.IO.File.WriteAllText(path, Json);
+		}
 	}
 
 	public void load(bool reset = false)
