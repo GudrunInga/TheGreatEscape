@@ -147,7 +147,7 @@ public class HighScore_Manager : MonoBehaviour {
 				return "No score! (yet)";
 			}
 			string text = "";
-			text += score.ToString() + " Points!\n";
+			text += score.ToString() + " Points!   ";
 			text += "[Run #" + run + " | " + coins + " coins collected |" + time + " seconds survived]";
 			return text;
 		}
