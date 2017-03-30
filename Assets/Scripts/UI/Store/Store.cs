@@ -399,6 +399,17 @@ public class Store : MonoBehaviour {
 		return _firstRun;
 	}
 
+	public void SetOwnedLists(List<bool> forms, List<bool> items)
+	{
+		_ownedForms = new List<bool>(forms);
+		_storeOwnedItems = new List<bool>(items);
+	}		  
+
+	public void setFirst(bool first)
+	{
+		_firstRun = first;
+	}
+
 	public bool GetFormByName(string name)
 	{
 		switch (name) {

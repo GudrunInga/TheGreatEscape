@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -186,6 +187,7 @@ public class UIController : MonoBehaviour {
         laundry = false;
         steel = false;
 		TurnOn (true);
+		save();
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 	}
 
@@ -213,6 +215,7 @@ public class UIController : MonoBehaviour {
 		dead = true;	  
 		_coins += _tempCoins;
 		_gameOverScript.GameOver (deathReason);
+		save();
 	}
 
 	/*Moneys...all the moneys*/
@@ -394,5 +397,69 @@ public class UIController : MonoBehaviour {
 			cap.SetActive (enabled);
 			_fancyItems [id] = enabled;
 		}*/
+	}
+
+	public void save()
+	{
+		Store mystore = gameObject.GetComponent<Store>();
+		SaveFile S = new SaveFile();
+		S.level = _level;
+		S.spawn = _spawn_x;
+		S.firstRun = _firstRun;
+		S.coins = _coins;
+		S.gravity = mystore.gravity;
+		S.speed = mystore.speed;
+		S.cameraAcc = mystore.cameraAcc;
+		S.ownedForms = mystore.GetOwnedForms();
+		S.ownedItems = mystore.getStoreOwnedItems();
+		S.storeFirstRun = mystore.getFirstRun();
+		string Json = JsonUtility.ToJson(S);
+
+		string path = Application.persistentDataPath + "/Progress.dat";	 
+		Debug.Log(path);
+		Debug.Log(Json);
+		System.IO.File.WriteAllText(path, Json);
+	}
+
+	public void load()
+	{
+		string path = Application.persistentDataPath + "/Progress.dat";
+		string[] data = System.IO.File.ReadAllLines(path);
+		Store mystore = gameObject.GetComponent<Store>();
+		foreach (String entry in data)
+		{
+			SaveFile S = JsonUtility.FromJson<SaveFile>(entry);
+			Debug.Log("Loaded " + entry);
+
+			_level = S.level;
+			_spawn_x = S.spawn;
+			_firstRun = S.firstRun;
+			_coins = S.coins;
+
+			mystore.gravity = S.gravity;
+			mystore.speed = S.speed;
+			mystore.cameraAcc = S.cameraAcc;
+			mystore.SetOwnedLists(S.ownedForms, S.ownedItems);
+			mystore.setFirst(S.storeFirstRun);		
+		}
+		Debug.Log("Game Loaded.");
+
+	}
+
+	[Serializable]
+	private class SaveFile
+	{
+
+		public int level;
+		public float spawn;
+		public bool firstRun;
+		public int coins;
+		//store
+		public float gravity;
+		public float speed;
+		public float cameraAcc;
+		public List<bool> ownedForms;
+		public List<bool> ownedItems;	   
+		public bool storeFirstRun;
 	}
 }
