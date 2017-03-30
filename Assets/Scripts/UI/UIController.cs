@@ -412,8 +412,7 @@ public class UIController : MonoBehaviour {
 		Store mystore = gameObject.GetComponent<Store>();
 		SaveFile S = new SaveFile();
 		S.level = _level;
-		S.spawn = _spawn_x;
-		S.firstRun = _firstRun;
+		S.spawn = _spawn_x;		
 		S.coins = _coins;
 		S.runs = runs;
 
@@ -421,11 +420,9 @@ public class UIController : MonoBehaviour {
 		S.speed = mystore.speed;
 		S.cameraAcc = mystore.cameraAcc;
 		S.ownedForms = mystore.GetOwnedForms();
-		S.ownedItems = mystore.getStoreOwnedItems();
-		S.storeFirstRun = mystore.getFirstRun();
+		S.ownedItems = mystore.getStoreOwnedItems(); 
 
-		S.itemList = ShopScrollList.itemList;
-		S.shop_firstrun = ShopScrollList._firstRun;
+		S.itemList = ShopScrollList.itemList;	   
 
 		string Json = JsonUtility.ToJson(S);
 
@@ -461,19 +458,16 @@ public class UIController : MonoBehaviour {
 			Debug.Log("Loaded " + entry);
 
 			_level = S.level;
-			_spawn_x = S.spawn;
-			_firstRun = S.firstRun;
+			_spawn_x = S.spawn;		 
 			_coins = S.coins;
 			runs = S.runs;
 
 			mystore.gravity = S.gravity;
 			mystore.speed = S.speed;
 			mystore.cameraAcc = S.cameraAcc;
-			mystore.SetOwnedLists(S.ownedForms, S.ownedItems);
-			mystore.setFirst(S.storeFirstRun);
+			mystore.SetOwnedLists(S.ownedForms, S.ownedItems);		
 
-			ShopScrollList.itemList = new List<ItemBought>(S.itemList);
-			ShopScrollList._firstRun = S.shop_firstrun;
+			ShopScrollList.itemList = new List<ItemBought>(S.itemList);	
 		}
 		if (reset)
 		{
@@ -490,8 +484,7 @@ public class UIController : MonoBehaviour {
 	{
 		//UIController
 		public int level;
-		public float spawn;
-		public bool firstRun;
+		public float spawn;		  
 		public int coins;
 		public int runs;
 		//store
@@ -499,10 +492,8 @@ public class UIController : MonoBehaviour {
 		public float speed;
 		public float cameraAcc;
 		public List<bool> ownedForms;
-		public List<bool> ownedItems;	   
-		public bool storeFirstRun;
+		public List<bool> ownedItems;	  
 		//ShopScrollList	 
-		public List<ItemBought> itemList;
-		public bool shop_firstrun = true;
+		public List<ItemBought> itemList;	
 	}
 }
