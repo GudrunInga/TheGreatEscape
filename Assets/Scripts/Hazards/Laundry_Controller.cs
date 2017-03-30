@@ -47,12 +47,13 @@ public class Laundry_Controller : MonoBehaviour {
 				}
 			}
 			else {
+				UIController.instance.laundry = true;
 				pants.SetActive(false);
 				shirt.SetActive(false);
 				BalloonController balloon = other.gameObject.transform.root.gameObject.GetComponent<BalloonController>();
 				balloon.setgrav(0.07f);
 				balloon.forceModel(heavyballoon);
-                UIController.instance.laundry = true;
+                
 			}
 		}
 	}

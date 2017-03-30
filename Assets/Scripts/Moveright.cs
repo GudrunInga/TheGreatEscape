@@ -22,8 +22,10 @@ public class Moveright : MonoBehaviour {
 			realAcceleration = 1.2f;
 		}
 		if(UIController.instance.player.transform.position.x < transform.position.x - 40)
-		{					   
-			UIController.instance.GameOver("Slow");
+		{	
+			if (!UIController.instance.laundry && !UIController.instance.steel) {
+				UIController.instance.GameOver ("Slow");
+			}
 		}
 	}
 	public void add_accel(float acc)

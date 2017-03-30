@@ -101,9 +101,11 @@ public class GameOverFunctions : MonoBehaviour {
 			UIController.instance.laundry = false;
 		}
 		if (UIController.instance.steel) {
-			_killReason.text = "Steel is heavy....who knew?";
+			_killReason.text = "Well, that went over like a lead balloon";
 			UIController.instance.steel = true;
-		} 
+		} else if (deathReason == "Bee") {
+			_killReason.text = "Bees are dangerous, if only you could gas them";
+		}
 		else if (deathReason == "Spike") {
 			_killReason.text = "Pointy things are bad for balloons, if only you could get better controls";
 		} 
