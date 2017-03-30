@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Moveright : MonoBehaviour {
-
-	
+public class Moveright : MonoBehaviour { 
     public float speed;
 	public float acceleration;
 	private Transform trans;

@@ -74,6 +74,9 @@ public class GameOverFunctions : MonoBehaviour {
 	{
 		_finalScore = UIController.instance.gameOverMenu.transform.Find ("Panel").transform.Find ("FinalScore").gameObject.GetComponent<Text> ();
 		_finalScore.text += (int)((UIController.instance.GetCoins()*5) + Time.timeSinceLevelLoad);
+		/*HighScore_Manager high = HighScore_Manager.instance();
+		high.addScore((int)((UIController.instance.GetCoins() * 5) + Time.timeSinceLevelLoad), 2, 2, 2);
+		high.save();  */
 	}
 		
 	//Start animating the balloon popping

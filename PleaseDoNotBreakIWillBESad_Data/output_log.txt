@@ -1,0 +1,372 @@
+Initialize engine version: 5.5.2f1 (3829d7f588f3)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 4000 (ID=0x166)
+    Vendor:   Intel
+    VRAM:     912 MB
+    Driver:   9.18.13.3489
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\PleaseDoNotBreakIWillBESad_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\PleaseDoNotBreakIWillBESad_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\PleaseDoNotBreakIWillBESad_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\PleaseDoNotBreakIWillBESad_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\PleaseDoNotBreakIWillBESad_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\PleaseDoNotBreakIWillBESad_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\PleaseDoNotBreakIWillBESad_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\PleaseDoNotBreakIWillBESad_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\PleaseDoNotBreakIWillBESad_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\PleaseDoNotBreakIWillBESad_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\PleaseDoNotBreakIWillBESad_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\PleaseDoNotBreakIWillBESad_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.083 seconds
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\PleaseDoNotBreakIWillBESad_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\MagnusMagnusson\Desktop\Balloon Escape\TheGreatEscape\PleaseDoNotBreakIWillBESad_Data\Managed\System.dll (this message is harmless)
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+The referenced script on this Behaviour (Game Object 'Game_Controller') is missing!
+ 
+(Filename:  Line: 1754)
+
+UnloadTime: 3.057593 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 27.386633 ms
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 17014.
+Total: 6.436342 ms (FindLiveObjects: 1.470210 ms CreateObjectMapping: 0.610663 ms MarkObjects: 4.138656 ms  DeleteObjects: 0.215528 ms)
+
+Setting level 1 -> 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Set 2 at 4.991808
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+starting level 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting level 2 -> 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Set 3 at 9.99165
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+starting level 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting level 3 -> 4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Set 4 at 14.99391
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+starting level 4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Shield saved you
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting level 4 -> 5
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Set 5 at 20.00766
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+starting level 5
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting level 5 -> 6
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Set 6 at 25.00229
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+starting level 6
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting level 6 -> 7
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Set 7 at 30.01772
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+starting level 7
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting level 7 -> 8
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Set 8 at 35.03642
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+starting level 8
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 19.323139 ms
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 17015.
+Total: 6.746377 ms (FindLiveObjects: 1.404355 ms CreateObjectMapping: 0.630762 ms MarkObjects: 4.532508 ms  DeleteObjects: 0.177468 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ShopScrollList.AddButtons () [0x00000] in <filename unknown>:0 
+  at ShopScrollList.RefreshDisplay () [0x00000] in <filename unknown>:0 
+  at Store.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Setting level 8 -> 9
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Set 9 at 40.0335
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+starting level 9
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Shield saved you
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting level 9 -> 10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Set 10 at 45.03291
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+starting level 10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting level 10 -> 11
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Set 11 at 50.03786
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+starting level 11
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting level 11 -> 12
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Set 12 at 55.04926
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+starting level 12
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 28.652006 ms
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 17015.
+Total: 6.752364 ms (FindLiveObjects: 1.525803 ms CreateObjectMapping: 0.572603 ms MarkObjects: 4.474778 ms  DeleteObjects: 0.178324 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ShopScrollList.AddButtons () [0x00000] in <filename unknown>:0 
+  at ShopScrollList.RefreshDisplay () [0x00000] in <filename unknown>:0 
+  at Store.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Shield saved you
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting level 12 -> 13
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Set 13 at 60.0461
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+starting level 13
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 23.597355 ms
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 17015.
+Total: 6.481243 ms (FindLiveObjects: 1.382973 ms CreateObjectMapping: 0.621354 ms MarkObjects: 4.299447 ms  DeleteObjects: 0.176185 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ShopScrollList.AddButtons () [0x00000] in <filename unknown>:0 
+  at ShopScrollList.RefreshDisplay () [0x00000] in <filename unknown>:0 
+  at Store.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Shield saved you
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting level 13 -> 14
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Set 14 at 65.04259
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+starting level 14
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 20.451241 ms
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 17015.
+Total: 7.463522 ms (FindLiveObjects: 1.576264 ms CreateObjectMapping: 0.653854 ms MarkObjects: 5.041395 ms  DeleteObjects: 0.185593 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ShopScrollList.AddButtons () [0x00000] in <filename unknown>:0 
+  at ShopScrollList.RefreshDisplay () [0x00000] in <filename unknown>:0 
+  at Store.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Setting level 14 -> 15
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Set 15 at 70.04168
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+starting level 15
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Shield saved you
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting level 15 -> 16
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Set 16 at 75.04311
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+starting level 16
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting level 16 -> 17
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Set 17 at 80.04954
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+starting level 17
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting level 17 -> 18
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Set 18 at 85.05978
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+starting level 18
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting level 18 -> 19
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Set 19 at 90.05839
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+starting level 19
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting level 19 -> 20
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Set 20 at 95.09727
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+starting level 20
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 15.794291 ms
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 17015.
+Total: 6.474401 ms (FindLiveObjects: 1.342775 ms CreateObjectMapping: 0.608097 ms MarkObjects: 4.355467 ms  DeleteObjects: 0.167633 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ShopScrollList.AddButtons () [0x00000] in <filename unknown>:0 
+  at ShopScrollList.RefreshDisplay () [0x00000] in <filename unknown>:0 
+  at Store.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Shield saved you
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 20.765553 ms
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 17015.
+Total: 6.734831 ms (FindLiveObjects: 1.424026 ms CreateObjectMapping: 0.629479 ms MarkObjects: 4.497442 ms  DeleteObjects: 0.181745 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ShopScrollList.AddButtons () [0x00000] in <filename unknown>:0 
+  at ShopScrollList.RefreshDisplay () [0x00000] in <filename unknown>:0 
+  at Store.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 3944 -> priority: 1 
+  Thread -> id: 37e0 -> priority: 1 
