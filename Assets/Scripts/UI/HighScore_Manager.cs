@@ -110,9 +110,13 @@ public class HighScore_Manager : MonoBehaviour {
 		}			  
 		return scores[position].time;
 	}
-
+	
+	public List<ScoreData> get_scores()
+	{
+		return scores;
+	}
 	[Serializable]
-	private class ScoreData : IComparable<ScoreData>
+	public class ScoreData : IComparable<ScoreData>
 	{
 		public int score;
 		public int run;
