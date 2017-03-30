@@ -18,7 +18,7 @@ public class GameOverBalloonPointer : MonoBehaviour {
 			position--;
 			//Debug.Log(position);
 		}
-		if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && position != 3) {
+		if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && position != 4) {
 			position++;
 			//Debug.Log(position);
 		}
