@@ -80,8 +80,8 @@ public class ShopScrollList : MonoBehaviour {
 				sampleButton.Setup(itemInfo, this);
 
 				if (item.itemID < 6) {
-					//Possible error
-					if (!UIController.instance.GetStoreScript ().GetOwnedFormByID (item.itemID)) {
+					//Possible error											  
+					if (UIController.instance.GetStoreScript() && !UIController.instance.GetStoreScript().GetOwnedFormByID(item.itemID)) {
 						UIController.instance.SetToggleInteractive (false);
 						sampleButton.GetComponent<Toggle> ().interactable = false;
 						sampleButton.GetComponent<Toggle> ().isOn = false;
