@@ -58,10 +58,13 @@ public class Store : MonoBehaviour {
 			InitializeForms ();
 
 			_firstRun = false;
+		} else {
+			shopScrollList.RefreshDisplay ();
 		}
 		InitializeButtons ();
 
-
+		//Debug.Log ("I am in Store Start " + _firstRun);
+	
 		//InitializeItems ();
 		//Debug.Log ("Owned forms: " + _ownedForms.Count);
 		//Debug.Log ("Store Owned Forms: " + _storeOwnedItems.Count);
@@ -78,7 +81,7 @@ public class Store : MonoBehaviour {
 			if (_storeOwnedItems [i]) {
 				
 				var item = ItemManager.instance.items [i];
-				Debug.Log ("Store Item: " + i + " Item: " + item.itemName);
+				//Debug.Log ("Store Item: " + i + " Item: " + item.itemName);
 				Button button = item.text.GetComponentInChildren<Button> ();
 				item.text.text = "BOUGHT!";
 				button.GetComponent<Button> ().interactable = false;
@@ -293,11 +296,12 @@ public class Store : MonoBehaviour {
 
 			if (formID < 6) {
 				_ownedForms [formID+1] = true;
+				if (!_storeOwnedItems [formID]) {
+					DisableBuyButton (text, sprite, formID);
+					_storeOwnedItems [formID] = true;
+				}
 			}
-			if (!_storeOwnedItems [formID]) {
-				DisableBuyButton (text, sprite, formID);
-				_storeOwnedItems [formID] = true;
-			}
+
 		}
 		GotMoney();
 	}
@@ -309,14 +313,14 @@ public class Store : MonoBehaviour {
 		Button button = text.GetComponentInChildren<Button> ();
 		button.GetComponent<Button> ().interactable = false;
 		if (sprite.name != "Shield_icon") {
-			Debug.Log ("AddToPlayerinfo" + " Sprite: " + sprite.name);
-
+			//Debug.Log ("AddToPlayerinfo" + " Sprite: " + sprite.name + " ID " + id);
 			AddToPlayerInfo (sprite, id);
 		}
 	}
 
     private void AddToPlayerInfo(Sprite sprite, int id)
     {
+		//Debug.Log ("ID " + id);
 		ItemBought item = new ItemBought ();
 		item.itemID = id;
 		item.bought = true;
@@ -348,10 +352,10 @@ public class Store : MonoBehaviour {
     public void SetOwned(int i, bool enabled)
     {
 		//Debug.Log ("I AM HERE");
-		if (i < 6) {
+		if (i < 6 && UIController.instance.IsToggleInteractive()) {
 			_ownedForms [i + 1] = enabled;
 		} else {
-			UIController.instance.SetActiveFancyStuff (i - 6, enabled);
+		//	UIController.instance.SetActiveFancyStuff (i - 6, enabled);
 		}
     }
 
@@ -359,6 +363,10 @@ public class Store : MonoBehaviour {
     {
         return _ownedForms;
     }
+	public bool GetOwnedFormByID(int id)
+	{
+		return _ownedForms [id];
+	}
 	public bool GetStoreOwnedItem(int id)
 	{
 		return _storeOwnedItems [id];

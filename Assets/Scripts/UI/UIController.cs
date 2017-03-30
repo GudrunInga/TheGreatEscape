@@ -5,6 +5,17 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIController : MonoBehaviour {
+
+	public static bool toggleIsInteractive;
+
+	public void SetToggleInteractive(bool active)
+	{
+		toggleIsInteractive = active;
+	}
+	public bool IsToggleInteractive()
+	{
+		return toggleIsInteractive;
+	}
     //For Go back button
     private GameObject _lastActiveMenu;
 
@@ -84,14 +95,19 @@ public class UIController : MonoBehaviour {
 	}*/
 	void InitializeFancyItems()
 	{
-		_fancyItems = new List<bool> ();
+		/*_fancyItems = new List<bool> ();
 		for (int i = 0; i < 3; i++) {
 			_fancyItems.Add (false);
-		}
+		}*/
 	}
+	public bool GetFancyItem(int id)
+	{
+		return _fancyItems [id];
+	}
+	//This function is working as expected - correctly
 	void CheckFancyItems()
 	{
-		for (int i = 0; i < 3; i++) {
+		/*for (int i = 0; i < 3; i++) {
 			if (_fancyItems [i]) {
 				if (i != 2) {
 					var obj = player.transform.GetChild (i).gameObject;
@@ -101,7 +117,7 @@ public class UIController : MonoBehaviour {
 					obj.SetActive (!obj.activeSelf);
 				}
 			}
-		}
+		}*/
 	}
 	// Use this for initialization
 	void Start() {
@@ -113,6 +129,7 @@ public class UIController : MonoBehaviour {
 			Time.timeScale = 0;
 			InitializeFancyItems ();
 			_firstRun = false;
+			toggleIsInteractive = true;
 		}
 		else {
 			mainMenu.SetActive(false);
@@ -164,6 +181,7 @@ public class UIController : MonoBehaviour {
 	/*Called when Start button in any menu is "clicked"*/
 	public void RestartScene()
 	{
+		//Debug.Log ("LET'S RESTART THE SCENE!");
 		_gameOverScript.ResetScene (false, false);
         laundry = false;
         steel = false;
@@ -277,30 +295,39 @@ public class UIController : MonoBehaviour {
     }
 
 	public void SetActiveFancyStuff(int id, bool enabled){
+		/*Debug.Log ("Set active fancy stuff");
 		var topHat = player.transform.GetChild (0).gameObject;
 		var bow = player.transform.GetChild (1).gameObject;
 		var cap = player.transform.GetChild (3).gameObject;
 
 		var hatobj = GameObject.FindGameObjectWithTag ("ToggleHat");
 		var bowobj = GameObject.FindGameObjectWithTag ("ToggleBow");
-		var capobj = GameObject.FindGameObjectWithTag ("ToggleBow");
-		Debug.Log ("ID: " + id + " enabled: " + enabled);
+		var capobj = GameObject.FindGameObjectWithTag ("ToggleCap");
+		//Debug.Log ("ID: " + id + " enabled: " + enabled);
 		//topHat
 		if (id == 0) {
 			if (enabled) {
+				if(bowobj != null && bowobj.GetComponent<Toggle>().isOn){
+					//Debug.Log ("I am toggling bow off and hat on");
+					bowobj.GetComponent<Toggle> ().interactable = false;
+					bowobj.GetComponent<Toggle> ().isOn = false;
+					bowobj.GetComponent<Toggle> ().interactable = true;
+				}
 				if (bow.activeSelf) {
-					var obj = GameObject.FindGameObjectWithTag ("ToggleBow"); //.isOn = false;
-					if(obj != null){
-						obj.GetComponent<Toggle> ().isOn = false;
-					}
+					//var obj = GameObject.FindGameObjectWithTag ("ToggleBow"); //.isOn = false;
+
 					bow.SetActive (false);
 					_fancyItems [1] = false;
 				} 
+				if(capobj != null && capobj.GetComponent<Toggle>().isOn){
+					//Debug.Log ("I am toggling cap off and hat on");
+					capobj.GetComponent<Toggle> ().interactable = false;
+					capobj.GetComponent<Toggle> ().isOn = false;
+					capobj.GetComponent<Toggle> ().interactable = true;
+				}
 				if (cap.activeSelf) {
-					var obj = GameObject.FindGameObjectWithTag ("ToggleCap"); //.isOn = false;
-					if(obj != null){
-						obj.GetComponent<Toggle> ().isOn = false;
-					}
+					//var obj = GameObject.FindGameObjectWithTag ("ToggleCap"); //.isOn = false;
+
 					cap.SetActive (false);
 					_fancyItems [2] = false;
 				}
@@ -311,19 +338,27 @@ public class UIController : MonoBehaviour {
 		//bow
 		else if (id == 1) {
 			if (enabled) {
+				if(hatobj != null && hatobj.GetComponent<Toggle>().isOn){
+					//Debug.Log ("I am toggling hat off and bow on");
+					hatobj.GetComponent<Toggle> ().interactable = false;
+					hatobj.GetComponent<Toggle> ().isOn = false;
+					hatobj.GetComponent<Toggle> ().interactable = true;
+				}
 				if (topHat.activeSelf) {
-					var obj = GameObject.FindGameObjectWithTag ("ToggleHat");
-					if(obj != null){
-						obj.GetComponent<Toggle> ().isOn = false;
-					}
+					//var obj = GameObject.FindGameObjectWithTag ("ToggleHat");
+
 					topHat.SetActive (false);
 					_fancyItems [0] = false;
 				} 
-				if (cap.activeSelf) {
-					var obj = GameObject.FindGameObjectWithTag ("ToggleCap");
-					if (obj != null) {
-						obj.GetComponent<Toggle> ().isOn = false;
-					}
+				if (capobj != null && capobj.GetComponent<Toggle>().isOn) {
+					//Debug.Log ("I am toggling cap off and bow on");
+					capobj.GetComponent<Toggle> ().interactable = false;
+					capobj.GetComponent<Toggle> ().isOn = false;
+					capobj.GetComponent<Toggle> ().interactable = true;
+				}
+				if (cap.activeSelf ) {
+					//var obj = GameObject.FindGameObjectWithTag ("ToggleCap");
+
 					cap.SetActive (false);
 					_fancyItems [2] = false;
 				}
@@ -334,26 +369,30 @@ public class UIController : MonoBehaviour {
 		//cap
 		else if (id == 2) {
 			if (enabled) {
-				if(hatobj != null){
-					Debug.Log ("I am toggling hat off ");
+				if(hatobj != null && hatobj.GetComponent<Toggle>().isOn){
+					//Debug.Log ("I am toggling hat off and cap on");
+					hatobj.GetComponent<Toggle> ().interactable = false;
 					hatobj.GetComponent<Toggle> ().isOn = false;
+					hatobj.GetComponent<Toggle> ().interactable = true;
 				}
 				if (topHat.activeSelf) {
 					topHat.SetActive (false);
 					_fancyItems [0] = false;
 				} 
 					
-				if(bowobj != null){
+				if(bowobj != null && bowobj.GetComponent<Toggle>().isOn){
+					//Debug.Log ("I am toggling bow off and cap on");
+					bowobj.GetComponent<Toggle> ().interactable = false;
 					bowobj.GetComponent<Toggle> ().isOn = false;
+					bowobj.GetComponent<Toggle> ().interactable = true;
 				}
 				if (bow.activeSelf) {
-					
 					bow.SetActive (false);
 					_fancyItems [1] = false;
 				}
 			}
 			cap.SetActive (enabled);
 			_fancyItems [id] = enabled;
-		}
+		}*/
 	}
 }
