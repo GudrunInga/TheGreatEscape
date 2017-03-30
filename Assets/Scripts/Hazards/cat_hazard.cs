@@ -4,6 +4,8 @@ using UnityEngine;
 using System.Linq;
 
 public class cat_hazard : MonoBehaviour {
+	public AudioSource catScared;
+	public AudioSource catPop;
 
 	public GameObject repellant;
 	private bool inside;
@@ -32,10 +34,13 @@ public class cat_hazard : MonoBehaviour {
 		{
 			if(repellant.activeInHierarchy)
 			{
+				catScared.Play ();
+
 				Destroy(gameObject);
 			}
 			else
 			{		 
+				catPop.Play ();
 				UIController.instance.GameOver("Cat");
 			}										
 		}
