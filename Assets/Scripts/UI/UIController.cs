@@ -70,6 +70,8 @@ public class UIController : MonoBehaviour {
 	private static int _level = 1;
 	// Location of player at level
 	private static float _spawn_x = 0;
+	// How many runs?
+	public static int runs = 1;
 	//Coins Collected, when player collides with coins the Coin_Rotate script calls an instance of this
 	private static int _coins;
 	private static bool _firstRun = true;
@@ -131,6 +133,7 @@ public class UIController : MonoBehaviour {
 			InitializeFancyItems ();
 			_firstRun = false;
 			toggleIsInteractive = true;
+			runs = 1;
 			save(true);
 			load();
 		}
@@ -214,10 +217,11 @@ public class UIController : MonoBehaviour {
 			bs.SafeTime = 4;
 			return;
 		}
-		dead = true;	  
+		dead = true;   
 		_coins += _tempCoins;
 		_gameOverScript.GameOver (deathReason);
 		save();
+		runs++;
 	}
 
 	/*Moneys...all the moneys*/
@@ -410,6 +414,7 @@ public class UIController : MonoBehaviour {
 		S.spawn = _spawn_x;
 		S.firstRun = _firstRun;
 		S.coins = _coins;
+		S.runs = runs;
 
 		S.gravity = mystore.gravity;
 		S.speed = mystore.speed;
@@ -453,6 +458,7 @@ public class UIController : MonoBehaviour {
 			_spawn_x = S.spawn;
 			_firstRun = S.firstRun;
 			_coins = S.coins;
+			runs = S.runs;
 
 			mystore.gravity = S.gravity;
 			mystore.speed = S.speed;
@@ -481,6 +487,7 @@ public class UIController : MonoBehaviour {
 		public float spawn;
 		public bool firstRun;
 		public int coins;
+		public int runs;
 		//store
 		public float gravity;
 		public float speed;
