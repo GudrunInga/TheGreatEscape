@@ -6,7 +6,7 @@ using UnityEngine.UI;
 namespace AssemblyCSharp
 {
 public class StoreGravity{
-	private float _gravity;
+	private static float _gravity;
 	private Button _buyButton;
 	private Text _currentGravityText;
 	private Button _increaseButton;

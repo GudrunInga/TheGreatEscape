@@ -10,7 +10,7 @@ namespace AssemblyCSharp
 		private int _speedLevel;
 		private int _currentLevel;
 
-		private float _speed;
+		private static float _speed;
 		private Button _buySpeed;
 		private Text _currentSpeedText;
 		private Button _increaseSpeedButton;
@@ -34,7 +34,9 @@ namespace AssemblyCSharp
 			if (UIController.instance.GetCoins() > 0) {
 				UIController.instance.SpendCoins ();
 
+                Debug.Log("mass " + UIController.instance.player.GetComponent<Rigidbody2D>().mass);
 				UIController.instance.player.GetComponent<Rigidbody2D> ().mass -= _speed;
+                Debug.Log("mass after change " + UIController.instance.player.GetComponent<Rigidbody2D>().mass);
 				_speedLevel++;
 				_currentLevel++;
 				_currentSpeedText.text = "Speed Level: " + _currentLevel.ToString();

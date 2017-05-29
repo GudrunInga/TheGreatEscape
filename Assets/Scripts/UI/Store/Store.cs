@@ -6,22 +6,23 @@ public class Store : MonoBehaviour {
 
     public bool IamTesting;
 
-	//Gravity
-	public float gravity;
+    //Gravity
+    public static float gravity = 0.01f;
 	public Button buyGravity;
 	public Text currentGravityLevel;
 	public Button increaseGravityButton;
 	public Button decreaseGravityButton;
+   
 
 	//Speed
-	public float speed;
+	public static float speed = 0.01f;
 	public Button buySpeed;
 	public Text currentSpeedLevel;
 	public Button increaseSpeedButton;
 	public Button decreaseSpeedButton;
 
 	//Camera Acceleration
-	public float cameraAcc;
+	public static float cameraAcc = 0.01f;
 	public Button buyCameraAcc;
 	public Text currentCameraAccLevel;
 	public Button increaseCameraAccButton;
@@ -42,6 +43,30 @@ public class Store : MonoBehaviour {
 
 	public GameObject contentOfPlayerInfo;
 
+    public float GetGravity()
+    {
+        return gravity;
+    }
+    public void SetGravity(float grav)
+    {
+        gravity = grav;
+    }
+	public float GetSpeed()
+	{
+        return speed;
+	}
+	public void SetSpeed(float sp)
+	{
+        speed = sp;
+	}
+	public float GetCameraAcc()
+	{
+        return cameraAcc;
+	}
+	public void SetCameraAcc(float camAcc)
+	{
+        cameraAcc = camAcc;
+	}
 	// Use this for initialization
 	void Start () {
 		_gravityScript = new AssemblyCSharp.StoreGravity(gravity, buyGravity, currentGravityLevel, increaseGravityButton, decreaseGravityButton);

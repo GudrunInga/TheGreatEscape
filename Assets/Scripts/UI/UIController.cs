@@ -416,9 +416,9 @@ public class UIController : MonoBehaviour {
 		S.coins = _coins;
 		S.runs = runs;
 
-		S.gravity = mystore.gravity;
-		S.speed = mystore.speed;
-		S.cameraAcc = mystore.cameraAcc;
+        S.gravity = mystore.GetGravity();
+        S.speed = mystore.GetSpeed();
+        S.cameraAcc = mystore.GetCameraAcc();
 		S.ownedForms = mystore.GetOwnedForms();
 		S.ownedItems = mystore.getStoreOwnedItems(); 
 
@@ -462,9 +462,9 @@ public class UIController : MonoBehaviour {
 			_coins = S.coins;
 			runs = S.runs;
 
-			mystore.gravity = S.gravity;
-			mystore.speed = S.speed;
-			mystore.cameraAcc = S.cameraAcc;
+            mystore.SetGravity(S.gravity);
+            mystore.SetSpeed(S.speed);
+            mystore.SetCameraAcc(S.cameraAcc);
 			mystore.SetOwnedLists(S.ownedForms, S.ownedItems);		
 
 			ShopScrollList.itemList = new List<ItemBought>(S.itemList);	
